@@ -1,0 +1,17 @@
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\bin\Debug\net10.0-windows\Hospital Managment System.exe
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\bin\Debug\net10.0-windows\Hospital Managment System.deps.json
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\bin\Debug\net10.0-windows\Hospital Managment System.runtimeconfig.json
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\bin\Debug\net10.0-windows\Hospital Managment System.dll
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\bin\Debug\net10.0-windows\Hospital Managment System.pdb
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital_Managment_System.Properties.Resources.resources
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital Managment System.csproj.GenerateResource.cache
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital Managment System.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital Managment System.AssemblyInfoInputs.cache
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital Managment System.AssemblyInfo.cs
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital Managment System.csproj.CoreCompileInputs.cache
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital Managment System.dll
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\refint\Hospital Managment System.dll
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital Managment System.pdb
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital Managment System.genruntimeconfig.cache
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\ref\Hospital Managment System.dll
+C:\Users\youss\source\repos\Hospital Managment System\Hospital Managment System\obj\Debug\net10.0-windows\Hospital_Managment_System.Login_Form1.resources
