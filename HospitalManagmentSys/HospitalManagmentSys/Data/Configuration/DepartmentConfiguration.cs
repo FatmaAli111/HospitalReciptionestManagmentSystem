@@ -16,9 +16,6 @@ namespace HospitalManagmentSys.Data.Configuration
         {
 
             builder.HasKey(d => d.Id);
-
-            builder.Property(d => d.Id).HasField("ID");
-
             builder.Property(d => d.Name)
                    .IsRequired()
                    .HasMaxLength(100);
