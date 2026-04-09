@@ -13,29 +13,41 @@ namespace HospitalManagmentSys.Presentation
     {
         private readonly Color[] avatarColors =
         {
-            Color.FromArgb(59,  130, 246),
-            Color.FromArgb(139,  92, 246),
-            Color.FromArgb(236,  72, 153),
-            Color.FromArgb(249, 115,  22),
-            Color.FromArgb( 20, 184, 166),
+            Color.FromArgb(59, 130, 246),
+            Color.FromArgb(139, 92, 246),
+            Color.FromArgb(236, 72, 153),
+            Color.FromArgb(249, 115, 22),
+            Color.FromArgb(20, 184, 166),
         };
 
         private readonly List<Patient> patients = new List<Patient>
         {
-            new Patient { Id = "001", FullName = "Remonda Nady",
-                Phone = "1234567890",  Email = "Remonda@email.com",
-                BloodType = "A+",  Age = 23,
-                TotalAppointments = 4, NoShowCount = 2 },
+            new Patient
+            {
+                Id = 1, FullName = "Remonda Nady",
+                Phone = "1234567890", Email = "Remonda@email.com",
+                BloodType = BloodType.O_Positive,
+                DateOfBirth = new DateTime(2002, 9, 25),
+                NoShowCount = 2
+            },
 
-            new Patient { Id = "002", FullName = "Sara Ahmed",
-                Phone = "123456778",  Email = "sara@email.com",
-                BloodType = "O-",  Age = 22,
-                TotalAppointments = 8, NoShowCount = 0 },
+            new Patient
+            {
+                Id = 2, FullName = "Sara Ahmed",
+                Phone = "123456778", Email = "sara@email.com",
+                BloodType = BloodType.O_Negative,
+                DateOfBirth = new DateTime(2001, 5, 12),
+                NoShowCount = 0
+            },
 
-            new Patient { Id = "003", FullName = "John Smith",
+            new Patient
+            {
+                Id = 3, FullName = "John Smith",
                 Phone = "2345678987", Email = "john@email.com",
-                BloodType = "B+", Age = 41,
-                TotalAppointments = 20, NoShowCount = 5 },
+                BloodType = BloodType.B_Positive,
+                DateOfBirth = new DateTime(1982, 3, 15),
+                NoShowCount = 5
+            },
         };
 
         public PatientsForm()
@@ -66,23 +78,21 @@ namespace HospitalManagmentSys.Presentation
 
             switch (filterCombo.SelectedIndex)
             {
-                case 1:
-                    result = result.Where(p => p.NoShowStatus.HasFlag(NoShowStatus.HighRisk));
+                case 1: 
+                    result = result.Where(p => p.MedicalUrgency == MedicalUrgency.High);
                     break;
-                case 2:
-                    result = result.Where(p => p.NoShowStatus.HasFlag(NoShowStatus.Good));
+                case 2: 
+                    result = result.Where(p => p.MedicalUrgency == MedicalUrgency.Low);
                     break;
-                case 4:
-                    result = result.Where(p => p.NoShowStatus.HasFlag(NoShowStatus.Warning));
+                case 3: 
+                    result = result.Where(p => p.MedicalUrgency == MedicalUrgency.Medium);
                     break;
-
             }
 
             var searchText = searchBox.Text.ToLower();
             if (!string.IsNullOrWhiteSpace(searchText))
             {
-                result = result.Where(p =>
-                    p.FullName.ToLower().Contains(searchText));
+                result = result.Where(p => p.FullName.ToLower().Contains(searchText));
             }
 
             LoadPatients(result.ToList());
@@ -91,7 +101,6 @@ namespace HospitalManagmentSys.Presentation
         private void LoadPatients(List<Patient> patients)
         {
             contentPanel.Controls.Clear();
-
             contentPanel.Controls.Add(new PatientTableHeader());
 
             int colorIndex = 0;
@@ -112,7 +121,7 @@ namespace HospitalManagmentSys.Presentation
         private void AddPatientBtn_Click(object sender, EventArgs e)
         {
             var form = new AddPatientForm();
-            form.ShowDialog(); 
+            form.ShowDialog();
         }
     }
 }
