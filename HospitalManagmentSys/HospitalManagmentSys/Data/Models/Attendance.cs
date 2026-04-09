@@ -13,9 +13,10 @@ namespace HospitalManagmentSys.Data.Models
         Late=3,
         Cancelled=4
     }
-    public class Attendence
+    public class Attendance
     {
         public int Id { get; set; }
+        public int AppointmentID { get; set; }
         public DateTime CheckInTime { get; set; }
         public DateTime CheckOutTime { get; set; }
         public DateTime ArriveTime { get; set; }

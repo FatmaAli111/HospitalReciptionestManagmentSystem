@@ -9,6 +9,7 @@ namespace HospitalManagmentSys.Data.Models
     public class TimeSlot
     {
         public int Id { get; set; }
+        public int DoctorId {  get; set; }
         public DateTime SlotDate { get; set; }
         public TimeSpan StartTime { get; set; }
         public TimeSpan EndTime { get; set; }
@@ -16,6 +17,7 @@ namespace HospitalManagmentSys.Data.Models
         public int BookedCount { get; set; }
         public bool IsAvailable { get; set; }
         public Doctor Doctor { get; set; }
+        public Queue Queue { get; set; }
         public List<Appointment> Appointments { get; set; } = new();
     }
 }

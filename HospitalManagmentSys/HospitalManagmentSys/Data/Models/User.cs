@@ -19,8 +19,9 @@ namespace HospitalManagmentSys.Data.Models
         public string Name { get; set; }
         public string Email { get; set; }
         public string PasswordHash { get; set; }
-        public bool Isactive { get; set; }
+        public bool IsActive { get; set; }
         public DateTime CreatedAt { get; set; }
-        public Doctor Doctor { get; set; }
+        public Doctor? Doctor { get; set; }
+        public UserRequest? UserRequest {  get; set; }
     }
 }

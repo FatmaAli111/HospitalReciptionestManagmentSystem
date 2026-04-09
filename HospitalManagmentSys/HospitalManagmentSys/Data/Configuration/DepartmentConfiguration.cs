@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using HospitalManagmentSys.Data.Models;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace HospitalManagmentSys.Data.Configuration
 {
-    using Microsoft.EntityFrameworkCore;
-    using Microsoft.EntityFrameworkCore.Metadata.Builders;
-    using HospitalManagmentSys.Data.Models;
 
     public class DepartmentConfiguration : IEntityTypeConfiguration<Department>
     {
@@ -18,7 +14,8 @@ namespace HospitalManagmentSys.Data.Configuration
             builder.HasKey(d => d.Id);
             builder.Property(d => d.Name)
                    .IsRequired()
-                   .HasMaxLength(100);
+                   .HasMaxLength(20);
+            builder.HasMany<Doctor>(e=>e.Doctors).WithOne(e=>e.Department).HasForeignKey(d=>d.DepartmentId).OnDelete(DeleteBehavior.Restrict);
 
     }
     }

@@ -2,7 +2,6 @@
 using HospitalManagmentSys.Data.Models;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Xml;
 
 namespace HospitalManagmentSys.Presentation.UserControls
 {
@@ -12,6 +11,7 @@ namespace HospitalManagmentSys.Presentation.UserControls
         {
             InitializeComponent();
         }
+
         public void SetData(Patient patient, Color avatarColor)
         {
             avatarLabel.Text = patient.Initials;
@@ -22,7 +22,7 @@ namespace HospitalManagmentSys.Presentation.UserControls
 
             contactLabel.Text = $"{patient.Phone}\r\n{patient.Email}";
 
-            bloodLabel.Text = patient.BloodType;
+            bloodLabel.Text = patient.BloodType.ToString().Replace("_", " ");
 
             appointmentsLabel.Text = $"{patient.TotalAppointments} total";
 
@@ -34,19 +34,19 @@ namespace HospitalManagmentSys.Presentation.UserControls
             Color badgeBg, badgeFg;
             string badgeText;
 
-            switch (patient.NoShowStatus)
+            switch (patient.MedicalUrgency)
             {
-                case NoShowStatus.Good:
+                case MedicalUrgency.Low:
                     badgeBg = Color.FromArgb(220, 252, 231);
                     badgeFg = Color.FromArgb(21, 128, 61);
                     badgeText = $"Good ({patient.NoShowCount})";
                     break;
-                case NoShowStatus.HighRisk:
+                case MedicalUrgency.High:
                     badgeBg = Color.FromArgb(254, 226, 226);
                     badgeFg = Color.FromArgb(153, 27, 27);
                     badgeText = $"High Risk ({patient.NoShowCount})";
                     break;
-                default: // Warning
+                default:
                     badgeBg = Color.FromArgb(254, 243, 199);
                     badgeFg = Color.FromArgb(146, 64, 14);
                     badgeText = $"Warning ({patient.NoShowCount})";
