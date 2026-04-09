@@ -11,5 +11,7 @@ namespace HospitalManagmentSys.Presentation
         private void AppointmentsCardView_Load(object sender, EventArgs e)
         {
         }
+
+      
     }
 }
