@@ -27,7 +27,7 @@ namespace HospitalManagmentSys.Presentation.UserControls
             Height = 36;
             Dock = DockStyle.Top;
             BackColor = Color.FromArgb(249, 250, 251);
-
+            Padding = new Padding(24, 0, 0, 0);
             foreach (var col in columns)
             {
                 Controls.Add(CreateHeaderLabel(col.Key, col.Value));
@@ -40,7 +40,7 @@ namespace HospitalManagmentSys.Presentation.UserControls
             return new Guna2HtmlLabel
             {
                 Text = text,
-                Font = new Font("Segoe UI", 8f, FontStyle.Bold),
+                Font = new Font("Segoe UI", 9f, FontStyle.Bold),
                 ForeColor = Color.FromArgb(107, 114, 128),
                 AutoSize = true,
                 Location = new Point(x, 10)

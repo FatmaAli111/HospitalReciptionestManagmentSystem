@@ -17,5 +17,9 @@ namespace HospitalManagmentSys.Presentation
             InitializeComponent();
         }
 
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
