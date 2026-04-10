@@ -22,5 +22,9 @@ namespace HospitalManagmentSys.Data.Configuration
                 .OnDelete(DeleteBehavior.Cascade);  
         }
       
+      
+            
+        }
+
     }
 }

@@ -25,7 +25,7 @@ namespace HospitalManagmentSys.Data.Configuration
                   .HasForeignKey(e => e.TimeSlotId)
                   .OnDelete(DeleteBehavior.Restrict);
 
-            
+
         }
     }
 }

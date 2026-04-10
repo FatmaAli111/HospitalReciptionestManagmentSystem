@@ -26,5 +26,6 @@ namespace HospitalManagmentSys.Data.Models
             this.Specialty = spec;
         }
 
+
     }
 }

@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Reflection.Emit;
 
+
 namespace HospitalManagmentSys.Data.Configuration
 {
     public class DoctorConfiguration : IEntityTypeConfiguration<Doctor>
@@ -10,6 +11,7 @@ namespace HospitalManagmentSys.Data.Configuration
         public void Configure(EntityTypeBuilder<Doctor> builder)
         {
             builder.HasKey(d => d.Id);
+
             builder.Property(d => d.Specialty).IsRequired().HasMaxLength(30);
 
             builder.HasOne(d => d.Department).WithMany(dep => dep.Doctors)
@@ -20,6 +22,7 @@ namespace HospitalManagmentSys.Data.Configuration
            .WithOne(u => u.Doctor)                    
            .HasForeignKey<Doctor>("UserId")
            .OnDelete(DeleteBehavior.Cascade);
+
 
             builder.HasMany(d => d.TimeSlots).WithOne(t => t.Doctor)
                    .HasForeignKey(t => t.DoctorId)

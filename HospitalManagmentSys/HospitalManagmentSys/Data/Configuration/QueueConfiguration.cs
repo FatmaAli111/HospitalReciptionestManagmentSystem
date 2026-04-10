@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 ﻿using HospitalManagmentSys.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System.Reflection.Emit;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using HospitalManagmentSys.Data.Models;
 
 namespace HospitalManagmentSys.Data.Configuration
 {
@@ -22,10 +26,11 @@ namespace HospitalManagmentSys.Data.Configuration
                 .WithOne(e => e.Queue).HasForeignKey(e => e.QueueId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(q => q.Doctor)
+            builder.HasOne<Doctor>(q => q.Doctor)
                 .WithMany(d => d.Queues)
                 .HasForeignKey(q => q.DoctorId)
                 .OnDelete(DeleteBehavior.Restrict);
+
 
 
         }

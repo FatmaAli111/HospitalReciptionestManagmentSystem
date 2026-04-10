@@ -8,6 +8,7 @@ namespace HospitalManagmentSys.Data.Configuration
         public void Configure(EntityTypeBuilder<UserRequest> builder)
         {
             builder.HasKey(e => e.ID);
+
             builder.Property(e => e.Status).IsRequired().HasMaxLength(20);
             builder.Property(e => e.RequestDate).HasDefaultValueSql("GETDATE()"); 
 
