@@ -9,7 +9,6 @@ namespace HospitalManagmentSys.Data.Models
     public class Doctor
     {
         public int Id { get; set; }
-        public int UserId {  get; set; }
         public int DepartmentId { get; set; }
         public string Specialty { get; set; }
         public User User { get; set; }
@@ -17,6 +16,11 @@ namespace HospitalManagmentSys.Data.Models
         public List<TimeSlot> TimeSlots { get; set; } = new();
         public ICollection<Queue> Queues { get; set; }
         public List<Appointment> Appointments { get; set; } = new();
+        public Doctor(User user, string spec)
+        {
+            this.User = user;
+            this.Specialty = spec;
+        }
 
     }
 }

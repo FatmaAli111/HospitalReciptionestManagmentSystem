@@ -16,9 +16,7 @@ namespace HospitalManagmentSys.Data.Configuration
             builder.HasIndex(e => e.Email).IsUnique();
             builder.Property(e => e.PasswordHash).IsRequired().HasMaxLength(30);
 
-            builder.HasOne<Doctor>(e => e.Doctor).WithOne(e => e.User)
-                .HasForeignKey<Doctor>(e=>e.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
+           
             builder.HasOne<UserRequest>(e=>e.UserRequest).WithOne(e => e.User)
                 .HasForeignKey<UserRequest>(e=>e.UserID)
                 .OnDelete(DeleteBehavior.Cascade);  
