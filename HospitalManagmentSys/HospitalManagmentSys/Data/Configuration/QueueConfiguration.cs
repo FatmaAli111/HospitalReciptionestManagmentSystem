@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 ﻿using HospitalManagmentSys.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
