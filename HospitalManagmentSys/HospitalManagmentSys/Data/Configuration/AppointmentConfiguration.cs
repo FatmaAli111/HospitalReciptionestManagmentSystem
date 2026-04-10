@@ -34,7 +34,7 @@ namespace HospitalManagmentSys.Data.Configuration
             builder.HasOne<Attendance>(e => e.Attendance).WithOne(e => e.Appointment)
                     .HasForeignKey<Attendance>(e => e.AppointmentID)
                     .OnDelete(DeleteBehavior.Restrict);
-
+        
         }
     }
 }
