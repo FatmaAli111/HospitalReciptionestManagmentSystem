@@ -11,17 +11,28 @@ namespace HospitalManagmentSys.Data.Models
         public int ID { get; set; }
         public int UserID { get; set; }
 
-        public string FullName { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; }
-
+       
         public string Status { get; set; }
 
         public DateTime RequestDate { get; set; }
 
         public bool IsAccountCreated { get; set; }
 
-        public User User { get; set; }
+
+        public User user { get; set; }
+        public UserRequest()
+        {
+            
+        }
+        public UserRequest(User user, string Status, DateTime RequestDate, bool? IsAccountCreated)
+        {
+            this.user = user;
+            this.Status = Status;
+            this.RequestDate = RequestDate;
+            this.IsAccountCreated = IsAccountCreated ?? false;
+
+
+        }
+
     }
 }

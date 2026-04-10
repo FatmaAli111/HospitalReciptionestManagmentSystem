@@ -1,3 +1,4 @@
+using Dashboard;
 using HospitalManagmentSys.Presentation;
 using SmartHospitalSystem;
 
@@ -15,6 +16,7 @@ namespace HospitalManagmentSys
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new QueueForm());
+
         }
     }
 }

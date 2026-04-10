@@ -25,9 +25,7 @@ namespace HospitalManagmentSys.Data.Configuration
                   .HasForeignKey(e => e.TimeSlotId)
                   .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(e => e.Queue).WithOne(e => e.TimeSlot)
-                   .HasForeignKey<Queue>(e => e.TimeSlotId)
-                   .OnDelete(DeleteBehavior.Restrict);
+
         }
     }
 }

@@ -17,7 +17,6 @@ namespace HospitalManagmentSys.Data.Models
         public int BookedCount { get; set; }
         public bool IsAvailable { get; set; }
         public Doctor Doctor { get; set; }
-        public Queue Queue { get; set; }
         public List<Appointment> Appointments { get; set; } = new();
     }
 }

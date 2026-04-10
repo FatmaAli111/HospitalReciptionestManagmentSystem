@@ -16,11 +16,13 @@ namespace HospitalManagmentSys.Data.Models
     public class Queue
     {
         public int Id { get; set; }
-        public int TimeSlotId { get; set; }
+
+        public int DoctorId { get; set; }
         public DateTime LastUpdated {  get; set; }
         public QueueStatus Status { get; set; }
 
-        public TimeSlot TimeSlot { get; set; }
+        public Doctor Doctor { get; set; }
+
         public List<Appointment> Appointments { get; set; } = new();
     }
 }
