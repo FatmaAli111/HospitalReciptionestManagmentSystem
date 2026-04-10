@@ -1,6 +1,5 @@
 using Dashboard;
 using HospitalManagmentSys.Presentation;
-using SmartHospitalSystem;
 
 namespace HospitalManagmentSys
 {
