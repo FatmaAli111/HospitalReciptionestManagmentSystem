@@ -17,14 +17,6 @@ namespace HospitalManagmentSys.Data.Models
         public bool IsAccountCreated { get; set; }
 
         public User user { get; set; }
-        public UserRequest(User user, string Status, DateTime RequestDate, bool? IsAccountCreated)
-        {
-            this.user = user;
-            this.Status = Status;
-            this.RequestDate = RequestDate;
-            this.IsAccountCreated = IsAccountCreated ?? false;
-
-
-        }
+        
     }
 }

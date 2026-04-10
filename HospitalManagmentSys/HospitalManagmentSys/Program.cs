@@ -1,3 +1,4 @@
+using Dashboard;
 using HospitalManagmentSys.Presentation;
 using SmartHospitalSystem;
 
