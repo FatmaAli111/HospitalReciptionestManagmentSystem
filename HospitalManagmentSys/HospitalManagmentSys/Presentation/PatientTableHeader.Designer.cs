@@ -26,12 +26,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // PatientTableHeader
             // 
-            this.Name = "PatientTableHeader";
-            this.ResumeLayout(false);
+            Name = "PatientTableHeader";
+            ResumeLayout(false);
         }
 
         #endregion

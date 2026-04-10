@@ -123,7 +123,7 @@ namespace HospitalManagmentSys.Presentation.UserControls
             statusLabel.Location = new Point(750, 18);
             statusLabel.Name = "statusLabel";
             statusLabel.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            statusLabel.Size = new Size(180, 45);
+            statusLabel.Size = new Size(26, 10);
             statusLabel.TabIndex = 6;
             statusLabel.TabStop = false;
             // 
@@ -139,7 +139,7 @@ namespace HospitalManagmentSys.Presentation.UserControls
             Controls.Add(statusLabel);
             Cursor = Cursors.Hand;
             Name = "PatientRowControl";
-            Size = new Size(1052, 60);
+            Size = new Size(1052, 62);
             ResumeLayout(false);
             PerformLayout();
         }
