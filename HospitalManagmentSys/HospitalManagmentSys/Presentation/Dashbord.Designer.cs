@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashbord));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             PatientsWating = new Panel();
             PatientWaiting = new Label();
             PatientsWatingNow = new Label();
@@ -115,6 +115,7 @@
             // 
             // PatientsWating
             // 
+            PatientsWating.Anchor = AnchorStyles.None;
             PatientsWating.BackColor = Color.White;
             PatientsWating.Controls.Add(PatientWaiting);
             PatientsWating.Controls.Add(PatientsWatingNow);
@@ -159,6 +160,7 @@
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.None;
             panel3.BackColor = Color.White;
             panel3.Controls.Add(ActiveDoc);
             panel3.Controls.Add(ActiveDoctor);
@@ -200,6 +202,7 @@
             // 
             // TPatients
             // 
+            TPatients.Anchor = AnchorStyles.None;
             TPatients.BackColor = Color.White;
             TPatients.Controls.Add(TPtient);
             TPatients.Controls.Add(TotalPatients);
@@ -241,6 +244,7 @@
             // 
             // NoShow
             // 
+            NoShow.Anchor = AnchorStyles.None;
             NoShow.BackColor = Color.White;
             NoShow.Controls.Add(NoSH);
             NoShow.Controls.Add(label1);
@@ -284,6 +288,7 @@
             // 
             // TodayAppoin
             // 
+            TodayAppoin.Anchor = AnchorStyles.None;
             TodayAppoin.BackColor = Color.White;
             TodayAppoin.Controls.Add(TAppoint);
             TodayAppoin.Controls.Add(TodaysAppointments);
@@ -325,6 +330,7 @@
             // 
             // label2
             // 
+            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(223, 7);
@@ -335,6 +341,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DarkGray;
@@ -346,6 +353,7 @@
             // 
             // label4
             // 
+            label4.Anchor = AnchorStyles.None;
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Blue;
@@ -357,6 +365,7 @@
             // 
             // label5
             // 
+            label5.Anchor = AnchorStyles.None;
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.DarkGray;
@@ -368,6 +377,7 @@
             // 
             // DoctorName
             // 
+            DoctorName.Anchor = AnchorStyles.None;
             DoctorName.AutoSize = true;
             DoctorName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DoctorName.ForeColor = Color.LightSlateGray;
@@ -438,6 +448,7 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Anchor = AnchorStyles.None;
             flowLayoutPanel1.BackColor = Color.White;
             flowLayoutPanel1.Controls.Add(panel4);
             flowLayoutPanel1.Location = new Point(222, 337);
@@ -447,6 +458,7 @@
             // 
             // flowLayoutPanel2
             // 
+            flowLayoutPanel2.Anchor = AnchorStyles.None;
             flowLayoutPanel2.BackColor = Color.White;
             flowLayoutPanel2.Controls.Add(panel1);
             flowLayoutPanel2.Location = new Point(686, 337);
@@ -534,6 +546,7 @@
             // 
             // Appointment
             // 
+            Appointment.Anchor = AnchorStyles.None;
             Appointment.AutoSize = true;
             Appointment.BackColor = SystemColors.Control;
             Appointment.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -546,6 +559,7 @@
             // 
             // flowLayoutPanel3
             // 
+            flowLayoutPanel3.Anchor = AnchorStyles.None;
             flowLayoutPanel3.BackColor = Color.White;
             flowLayoutPanel3.Controls.Add(panel2);
             flowLayoutPanel3.Location = new Point(223, 501);
@@ -599,6 +613,7 @@
             // 
             // Dctor
             // 
+            Dctor.Anchor = AnchorStyles.None;
             Dctor.AutoSize = true;
             Dctor.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Dctor.ForeColor = Color.Blue;
@@ -610,6 +625,7 @@
             // 
             // label6
             // 
+            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.DarkGray;
@@ -621,6 +637,7 @@
             // 
             // label7
             // 
+            label7.Anchor = AnchorStyles.None;
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Blue;
@@ -632,6 +649,7 @@
             // 
             // panel5
             // 
+            panel5.Anchor = AnchorStyles.None;
             panel5.BackColor = Color.White;
             panel5.Controls.Add(panel16);
             panel5.Controls.Add(panel15);
@@ -728,8 +746,9 @@
             // 
             // NewAppoint
             // 
+            NewAppoint.Anchor = AnchorStyles.None;
             NewAppoint.AutoRoundedCorners = true;
-            NewAppoint.CustomizableEdges = customizableEdges13;
+            NewAppoint.CustomizableEdges = customizableEdges1;
             NewAppoint.DisabledState.BorderColor = Color.DarkGray;
             NewAppoint.DisabledState.CustomBorderColor = Color.DarkGray;
             NewAppoint.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -739,16 +758,17 @@
             NewAppoint.ForeColor = Color.White;
             NewAppoint.Location = new Point(854, 21);
             NewAppoint.Name = "NewAppoint";
-            NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges2;
             NewAppoint.Size = new Size(180, 45);
             NewAppoint.TabIndex = 17;
             NewAppoint.Text = "New Appointment";
             // 
             // ViewQueu
             // 
+            ViewQueu.Anchor = AnchorStyles.None;
             ViewQueu.AutoRoundedCorners = true;
             ViewQueu.BackColor = SystemColors.Control;
-            ViewQueu.CustomizableEdges = customizableEdges15;
+            ViewQueu.CustomizableEdges = customizableEdges3;
             ViewQueu.DisabledState.BorderColor = Color.DarkGray;
             ViewQueu.DisabledState.CustomBorderColor = Color.DarkGray;
             ViewQueu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -759,16 +779,17 @@
             ViewQueu.Location = new Point(667, 21);
             ViewQueu.Name = "ViewQueu";
             ViewQueu.RightToLeft = RightToLeft.No;
-            ViewQueu.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            ViewQueu.ShadowDecoration.CustomizableEdges = customizableEdges4;
             ViewQueu.Size = new Size(180, 45);
             ViewQueu.TabIndex = 18;
             ViewQueu.Text = "View Queue";
             // 
             // ViewAll
             // 
+            ViewAll.Anchor = AnchorStyles.None;
             ViewAll.AutoRoundedCorners = true;
             ViewAll.BackColor = SystemColors.Control;
-            ViewAll.CustomizableEdges = customizableEdges17;
+            ViewAll.CustomizableEdges = customizableEdges5;
             ViewAll.DisabledState.BorderColor = Color.DarkGray;
             ViewAll.DisabledState.CustomBorderColor = Color.DarkGray;
             ViewAll.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -779,12 +800,12 @@
             ViewAll.Location = new Point(991, 276);
             ViewAll.Name = "ViewAll";
             ViewAll.RightToLeft = RightToLeft.No;
-            ViewAll.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            ViewAll.ShadowDecoration.CustomizableEdges = customizableEdges6;
             ViewAll.Size = new Size(111, 45);
             ViewAll.TabIndex = 19;
             ViewAll.Text = "View all";
             // 
-            // Form1
+            // Dashbord
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -810,8 +831,10 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Name = "Form1";
+            MinimumSize = new Size(1159, 726);
+            Name = "Dashbord";
             Text = "Dashbord";
+            WindowState = FormWindowState.Maximized;
             Load += Form1_Load;
             PatientsWating.ResumeLayout(false);
             PatientsWating.PerformLayout();
