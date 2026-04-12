@@ -28,18 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            appointmentsView1 = new AppointmentsView();
             SuspendLayout();
+            // 
+            // appointmentsView1
+            // 
+            appointmentsView1.BackColor = Color.FromArgb(245, 247, 251);
+            appointmentsView1.Dock = DockStyle.Fill;
+            appointmentsView1.Location = new Point(0, 0);
+            appointmentsView1.Name = "appointmentsView1";
+            appointmentsView1.Padding = new Padding(24);
+            appointmentsView1.Size = new Size(685, 402);
+            appointmentsView1.TabIndex = 0;
             // 
             // AppointmentsHostForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(685, 402);
+            Controls.Add(appointmentsView1);
             Name = "AppointmentsHostForm";
             Text = "AppointmentsHostForm";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private AppointmentsView appointmentsView1;
     }
 }

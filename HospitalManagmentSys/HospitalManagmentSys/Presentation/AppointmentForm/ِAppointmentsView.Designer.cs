@@ -50,8 +50,6 @@
             txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             cbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             flpList = new FlowLayoutPanel();
-            card1 = new AppointmentsCardView();
-            card2 = new AppointmentsCardView();
             card3 = new AppointmentsCardView();
             tlpRoot.SuspendLayout();
             cardHeader.SuspendLayout();
@@ -165,6 +163,7 @@
             btnBook.Size = new Size(184, 40);
             btnBook.TabIndex = 1;
             btnBook.Text = "+  Book Appointment";
+            btnBook.Click += btnBook_Click;
             // 
             // cardDate
             // 
@@ -348,8 +347,6 @@
             // 
             flpList.AutoScroll = true;
             flpList.BackColor = Color.Transparent;
-            flpList.Controls.Add(card1);
-            flpList.Controls.Add(card2);
             flpList.Controls.Add(card3);
             flpList.Dock = DockStyle.Fill;
             flpList.FlowDirection = FlowDirection.TopDown;
@@ -360,25 +357,10 @@
             flpList.TabIndex = 3;
             flpList.WrapContents = false;
             // 
-            // card1
-            // 
-            card1.Location = new Point(0, 8);
-            card1.Margin = new Padding(0, 0, 0, 16);
-            card1.Name = "card1";
-            card1.Size = new Size(980, 150);
-            card1.TabIndex = 0;
-            // 
-            // card2
-            // 
-            card2.Location = new Point(0, 174);
-            card2.Margin = new Padding(0, 0, 0, 16);
-            card2.Name = "card2";
-            card2.Size = new Size(980, 150);
-            card2.TabIndex = 1;
-            // 
             // card3
             // 
-            card3.Location = new Point(0, 340);
+            card3.BackColor = Color.Transparent;
+            card3.Location = new Point(0, 8);
             card3.Margin = new Padding(0, 0, 0, 16);
             card3.Name = "card3";
             card3.Size = new Size(980, 150);
@@ -430,8 +412,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2ComboBox cbStatus;
         private System.Windows.Forms.FlowLayoutPanel flpList;
-        private AppointmentsCardView card1;
-        private AppointmentsCardView card2;
         private AppointmentsCardView card3;
     }
 }
