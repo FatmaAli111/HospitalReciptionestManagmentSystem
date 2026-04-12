@@ -17,7 +17,7 @@ namespace HospitalManagmentSys.Data.Configuration
             builder.Property(e => e.PasswordHash).IsRequired().HasMaxLength(30);
 
            
-            builder.HasOne<UserRequest>(e=>e.UserRequest).WithOne(e => e.user)
+            builder.HasOne<UserRequest>(e=>e.UserRequest).WithOne(e => e.User)
                 .HasForeignKey<UserRequest>(e=>e.UserID)
                 .OnDelete(DeleteBehavior.Cascade);  
         }

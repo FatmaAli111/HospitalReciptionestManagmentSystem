@@ -745,6 +745,9 @@ namespace HospitalManagmentSys.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
+                    b.Property<string>("Speciality")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Email")
@@ -840,72 +843,52 @@ namespace HospitalManagmentSys.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsAccountCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RequestDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Speciality")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("UserID")
+                    b.Property<int?>("UserID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
                     b.HasIndex("UserID")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[UserID] IS NOT NULL");
 
                     b.ToTable("UserRequests");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            IsAccountCreated = true,
-                            RequestDate = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Approved",
-                            UserID = 1
-                        },
-                        new
-                        {
-                            ID = 2,
-                            IsAccountCreated = true,
-                            RequestDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Approved",
-                            UserID = 2
-                        },
-                        new
-                        {
-                            ID = 3,
-                            IsAccountCreated = true,
-                            RequestDate = new DateTime(2024, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Approved",
-                            UserID = 3
-                        },
-                        new
-                        {
-                            ID = 4,
-                            IsAccountCreated = true,
-                            RequestDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Approved",
-                            UserID = 4
-                        },
-                        new
-                        {
-                            ID = 5,
-                            IsAccountCreated = false,
-                            RequestDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Pending",
-                            UserID = 5
-                        });
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Appointment", b =>
@@ -996,13 +979,12 @@ namespace HospitalManagmentSys.Migrations
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.UserRequest", b =>
                 {
-                    b.HasOne("HospitalManagmentSys.Data.Models.User", "user")
+                    b.HasOne("HospitalManagmentSys.Data.Models.User", "User")
                         .WithOne("UserRequest")
                         .HasForeignKey("HospitalManagmentSys.Data.Models.UserRequest", "UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.Navigation("user");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Appointment", b =>

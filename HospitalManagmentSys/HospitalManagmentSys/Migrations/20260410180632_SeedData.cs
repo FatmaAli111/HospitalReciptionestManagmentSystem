@@ -88,22 +88,7 @@ namespace HospitalManagmentSys.Migrations
                     { 5, 5, "Cosmetic Dermatology", 5 }
                 });
 
-            migrationBuilder.InsertData(
-                table: "UserRequests",
-                columns: new[] { "ID", "IsAccountCreated", "RequestDate", "Status", "UserID" },
-                values: new object[,]
-                {
-                    { 1, true, new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified), "Approved", 1 },
-                    { 2, true, new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified), "Approved", 2 },
-                    { 3, true, new DateTime(2024, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified), "Approved", 3 },
-                    { 4, true, new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified), "Approved", 4 }
-                });
-
-            migrationBuilder.InsertData(
-                table: "UserRequests",
-                columns: new[] { "ID", "RequestDate", "Status", "UserID" },
-                values: new object[] { 5, new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified), "Pending", 5 });
-
+            
             migrationBuilder.InsertData(
                 table: "Queues",
                 columns: new[] { "Id", "DoctorId", "LastUpdated", "Status" },

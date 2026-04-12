@@ -25,13 +25,7 @@ namespace HospitalManagmentSys.Data
                 new User { Id = 7, Role = UserRole.Receptionist, Name = "Mona Kamel", Email = "mona.kamel@hospital.com", Phone = "01067890123", PasswordHash = "hashed_pw_7", IsActive = true, CreatedAt = new DateTime(2024, 1, 5) }
             );
 
-            builder.Entity<UserRequest>().HasData(
-                new UserRequest { ID = 1, UserID = 1, Status = "Approved", RequestDate = new DateTime(2024, 1, 9), IsAccountCreated = true },
-                new UserRequest { ID = 2, UserID = 2, Status = "Approved", RequestDate = new DateTime(2024, 1, 11), IsAccountCreated = true },
-                new UserRequest { ID = 3, UserID = 3, Status = "Approved", RequestDate = new DateTime(2024, 1, 31), IsAccountCreated = true },
-                new UserRequest { ID = 4, UserID = 4, Status = "Approved", RequestDate = new DateTime(2024, 2, 14), IsAccountCreated = true },
-                new UserRequest { ID = 5, UserID = 5, Status = "Pending", RequestDate = new DateTime(2024, 3, 4), IsAccountCreated = false }
-            );
+           
 
             builder.Entity<Doctor>().HasData(
                 new { Id = 1, DepartmentId = 1, Specialty = "Interventional Cardiology", UserId = 1 },

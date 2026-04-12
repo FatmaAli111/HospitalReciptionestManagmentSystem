@@ -1,5 +1,6 @@
 using Dashboard;
 using HospitalManagmentSys.Presentation;
+using WinFormsApp;
 
 namespace HospitalManagmentSys
 {
@@ -14,7 +15,11 @@ namespace HospitalManagmentSys
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new PatientsForm());
+            //Application.Run(new PatientsForm());
+            //Application.Run(new AccountCreationTicket());
+            Application.Run(new Sign_up_page());
+
+            //Application.Run(new AdminPanel());
 
         }
     }

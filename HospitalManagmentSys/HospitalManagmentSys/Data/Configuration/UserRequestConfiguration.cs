@@ -14,10 +14,12 @@ namespace HospitalManagmentSys.Data.Configuration
 
             builder.Property(e => e.IsAccountCreated).HasDefaultValue(false);
 
-            builder.HasOne(e => e.user).WithOne(e => e.UserRequest)
+            builder.HasOne(e => e.User).WithOne(e => e.UserRequest)
                    .HasForeignKey<UserRequest>(e => e.UserID)
                    .OnDelete(DeleteBehavior.Cascade);
         }
+
     }
+
 }
 
