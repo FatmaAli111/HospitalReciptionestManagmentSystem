@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sign_up_page));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             Confirm_Password_textBox = new TextBox();
@@ -240,13 +240,13 @@
             // 
             SignupBtn.BorderRadius = 8;
             SignupBtn.Cursor = Cursors.Hand;
-            SignupBtn.CustomizableEdges = customizableEdges3;
+            SignupBtn.CustomizableEdges = customizableEdges1;
             SignupBtn.FillColor = Color.FromArgb(59, 130, 246);
             SignupBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             SignupBtn.ForeColor = Color.White;
             SignupBtn.Location = new Point(821, 869);
             SignupBtn.Name = "SignupBtn";
-            SignupBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            SignupBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             SignupBtn.Size = new Size(318, 40);
             SignupBtn.TabIndex = 25;
             SignupBtn.Text = "Sign up";
@@ -343,7 +343,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 986);
+            ClientSize = new Size(1924, 1033);
             Controls.Add(panel1);
             Name = "Sign_up_page";
             Text = "Sign up Page";

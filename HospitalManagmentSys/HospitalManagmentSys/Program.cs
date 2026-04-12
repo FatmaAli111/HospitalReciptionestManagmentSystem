@@ -16,10 +16,10 @@ namespace HospitalManagmentSys
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             //Application.Run(new PatientsForm());
-            //Application.Run(new AccountCreationTicket());
-            Application.Run(new Sign_up_page());
-
-            //Application.Run(new AdminPanel());
+            Application.Run(new AccountCreationTicket());
+            //Application.Run(new Sign_up_page());
+            Application.Run(new AdminPanel());
+            //Application.Run(new Dashbord());
 
         }
     }

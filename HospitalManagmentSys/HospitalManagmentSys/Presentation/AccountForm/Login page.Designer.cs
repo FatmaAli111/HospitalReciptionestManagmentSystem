@@ -409,7 +409,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1924, 986);
+            ClientSize = new Size(1924, 1033);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(sign_in_button);
             Controls.Add(Password_textBox);

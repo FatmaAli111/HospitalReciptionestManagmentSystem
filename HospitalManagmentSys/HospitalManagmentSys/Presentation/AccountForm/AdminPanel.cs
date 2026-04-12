@@ -34,8 +34,38 @@ namespace HospitalManagmentSys.Presentation
             foreach (var req in requests)
             {
                 var card = new Request_Card(req);
+                card.CardDeleted += OnCardDeleted;
+
                 requestsPanel.Controls.Add(card);
             }
+            if (requests.Count == 0)
+            {
+                No_Pending_Requests_label.Visible = true;
+            }
+            else
+            {
+                No_Pending_Requests_label.Visible = false;
+            }
+        }
+
+        public void No_Pending_Requests_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            LoadRequests();
+        }
+
+        private void requestsPanel_Paint(object sender, PaintEventArgs e)
+        {
+          
+        }
+        private void OnCardDeleted()
+        {
+            if (requestsPanel.Controls.Count == 0)
+                No_Pending_Requests_label.Visible = true;
         }
     }
 }
