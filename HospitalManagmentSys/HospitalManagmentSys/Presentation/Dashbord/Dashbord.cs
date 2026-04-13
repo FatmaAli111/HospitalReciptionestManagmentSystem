@@ -37,55 +37,65 @@ namespace Dashboard
             Control kpis = CreateKPIs();
             kpis.Margin = new Padding(0, 0, 0, 20);
             root.Controls.Add(kpis);
+// --- ????? ?????: ???????? ---
 
-            FlowLayoutPanel cardsContainer = new FlowLayoutPanel();
-            cardsContainer.AutoSize = true;
-            cardsContainer.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+// 1. ????? ???????? ???????
+Label appointmentTitle = new Label();
+appointmentTitle.Text = "?? ???????? ???????";
+appointmentTitle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+appointmentTitle.ForeColor = Color.DarkBlue;
+appointmentTitle.AutoSize = true; // ???? true ???? ???? ????? ???? ??
+appointmentTitle.Margin = new Padding(20, 10, 0, 5); // ?????? ?????? ???????
+root.Controls.Add(appointmentTitle);
 
-            cardsContainer.Width = 900;
+// 2. ????? ???? ????????
+FlowLayoutPanel cardsContainer = new FlowLayoutPanel();
+cardsContainer.AutoSize = true;
+cardsContainer.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+cardsContainer.FlowDirection = FlowDirection.LeftToRight;
+cardsContainer.WrapContents = true; 
+cardsContainer.Width = 900;
+cardsContainer.Padding = new Padding(5);
+cardsContainer.Margin = new Padding(0, 0, 0, 20);
 
-            cardsContainer.FlowDirection = FlowDirection.LeftToRight;
-            cardsContainer.WrapContents = true; 
-            cardsContainer.Margin = new Padding(0, 0, 0, 20);
-            cardsContainer.Padding = new Padding(5);
+var a1 = new AppointmentCardControl();
+a1.Size = new Size(250, 120);
+a1.Margin = new Padding(10);
+var a3 = new DoctorCardControl();
+a3.Margin = new Padding(10);
 
-            Label title = new Label();
-            title.Text = "Appointment";
-            title.Font = new Font("Segoe UI", 10, FontStyle.Bold);
-            title.Location = new Point(10, 0);
+cardsContainer.Controls.Add(a1);
+cardsContainer.Controls.Add(a3);
 
+root.Controls.Add(cardsContainer); // ??? ??????? ??? ??????? ?????
 
-            var a1 = new AppointmentCardControl();
-            a1.Size = new Size(250, 120);
-            a1.Margin = new Padding(10);
-            var a3 = new DoctorCardControl();
-            a3.Margin = new Padding(10);
+// --- ????? ??????: ??????? ?? ?????? ---
 
+// 3. ????? ????? ?????? (??? ??????? ??????)
+Label patientTitle = new Label();
+patientTitle.Text = "?? ????? ?????? ????????";
+patientTitle.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+patientTitle.ForeColor = Color.DarkBlue;
+patientTitle.AutoSize = true;
+patientTitle.Margin = new Padding(20, 10, 0, 5);
+root.Controls.Add(patientTitle);
 
-            cardsContainer.Controls.Add(a1);
-            cardsContainer.Controls.Add(title);
+// 4. ????? ???? ??????
+FlowLayoutPanel doctorContainer = new FlowLayoutPanel();
+doctorContainer.AutoSize = true;
+doctorContainer.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+doctorContainer.FlowDirection = FlowDirection.LeftToRight;
+doctorContainer.WrapContents = true;
+doctorContainer.Width = 900;
+doctorContainer.Padding = new Padding(5);
 
-            cardsContainer.Controls.Add(a3);
+var a2 = new PatientCardControl();
+a2.Size = new Size(500, 120);
+a2.Margin = new Padding(10);
 
-            root.Controls.Add(cardsContainer);
+doctorContainer.Controls.Add(a2);
 
-            FlowLayoutPanel doctorContainer = new FlowLayoutPanel();
-            doctorContainer.AutoSize = true;
-            doctorContainer.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-
-            doctorContainer.Width = 900;
-            doctorContainer.FlowDirection = FlowDirection.LeftToRight;
-            doctorContainer.WrapContents = true;
-            doctorContainer.Margin = new Padding(0, 0, 0, 20);
-            doctorContainer.Padding = new Padding(5);
-
-            var a2 = new PatientCardControl();
-            a2.Size = new Size(500, 120);
-            a2.Margin = new Padding(10);
-
-            doctorContainer.Controls.Add(a2);
-
-
+root.Controls.Add(doctorContainer); // ??? ????? ?????? ??? ???????
             root.Controls.Add(doctorContainer);
 
             Control progress = CreateProgressSection();
