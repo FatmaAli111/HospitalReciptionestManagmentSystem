@@ -18,6 +18,7 @@ namespace HospitalManagmentSys.Presentation
     public partial class Request_Card : UserControl
 
     {
+        public event Action CardDeleted;
         public Request_Card()
         {
             InitializeComponent();
@@ -61,19 +62,22 @@ namespace HospitalManagmentSys.Presentation
             {
                 parent.Controls.Remove(this);
                 this.Dispose();
+                CardDeleted?.Invoke();
 
-                parent.PerformLayout();
-                parent.Refresh();
+
+
             }
         }
         private void ApproveBtn_Click(object sender, EventArgs e)
         {
             var service = new UserRequestService();
             service.ApproveRequest(_request.ID);
-
+            DenyBtn.Enabled = false;
+            DenyBtn.DisabledState.FillColor = Color.Red;
+            DenyBtn.DisabledState.ForeColor = Color.White;
+            DenyBtn.DisabledState.BorderColor = Color.Red;
             ApproveBtn.Enabled = false;
             ApproveBtn.Text = "Approved";
-            ApproveBtn.BackColor = Color.Silver;
         }
 
 
@@ -97,8 +101,7 @@ namespace HospitalManagmentSys.Presentation
             parent.Controls.Remove(this);
             this.Dispose();
 
-            parent.PerformLayout();
-            parent.Refresh();
+            CardDeleted?.Invoke();
         }
         private void Password_Click(object sender, EventArgs e)
         {

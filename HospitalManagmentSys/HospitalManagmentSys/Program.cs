@@ -17,9 +17,9 @@ namespace HospitalManagmentSys
             ApplicationConfiguration.Initialize();
             //Application.Run(new PatientsForm());
             //Application.Run(new AccountCreationTicket());
-            Application.Run(new AppointmentsHostForm());
+            //Application.Run(new Sign_up_page());
 
-            //Application.Run(new AdminPanel());
+            ////Application.Run(new AdminPanel());
 
         }
     }
