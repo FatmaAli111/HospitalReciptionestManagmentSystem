@@ -39,6 +39,8 @@ namespace HospitalManagmentSys.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
+            SeedData.Seed(modelBuilder);
+
 
         }
     }

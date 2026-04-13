@@ -16,5 +16,15 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         {
             InitializeComponent();
         }
+
+        private void DoctorPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DocName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
