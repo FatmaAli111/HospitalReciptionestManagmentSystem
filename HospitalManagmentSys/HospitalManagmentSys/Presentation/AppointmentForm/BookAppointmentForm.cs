@@ -10,11 +10,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace HospitalManagmentSys.Presentation
 {
     public partial class BookAppointmentForm : Form
     {
-        private readonly AppointmentBL _Service;
+        private readonly AppointmentService _Service;
         public BookAppointmentForm()
         {
 
@@ -27,10 +28,7 @@ namespace HospitalManagmentSys.Presentation
 
         }
 
-        private void dtpDate_ValueChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void BookAppointmentForm_Load(object sender, EventArgs e)
         {
@@ -39,7 +37,7 @@ namespace HospitalManagmentSys.Presentation
             cmbPatient.DisplayMember = "FullName";
             cmbPatient.ValueMember = "Id";
 
-          var doctors = _Service.GetDoctors().Select(d => new {FullName=d.User.Name,d.Id}).ToList();
+            var doctors = _Service.GetDoctors().Select(d => new { FullName = d.User.Name, d.Id }).ToList();
             cmbDoctor.DataSource = doctors;
             cmbDoctor.DisplayMember = "FullName";
             cmbDoctor.ValueMember = "Id";
@@ -48,6 +46,27 @@ namespace HospitalManagmentSys.Presentation
             cmbPriority.DrawMode = DrawMode.Normal;
             cmbPriority.DataSource = Enum.GetValues(typeof(MedicalUrgency));
 
+        }
+
+        private void btnBook_Click(object sender, EventArgs e)
+        {
+            DateTime dateTime = dtpDate.Value.Date + dtpTime.Value.TimeOfDay;
+
+            var appointment = new Appointment
+            {
+                PatientId = (int)cmbPatient.SelectedValue,
+                DoctorId = (int)cmbDoctor.SelectedValue,
+                PriorityScore = (double)(MedicalUrgency)cmbPriority.SelectedItem,
+                Description = txtReason.Text
+            };
+
+            string result = _Service.AddAppointment(appointment, dateTime);
+            MessageBox.Show(result);
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

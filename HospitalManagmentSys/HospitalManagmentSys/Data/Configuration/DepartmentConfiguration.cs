@@ -12,6 +12,8 @@ namespace HospitalManagmentSys.Data.Configuration
         {
 
             builder.HasKey(d => d.Id);
+            builder.Property(e => e.Id).UseIdentityColumn();
+
             builder.Property(d => d.Name)
                    .IsRequired()
                    .HasMaxLength(20);

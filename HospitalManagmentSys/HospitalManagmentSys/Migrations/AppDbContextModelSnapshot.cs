@@ -30,6 +30,12 @@ namespace HospitalManagmentSys.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("AppointmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
@@ -65,96 +71,6 @@ namespace HospitalManagmentSys.Migrations
                     b.HasIndex("TimeSlotId");
 
                     b.ToTable("Appointments");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DoctorId = 1,
-                            PatientId = 1,
-                            PriorityScore = 7.5,
-                            QueueId = 1,
-                            QueueOrder = 1,
-                            Status = "Confirmed",
-                            TimeSlotId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DoctorId = 1,
-                            PatientId = 2,
-                            PriorityScore = 9.0,
-                            QueueId = 1,
-                            QueueOrder = 2,
-                            Status = "Confirmed",
-                            TimeSlotId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            DoctorId = 1,
-                            PatientId = 3,
-                            PriorityScore = 5.0,
-                            QueueId = 1,
-                            QueueOrder = 3,
-                            Status = "Completed",
-                            TimeSlotId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            DoctorId = 2,
-                            PatientId = 4,
-                            PriorityScore = 6.5,
-                            QueueId = 2,
-                            QueueOrder = 1,
-                            Status = "Pending",
-                            TimeSlotId = 3
-                        },
-                        new
-                        {
-                            Id = 5,
-                            DoctorId = 2,
-                            PatientId = 5,
-                            PriorityScore = 8.0,
-                            QueueId = 2,
-                            QueueOrder = 2,
-                            Status = "Cancelled",
-                            TimeSlotId = 4
-                        },
-                        new
-                        {
-                            Id = 6,
-                            DoctorId = 3,
-                            PatientId = 6,
-                            PriorityScore = 4.5,
-                            QueueId = 3,
-                            QueueOrder = 1,
-                            Status = "Pending",
-                            TimeSlotId = 5
-                        },
-                        new
-                        {
-                            Id = 7,
-                            DoctorId = 4,
-                            PatientId = 7,
-                            PriorityScore = 7.0,
-                            QueueId = 4,
-                            QueueOrder = 1,
-                            Status = "Completed",
-                            TimeSlotId = 7
-                        },
-                        new
-                        {
-                            Id = 8,
-                            DoctorId = 5,
-                            PatientId = 8,
-                            PriorityScore = 8.5,
-                            QueueId = 5,
-                            QueueOrder = 1,
-                            Status = "Cancelled",
-                            TimeSlotId = 8
-                        });
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Attendance", b =>
@@ -626,7 +542,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 9, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 5,
-                            SlotDate = new DateTime(2025, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
                         },
                         new
@@ -637,7 +553,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 10, 30, 0, 0),
                             IsAvailable = false,
                             MaxCapacity = 5,
-                            SlotDate = new DateTime(2025, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 10, 0, 0, 0)
                         },
                         new
@@ -648,7 +564,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 9, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 4,
-                            SlotDate = new DateTime(2025, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
                         },
                         new
@@ -659,7 +575,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsAvailable = false,
                             MaxCapacity = 4,
-                            SlotDate = new DateTime(2025, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 11, 0, 0, 0)
                         },
                         new
@@ -670,7 +586,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 8, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 3,
-                            SlotDate = new DateTime(2025, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 8, 0, 0, 0)
                         },
                         new
@@ -681,7 +597,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 3,
-                            SlotDate = new DateTime(2025, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
                         },
                         new
@@ -692,7 +608,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 10, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 6,
-                            SlotDate = new DateTime(2025, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 10, 0, 0, 0)
                         },
                         new
@@ -703,7 +619,95 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 13, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 5,
-                            SlotDate = new DateTime(2025, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 9,
+                            BookedCount = 0,
+                            DoctorId = 1,
+                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            IsAvailable = true,
+                            MaxCapacity = 6,
+                            SlotDate = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 10,
+                            BookedCount = 0,
+                            DoctorId = 1,
+                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            IsAvailable = true,
+                            MaxCapacity = 6,
+                            SlotDate = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 11,
+                            BookedCount = 0,
+                            DoctorId = 2,
+                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            IsAvailable = true,
+                            MaxCapacity = 6,
+                            SlotDate = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 12,
+                            BookedCount = 0,
+                            DoctorId = 2,
+                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            IsAvailable = true,
+                            MaxCapacity = 6,
+                            SlotDate = new DateTime(2026, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 13,
+                            BookedCount = 0,
+                            DoctorId = 3,
+                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            IsAvailable = true,
+                            MaxCapacity = 6,
+                            SlotDate = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 14,
+                            BookedCount = 0,
+                            DoctorId = 3,
+                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            IsAvailable = true,
+                            MaxCapacity = 6,
+                            SlotDate = new DateTime(2026, 4, 16, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 13, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 15,
+                            BookedCount = 0,
+                            DoctorId = 4,
+                            EndTime = new TimeSpan(0, 12, 0, 0, 0),
+                            IsAvailable = true,
+                            MaxCapacity = 6,
+                            SlotDate = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            StartTime = new TimeSpan(0, 9, 0, 0, 0)
+                        },
+                        new
+                        {
+                            Id = 16,
+                            BookedCount = 0,
+                            DoctorId = 5,
+                            EndTime = new TimeSpan(0, 16, 0, 0, 0),
+                            IsAvailable = true,
+                            MaxCapacity = 6,
+                            SlotDate = new DateTime(2026, 4, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
                         });
                 });

@@ -10,6 +10,7 @@ namespace HospitalManagmentSys.Data.Configuration
         public void Configure(EntityTypeBuilder<Appointment> builder)
         {
             builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id).UseIdentityColumn();
             builder.Property(e => e.QueueOrder).IsRequired();
             builder.Property(e => e.PriorityScore).IsRequired();
 

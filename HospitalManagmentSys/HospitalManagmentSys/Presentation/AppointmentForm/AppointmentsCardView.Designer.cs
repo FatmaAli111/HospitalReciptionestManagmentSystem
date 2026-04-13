@@ -107,7 +107,7 @@
             lblTimeStart.AutoSize = true;
             lblTimeStart.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblTimeStart.ForeColor = Color.FromArgb(17, 24, 39);
-            lblTimeStart.Location = new Point(16, 34);
+            lblTimeStart.Location = new Point(3, 26);
             lblTimeStart.Name = "lblTimeStart";
             lblTimeStart.Size = new Size(77, 32);
             lblTimeStart.TabIndex = 0;
@@ -118,11 +118,12 @@
             lblTimeEnd.AutoSize = true;
             lblTimeEnd.Font = new Font("Segoe UI", 9F);
             lblTimeEnd.ForeColor = Color.FromArgb(107, 114, 128);
-            lblTimeEnd.Location = new Point(20, 68);
+            lblTimeEnd.Location = new Point(17, 58);
             lblTimeEnd.Name = "lblTimeEnd";
             lblTimeEnd.Size = new Size(48, 15);
             lblTimeEnd.TabIndex = 1;
             lblTimeEnd.Text = "to 10:00";
+            lblTimeEnd.Click += lblTimeEnd_Click;
             // 
             // pDetails
             // 
@@ -187,7 +188,7 @@
             bUrgency.Location = new Point(180, 12);
             bUrgency.Name = "bUrgency";
             bUrgency.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            bUrgency.Size = new Size(70, 22);
+            bUrgency.Size = new Size(85, 22);
             bUrgency.TabIndex = 2;
             bUrgency.Text = "medium";
             // 
@@ -203,10 +204,10 @@
             bStatus.FillColor = Color.FromArgb(245, 158, 11);
             bStatus.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
             bStatus.ForeColor = Color.White;
-            bStatus.Location = new Point(258, 12);
+            bStatus.Location = new Point(271, 13);
             bStatus.Name = "bStatus";
             bStatus.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            bStatus.Size = new Size(70, 22);
+            bStatus.Size = new Size(80, 22);
             bStatus.TabIndex = 3;
             bStatus.Text = "waiting";
             // 

@@ -14,6 +14,7 @@ namespace HospitalManagmentSys.Data.Configuration
         public void Configure(EntityTypeBuilder<Queue> builder)
         {
             builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id).UseIdentityColumn();
 
             builder.Property(e => e.Status).HasConversion<string>().IsRequired();
 
