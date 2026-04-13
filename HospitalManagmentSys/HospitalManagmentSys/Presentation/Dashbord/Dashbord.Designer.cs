@@ -110,7 +110,6 @@
             PatientsWating.Name = "PatientsWating";
             PatientsWating.Size = new Size(154, 195);
             PatientsWating.TabIndex = 0;
-            PatientsWating.Paint += panel9_Paint;
             // 
             // PatientWaiting
             // 
@@ -122,7 +121,6 @@
             PatientWaiting.Size = new Size(33, 37);
             PatientWaiting.TabIndex = 2;
             PatientWaiting.Text = "5";
-            PatientWaiting.Click += PatientWaiting_Click;
             // 
             // PatientsWatingNow
             // 
@@ -134,7 +132,6 @@
             PatientsWatingNow.Size = new Size(124, 15);
             PatientsWatingNow.TabIndex = 1;
             PatientsWatingNow.Text = "Patients Wating Now";
-            PatientsWatingNow.Click += PatientsWatingNow_Click;
             // 
             // panel11
             // 
@@ -200,7 +197,6 @@
             NoShow.Name = "NoShow";
             NoShow.Size = new Size(154, 195);
             NoShow.TabIndex = 0;
-            NoShow.Paint += panel4_Paint;
             // 
             // guna2Panel1
             // 
@@ -209,7 +205,7 @@
             guna2Panel1.Location = new Point(59, 30);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(34, 29);
+            guna2Panel1.Size = new Size(30, 29);
             guna2Panel1.TabIndex = 3;
             // 
             // NoSH
@@ -222,7 +218,6 @@
             NoSH.Size = new Size(33, 37);
             NoSH.TabIndex = 2;
             NoSH.Text = "5";
-            NoSH.Click += NoSH_Click;
             // 
             // label1
             // 
@@ -655,7 +650,6 @@
             Name = "Dashbord";
             Text = "Dashbord";
             WindowState = FormWindowState.Maximized;
-            Load += Form1_Load;
             PatientsWating.ResumeLayout(false);
             PatientsWating.PerformLayout();
             TPatients.ResumeLayout(false);
