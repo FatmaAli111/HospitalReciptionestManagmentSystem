@@ -8,15 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HospitalManagmentSys.Presentation
+namespace HospitalManagmentSys.Presentation.Dashbord
 {
-    public partial class system : Form
+    public partial class DoctorCardControl : UserControl
     {
-        public system()
+        public DoctorCardControl()
         {
             InitializeComponent();
         }
-
-       
     }
 }

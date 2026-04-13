@@ -8,15 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HospitalManagmentSys.Presentation
+namespace HospitalManagmentSys.Presentation.Dashbord
 {
-    public partial class system : Form
+    public partial class AppointmentCardControl : UserControl
     {
-        public system()
+        public AppointmentCardControl()
         {
             InitializeComponent();
         }
 
-       
+        private void PatientName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -362,6 +362,7 @@
             // 
             // card1
             // 
+            card1.BackColor = Color.Transparent;
             card1.Location = new Point(0, 8);
             card1.Margin = new Padding(0, 0, 0, 16);
             card1.Name = "card1";
@@ -370,6 +371,7 @@
             // 
             // card2
             // 
+            card2.BackColor = Color.Transparent;
             card2.Location = new Point(0, 174);
             card2.Margin = new Padding(0, 0, 0, 16);
             card2.Name = "card2";
@@ -378,6 +380,7 @@
             // 
             // card3
             // 
+            card3.BackColor = Color.Transparent;
             card3.Location = new Point(0, 340);
             card3.Margin = new Padding(0, 0, 0, 16);
             card3.Name = "card3";
@@ -393,6 +396,7 @@
             Name = "AppointmentsView";
             Padding = new Padding(24);
             Size = new Size(1148, 808);
+            Load += AppointmentsView_Load;
             tlpRoot.ResumeLayout(false);
             cardHeader.ResumeLayout(false);
             tlpHeader.ResumeLayout(false);

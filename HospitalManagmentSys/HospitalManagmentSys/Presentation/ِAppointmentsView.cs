@@ -18,5 +18,10 @@ namespace HospitalManagmentSys.Presentation
         {
 
         }
+
+        private void AppointmentsView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
