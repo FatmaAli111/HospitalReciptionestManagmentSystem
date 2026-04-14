@@ -57,14 +57,7 @@ namespace HospitalManagmentSys.Data
                 new TimeSlot { Id = 8, DoctorId = 5, SlotDate = new DateTime(2026, 6, 13), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(13, 30, 0), MaxCapacity = 5, BookedCount = 2, IsAvailable = true }
             );
 
-            builder.Entity<Queue>().HasData(
-                new Queue { Id = 1, DoctorId = 1, LastUpdated = new DateTime(2025, 6, 10, 9, 0, 0), Status = QueueStatus.InProgress },
-                new Queue { Id = 2, DoctorId = 2, LastUpdated = new DateTime(2025, 6, 10, 9, 0, 0), Status = QueueStatus.Waiting },
-                new Queue { Id = 3, DoctorId = 3, LastUpdated = new DateTime(2025, 6, 11, 8, 0, 0), Status = QueueStatus.Waiting },
-                new Queue { Id = 4, DoctorId = 4, LastUpdated = new DateTime(2025, 6, 12, 10, 0, 0), Status = QueueStatus.Completed },
-                new Queue { Id = 5, DoctorId = 5, LastUpdated = new DateTime(2025, 6, 13, 13, 0, 0), Status = QueueStatus.Cancelled }
-            );
-
+            
         builder.Entity<TimeSlot>().HasData(
     new TimeSlot { Id = 9, DoctorId = 1, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
     new TimeSlot { Id = 10, DoctorId = 1, SlotDate = new DateTime(2026, 4, 15), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },

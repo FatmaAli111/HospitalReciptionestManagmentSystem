@@ -18,7 +18,6 @@ namespace HospitalManagmentSys.Data
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<TimeSlot> TimeSlots { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
-        public DbSet<Queue> Queues { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserRequest> UserRequests { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

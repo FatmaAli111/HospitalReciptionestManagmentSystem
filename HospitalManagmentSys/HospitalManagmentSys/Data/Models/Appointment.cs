@@ -20,7 +20,6 @@ namespace HospitalManagmentSys.Data.Models
         public int PatientId { get; set; }
         public int DoctorId { get; set; }
         public int TimeSlotId { get; set; }
-        public int? QueueId { get; set; }
         public int QueueOrder { get; set; }
         public string? Description { get; set; }
         public DateTime AppointmentDate { get; set; }
@@ -32,6 +31,5 @@ namespace HospitalManagmentSys.Data.Models
         public Doctor Doctor { get; set; }
         public TimeSlot TimeSlot { get; set; }
         public Attendance? Attendance { get; set; }
-        public Queue? Queue { get; set; }
     }
 }
