@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace HospitalManagmentSys.Presentation.Settings
 {
-    partial class SettingsView: UserControl
+    public partial class SettingsUserControl: UserControl
     {
-        public SettingsView()
+        public SettingsUserControl()
         {
             InitializeComponent();
         }
