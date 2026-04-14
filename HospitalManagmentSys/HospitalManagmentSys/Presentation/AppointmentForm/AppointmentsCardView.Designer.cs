@@ -15,8 +15,8 @@
 
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -28,6 +28,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             pCard = new Guna.UI2.WinForms.Guna2Panel();
             tlpCard = new TableLayoutPanel();
             pTime = new Panel();
@@ -44,6 +46,7 @@
             prgUrgency = new Guna.UI2.WinForms.Guna2ProgressBar();
             lblUrgencyValue = new Label();
             pActions = new Panel();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             btnNoShow = new Guna.UI2.WinForms.Guna2Button();
             btnCheckIn = new Guna.UI2.WinForms.Guna2Button();
             lnkCancel = new LinkLabel();
@@ -61,14 +64,14 @@
             pCard.BorderRadius = 14;
             pCard.BorderThickness = 1;
             pCard.Controls.Add(tlpCard);
-            pCard.CustomizableEdges = customizableEdges12;
+            pCard.CustomizableEdges = customizableEdges14;
             pCard.Dock = DockStyle.Fill;
             pCard.FillColor = Color.White;
             pCard.Location = new Point(0, 0);
             pCard.Name = "pCard";
             pCard.Padding = new Padding(16);
             pCard.ShadowDecoration.BorderRadius = 14;
-            pCard.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            pCard.ShadowDecoration.CustomizableEdges = customizableEdges15;
             pCard.ShadowDecoration.Enabled = true;
             pCard.Size = new Size(980, 150);
             pCard.TabIndex = 0;
@@ -107,7 +110,7 @@
             lblTimeStart.AutoSize = true;
             lblTimeStart.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
             lblTimeStart.ForeColor = Color.FromArgb(17, 24, 39);
-            lblTimeStart.Location = new Point(16, 34);
+            lblTimeStart.Location = new Point(3, 26);
             lblTimeStart.Name = "lblTimeStart";
             lblTimeStart.Size = new Size(77, 32);
             lblTimeStart.TabIndex = 0;
@@ -118,11 +121,12 @@
             lblTimeEnd.AutoSize = true;
             lblTimeEnd.Font = new Font("Segoe UI", 9F);
             lblTimeEnd.ForeColor = Color.FromArgb(107, 114, 128);
-            lblTimeEnd.Location = new Point(20, 68);
+            lblTimeEnd.Location = new Point(17, 58);
             lblTimeEnd.Name = "lblTimeEnd";
             lblTimeEnd.Size = new Size(48, 15);
             lblTimeEnd.TabIndex = 1;
             lblTimeEnd.Text = "to 10:00";
+            lblTimeEnd.Click += lblTimeEnd_Click;
             // 
             // pDetails
             // 
@@ -184,10 +188,10 @@
             bUrgency.FillColor = Color.FromArgb(245, 158, 11);
             bUrgency.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
             bUrgency.ForeColor = Color.White;
-            bUrgency.Location = new Point(180, 12);
+            bUrgency.Location = new Point(203, 12);
             bUrgency.Name = "bUrgency";
             bUrgency.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            bUrgency.Size = new Size(70, 22);
+            bUrgency.Size = new Size(85, 22);
             bUrgency.TabIndex = 2;
             bUrgency.Text = "medium";
             // 
@@ -203,10 +207,10 @@
             bStatus.FillColor = Color.FromArgb(245, 158, 11);
             bStatus.Font = new Font("Segoe UI", 8.5F, FontStyle.Bold);
             bStatus.ForeColor = Color.White;
-            bStatus.Location = new Point(258, 12);
+            bStatus.Location = new Point(294, 12);
             bStatus.Name = "bStatus";
             bStatus.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            bStatus.Size = new Size(70, 22);
+            bStatus.Size = new Size(101, 22);
             bStatus.TabIndex = 3;
             bStatus.Text = "waiting";
             // 
@@ -273,6 +277,7 @@
             // pActions
             // 
             pActions.BackColor = Color.Transparent;
+            pActions.Controls.Add(guna2Button1);
             pActions.Controls.Add(btnNoShow);
             pActions.Controls.Add(btnCheckIn);
             pActions.Controls.Add(lnkCancel);
@@ -283,32 +288,48 @@
             pActions.Size = new Size(220, 118);
             pActions.TabIndex = 2;
             // 
+            // guna2Button1
+            // 
+            guna2Button1.BorderRadius = 10;
+            guna2Button1.CustomizableEdges = customizableEdges8;
+            guna2Button1.FillColor = Color.Green;
+            guna2Button1.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(52, 58);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2Button1.Size = new Size(150, 36);
+            guna2Button1.TabIndex = 3;
+            guna2Button1.Text = "Complete";
+            guna2Button1.Click += guna2Button1_Click;
+            // 
             // btnNoShow
             // 
             btnNoShow.BorderRadius = 10;
-            btnNoShow.CustomizableEdges = customizableEdges8;
+            btnNoShow.CustomizableEdges = customizableEdges10;
             btnNoShow.FillColor = Color.FromArgb(220, 38, 38);
             btnNoShow.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnNoShow.ForeColor = Color.White;
             btnNoShow.Location = new Point(52, 16);
             btnNoShow.Name = "btnNoShow";
-            btnNoShow.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            btnNoShow.ShadowDecoration.CustomizableEdges = customizableEdges11;
             btnNoShow.Size = new Size(150, 36);
             btnNoShow.TabIndex = 0;
-            btnNoShow.Text = "Mark No-Show";
+            btnNoShow.Text = "Cancel";
+            btnNoShow.Click += btnNoShow_Click;
             // 
             // btnCheckIn
             // 
             btnCheckIn.BorderColor = Color.FromArgb(229, 231, 235);
             btnCheckIn.BorderRadius = 10;
             btnCheckIn.BorderThickness = 1;
-            btnCheckIn.CustomizableEdges = customizableEdges10;
+            btnCheckIn.CustomizableEdges = customizableEdges12;
             btnCheckIn.FillColor = Color.White;
             btnCheckIn.Font = new Font("Segoe UI", 9.5F, FontStyle.Bold);
             btnCheckIn.ForeColor = Color.FromArgb(17, 24, 39);
             btnCheckIn.Location = new Point(52, 16);
             btnCheckIn.Name = "btnCheckIn";
-            btnCheckIn.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            btnCheckIn.ShadowDecoration.CustomizableEdges = customizableEdges13;
             btnCheckIn.Size = new Size(100, 36);
             btnCheckIn.TabIndex = 1;
             btnCheckIn.Text = "Check In";
@@ -370,5 +391,6 @@
         private Guna.UI2.WinForms.Guna2Button btnNoShow;
         private Guna.UI2.WinForms.Guna2Button btnCheckIn;
         private System.Windows.Forms.LinkLabel lnkCancel;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }

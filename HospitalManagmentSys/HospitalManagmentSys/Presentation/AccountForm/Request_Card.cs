@@ -1,0 +1,111 @@
+﻿using Azure.Core;
+using HospitalManagmentSys.BiussnessLogic;
+using HospitalManagmentSys.Data.Models;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Xml;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
+
+namespace HospitalManagmentSys.Presentation
+{
+    public partial class Request_Card : UserControl
+
+    {
+        public event Action CardDeleted;
+        public Request_Card()
+        {
+            InitializeComponent();
+
+        }
+        private UserRequest _request;
+        public Request_Card(Data.Models.UserRequest req)
+        {
+            InitializeComponent();
+            _request = req;
+
+            LoadData();
+        }
+
+
+        private void LoadData()
+        {
+            if (_request.Role == UserRole.Doctor)
+            {
+                Doctor_View.Visible = true;
+                Phone_textBox2.Text = _request.Phone;
+                Specialit_textBox.Text = _request.Speciality;
+            }
+            else
+            {
+                Doctor_View.Visible = false;
+            }
+            Full_Name_textBox.Text = _request.Name;
+            email_textBox1.Text = _request.Email;
+            Password_textBox2.Text = _request.PasswordHash;
+
+
+        }
+        private void Exit_Btn_Click(object sender, EventArgs e)
+        {
+            var parent = this.Parent as FlowLayoutPanel;
+            Exit_Btn.Cursor = Cursors.Hand;
+
+
+            if (parent != null)
+            {
+                parent.Controls.Remove(this);
+                this.Dispose();
+                CardDeleted?.Invoke();
+
+
+
+            }
+        }
+        private void ApproveBtn_Click(object sender, EventArgs e)
+        {
+            var service = new UserRequestService();
+            service.ApproveRequest(_request.ID);
+            DenyBtn.Enabled = false;
+            DenyBtn.DisabledState.FillColor = Color.Red;
+            DenyBtn.DisabledState.ForeColor = Color.White;
+            DenyBtn.DisabledState.BorderColor = Color.Red;
+            ApproveBtn.Enabled = false;
+            ApproveBtn.Text = "Approved";
+        }
+
+
+        private void Exit_Btn_MouseEnter(object sender, EventArgs e)
+        {
+            Exit_Btn.BackColor = Color.Red;
+        }
+
+        private void Exit_Btn_MouseLeave(object sender, EventArgs e)
+        {
+            Exit_Btn.BackColor = Color.Transparent;
+        }
+
+        private void DenyBtn_Click(object sender, EventArgs e)
+        {
+            var service = new UserRequestService();
+            service.DenyRequest(_request.ID);  
+
+    
+            var parent = this.Parent;
+            parent.Controls.Remove(this);
+            this.Dispose();
+
+            CardDeleted?.Invoke();
+        }
+        private void Password_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

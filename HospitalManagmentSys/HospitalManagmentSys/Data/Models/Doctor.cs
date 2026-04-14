@@ -12,6 +12,7 @@ namespace HospitalManagmentSys.Data.Models
         public int DepartmentId { get; set; }
         public string Specialty { get; set; }
         public User User { get; set; }
+        public int UserId { get; set; }
         public Department Department { get; set; }
         public List<TimeSlot> TimeSlots { get; set; } = new();
         public ICollection<Queue> Queues { get; set; }

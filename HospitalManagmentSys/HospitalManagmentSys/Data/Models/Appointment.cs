@@ -14,6 +14,7 @@ namespace HospitalManagmentSys.Data.Models
         Cancelled = 4
     }
 
+
     public class Appointment
     {
         public int Id { get; set; }
@@ -22,6 +23,8 @@ namespace HospitalManagmentSys.Data.Models
         public int TimeSlotId { get; set; }
         public int? QueueId { get; set; }
         public int QueueOrder { get; set; }
+        public string? Description { get; set; }
+        public DateTime AppointmentDate { get; set; }
 
         public AppointmentStatus Status { get; set; }
         public double PriorityScore { get; set; }

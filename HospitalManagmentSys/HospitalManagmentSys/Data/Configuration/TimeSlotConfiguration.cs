@@ -10,6 +10,8 @@ namespace HospitalManagmentSys.Data.Configuration
         {
 
             builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id).UseIdentityColumn();
+
             builder.Property(e => e.SlotDate).IsRequired();
             builder.Property(e => e.StartTime).IsRequired();
             builder.Property(e => e.EndTime).IsRequired();

@@ -134,7 +134,8 @@ namespace HospitalManagmentSys.Presentation
             filterCombo.Font = new Font("Segoe UI", 10F);
             filterCombo.ForeColor = Color.FromArgb(68, 88, 112);
             filterCombo.ItemHeight = 30;
-            filterCombo.Items.AddRange(new object[] { "All Patients", "High No-Show Risk", "Good Standing" });
+            filterCombo.Items.AddRange(new object[] { "All Patients", "High Risk", "Medium Risk", "Low Risk" });
+            filterCombo.SelectedIndex = 0;
             filterCombo.Location = new Point(862, 18);
             filterCombo.Name = "filterCombo";
             filterCombo.ShadowDecoration.CustomizableEdges = customizableEdges6;
@@ -152,7 +153,7 @@ namespace HospitalManagmentSys.Presentation
             searchBox.Location = new Point(24, 18);
             searchBox.Margin = new Padding(3, 4, 3, 4);
             searchBox.Name = "searchBox";
-            searchBox.PlaceholderText = "Search by name, email, or phone...";
+            searchBox.PlaceholderText = "Search by name ...";
             searchBox.SelectedText = "";
             searchBox.ShadowDecoration.CustomizableEdges = customizableEdges8;
             searchBox.Size = new Size(400, 36);
@@ -166,7 +167,7 @@ namespace HospitalManagmentSys.Presentation
             contentPanel.FillColor = Color.FromArgb(243, 244, 246);
             contentPanel.Location = new Point(0, 150);
             contentPanel.Name = "contentPanel";
-            contentPanel.Padding = new Padding(24);
+            contentPanel.Padding = new Padding(0);
             contentPanel.ShadowDecoration.CustomizableEdges = customizableEdges12;
             contentPanel.Size = new Size(1100, 550);
             contentPanel.TabIndex = 0;

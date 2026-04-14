@@ -199,6 +199,7 @@
             // Phone_textBox
             // 
             Phone_textBox.Location = new Point(71, 95);
+            Phone_textBox.MaxLength = 11;
             Phone_textBox.Name = "Phone_textBox";
             Phone_textBox.Size = new Size(215, 27);
             Phone_textBox.TabIndex = 7;

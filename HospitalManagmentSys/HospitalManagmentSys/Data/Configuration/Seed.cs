@@ -25,13 +25,36 @@ namespace HospitalManagmentSys.Data
                 new User { Id = 7, Role = UserRole.Receptionist, Name = "Mona Kamel", Email = "mona.kamel@hospital.com", Phone = "01067890123", PasswordHash = "hashed_pw_7", IsActive = true, CreatedAt = new DateTime(2024, 1, 5) }
             );
 
-            builder.Entity<UserRequest>().HasData(
-                new UserRequest { ID = 1, UserID = 1, Status = "Approved", RequestDate = new DateTime(2024, 1, 9), IsAccountCreated = true },
-                new UserRequest { ID = 2, UserID = 2, Status = "Approved", RequestDate = new DateTime(2024, 1, 11), IsAccountCreated = true },
-                new UserRequest { ID = 3, UserID = 3, Status = "Approved", RequestDate = new DateTime(2024, 1, 31), IsAccountCreated = true },
-                new UserRequest { ID = 4, UserID = 4, Status = "Approved", RequestDate = new DateTime(2024, 2, 14), IsAccountCreated = true },
-                new UserRequest { ID = 5, UserID = 5, Status = "Pending", RequestDate = new DateTime(2024, 3, 4), IsAccountCreated = false }
-            );
+            builder.Entity<Appointment>().HasData(
+     // TimeSlot 9 - Doctor 1 - 14 April 9:00-12:00
+     new Appointment { Id = 1, PatientId = 1, DoctorId = 1, TimeSlotId = 9, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 9, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 2, Description = "صداع مستمر" },
+     new Appointment { Id = 2, PatientId = 2, DoctorId = 1, TimeSlotId = 9, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 9, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 1, Description = "كشف دوري" },
+     new Appointment { Id = 3, PatientId = 3, DoctorId = 1, TimeSlotId = 9, QueueOrder = 3, AppointmentDate = new DateTime(2026, 4, 14, 10, 0, 0), Status = AppointmentStatus.Cancelled, PriorityScore = 3, Description = "ألم في الظهر" },
+     new Appointment { Id = 4, PatientId = 4, DoctorId = 1, TimeSlotId = 9, QueueOrder = 4, AppointmentDate = new DateTime(2026, 4, 14, 10, 30, 0), Status = AppointmentStatus.Completed, PriorityScore = 4, Description = "متابعة علاج" },
+
+     // TimeSlot 10 - Doctor 1 - 15 April 13:00-16:00 (يوم تاني مفيش تعارض)
+     new Appointment { Id = 5, PatientId = 2, DoctorId = 1, TimeSlotId = 10, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 15, 13, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 2, Description = "متابعة" },
+     new Appointment { Id = 6, PatientId = 3, DoctorId = 1, TimeSlotId = 10, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 15, 13, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 3, Description = "فحص عام" },
+
+     // TimeSlot 11 - Doctor 2 - 14 April 9:00-12:00
+     new Appointment { Id = 7, PatientId = 1, DoctorId = 2, TimeSlotId = 11, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 9, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 3, Description = "ضغط دم" },
+     new Appointment { Id = 8, PatientId = 4, DoctorId = 2, TimeSlotId = 11, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 9, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 2, Description = "سكر" },
+
+     // TimeSlot 12 - Doctor 2 - 15 April 13:00-16:00
+     new Appointment { Id = 9, PatientId = 1, DoctorId = 2, TimeSlotId = 12, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 15, 13, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 1, Description = "استشارة" },
+
+     // TimeSlot 13 - Doctor 3 - 14 April 9:00-12:00
+     new Appointment { Id = 10, PatientId = 2, DoctorId = 3, TimeSlotId = 13, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 9, 0, 0), Status = AppointmentStatus.Completed, PriorityScore = 1, Description = "استشارة" },
+     new Appointment { Id = 11, PatientId = 3, DoctorId = 3, TimeSlotId = 13, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 9, 30, 0), Status = AppointmentStatus.Cancelled, PriorityScore = 2, Description = "أشعة" },
+
+     // TimeSlot 15 - Doctor 4 - 14 April 9:00-12:00
+     new Appointment { Id = 12, PatientId = 4, DoctorId = 4, TimeSlotId = 15, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 9, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 4, Description = "ألم مفاصل" },
+     new Appointment { Id = 13, PatientId = 1, DoctorId = 4, TimeSlotId = 15, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 9, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 1, Description = "كشف" },
+
+     // TimeSlot 16 - Doctor 5 - 14 April 13:00-16:00
+     new Appointment { Id = 14, PatientId = 2, DoctorId = 5, TimeSlotId = 16, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 13, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 2, Description = "فحص عيون" },
+     new Appointment { Id = 15, PatientId = 4, DoctorId = 5, TimeSlotId = 16, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 13, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 3, Description = "نظارة" }
+ );
 
             builder.Entity<Doctor>().HasData(
                 new { Id = 1, DepartmentId = 1, Specialty = "Interventional Cardiology", UserId = 1 },
@@ -53,14 +76,14 @@ namespace HospitalManagmentSys.Data
             );
 
             builder.Entity<TimeSlot>().HasData(
-                new TimeSlot { Id = 1, DoctorId = 1, SlotDate = new DateTime(2025, 6, 10), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(9, 30, 0), MaxCapacity = 5, BookedCount = 3, IsAvailable = true },
-                new TimeSlot { Id = 2, DoctorId = 1, SlotDate = new DateTime(2025, 6, 10), StartTime = new TimeSpan(10, 0, 0), EndTime = new TimeSpan(10, 30, 0), MaxCapacity = 5, BookedCount = 5, IsAvailable = false },
-                new TimeSlot { Id = 3, DoctorId = 2, SlotDate = new DateTime(2025, 6, 10), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(9, 30, 0), MaxCapacity = 4, BookedCount = 2, IsAvailable = true },
-                new TimeSlot { Id = 4, DoctorId = 2, SlotDate = new DateTime(2025, 6, 11), StartTime = new TimeSpan(11, 0, 0), EndTime = new TimeSpan(11, 30, 0), MaxCapacity = 4, BookedCount = 4, IsAvailable = false },
-                new TimeSlot { Id = 5, DoctorId = 3, SlotDate = new DateTime(2025, 6, 11), StartTime = new TimeSpan(8, 0, 0), EndTime = new TimeSpan(8, 30, 0), MaxCapacity = 3, BookedCount = 1, IsAvailable = true },
-                new TimeSlot { Id = 6, DoctorId = 3, SlotDate = new DateTime(2025, 6, 12), StartTime = new TimeSpan(14, 0, 0), EndTime = new TimeSpan(14, 30, 0), MaxCapacity = 3, BookedCount = 0, IsAvailable = true },
-                new TimeSlot { Id = 7, DoctorId = 4, SlotDate = new DateTime(2025, 6, 12), StartTime = new TimeSpan(10, 0, 0), EndTime = new TimeSpan(10, 30, 0), MaxCapacity = 6, BookedCount = 3, IsAvailable = true },
-                new TimeSlot { Id = 8, DoctorId = 5, SlotDate = new DateTime(2025, 6, 13), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(13, 30, 0), MaxCapacity = 5, BookedCount = 2, IsAvailable = true }
+                new TimeSlot { Id = 1, DoctorId = 1, SlotDate = new DateTime(2026, 6, 10), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(9, 30, 0), MaxCapacity = 5, BookedCount = 3, IsAvailable = true },
+                new TimeSlot { Id = 2, DoctorId = 1, SlotDate = new DateTime(2026, 6, 10), StartTime = new TimeSpan(10, 0, 0), EndTime = new TimeSpan(10, 30, 0), MaxCapacity = 5, BookedCount = 5, IsAvailable = false },
+                new TimeSlot { Id = 3, DoctorId = 2, SlotDate = new DateTime(2026, 6, 10), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(9, 30, 0), MaxCapacity = 4, BookedCount = 2, IsAvailable = true },
+                new TimeSlot { Id = 4, DoctorId = 2, SlotDate = new DateTime(2026, 6, 11), StartTime = new TimeSpan(11, 0, 0), EndTime = new TimeSpan(11, 30, 0), MaxCapacity = 4, BookedCount = 4, IsAvailable = false },
+                new TimeSlot { Id = 5, DoctorId = 3, SlotDate = new DateTime(2026, 6, 11), StartTime = new TimeSpan(8, 0, 0), EndTime = new TimeSpan(8, 30, 0), MaxCapacity = 3, BookedCount = 1, IsAvailable = true },
+                new TimeSlot { Id = 6, DoctorId = 3, SlotDate = new DateTime(2026, 6, 12), StartTime = new TimeSpan(14, 0, 0), EndTime = new TimeSpan(14, 30, 0), MaxCapacity = 3, BookedCount = 0, IsAvailable = true },
+                new TimeSlot { Id = 7, DoctorId = 4, SlotDate = new DateTime(2026, 6, 12), StartTime = new TimeSpan(10, 0, 0), EndTime = new TimeSpan(10, 30, 0), MaxCapacity = 6, BookedCount = 3, IsAvailable = true },
+                new TimeSlot { Id = 8, DoctorId = 5, SlotDate = new DateTime(2026, 6, 13), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(13, 30, 0), MaxCapacity = 5, BookedCount = 2, IsAvailable = true }
             );
 
             builder.Entity<Queue>().HasData(
@@ -71,16 +94,16 @@ namespace HospitalManagmentSys.Data
                 new Queue { Id = 5, DoctorId = 5, LastUpdated = new DateTime(2025, 6, 13, 13, 0, 0), Status = QueueStatus.Cancelled }
             );
 
-            builder.Entity<Appointment>().HasData(
-                new Appointment { Id = 1, PatientId = 1, DoctorId = 1, TimeSlotId = 1, QueueId = 1, QueueOrder = 1, Status = AppointmentStatus.Confirmed, PriorityScore = 7.5 },
-                new Appointment { Id = 2, PatientId = 2, DoctorId = 1, TimeSlotId = 1, QueueId = 1, QueueOrder = 2, Status = AppointmentStatus.Confirmed, PriorityScore = 9.0 },
-                new Appointment { Id = 3, PatientId = 3, DoctorId = 1, TimeSlotId = 2, QueueId = 1, QueueOrder = 3, Status = AppointmentStatus.Completed, PriorityScore = 5.0 },
-                new Appointment { Id = 4, PatientId = 4, DoctorId = 2, TimeSlotId = 3, QueueId = 2, QueueOrder = 1, Status = AppointmentStatus.Pending, PriorityScore = 6.5 },
-                new Appointment { Id = 5, PatientId = 5, DoctorId = 2, TimeSlotId = 4, QueueId = 2, QueueOrder = 2, Status = AppointmentStatus.Cancelled, PriorityScore = 8.0 },
-                new Appointment { Id = 6, PatientId = 6, DoctorId = 3, TimeSlotId = 5, QueueId = 3, QueueOrder = 1, Status = AppointmentStatus.Pending, PriorityScore = 4.5 },
-                new Appointment { Id = 7, PatientId = 7, DoctorId = 4, TimeSlotId = 7, QueueId = 4, QueueOrder = 1, Status = AppointmentStatus.Completed, PriorityScore = 7.0 },
-                new Appointment { Id = 8, PatientId = 8, DoctorId = 5, TimeSlotId = 8, QueueId = 5, QueueOrder = 1, Status = AppointmentStatus.Cancelled, PriorityScore = 8.5 }
-            );
+            builder.Entity<TimeSlot>().HasData(
+    new TimeSlot { Id = 9, DoctorId = 1, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+    new TimeSlot { Id = 10, DoctorId = 1, SlotDate = new DateTime(2026, 4, 15), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+    new TimeSlot { Id = 11, DoctorId = 2, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+    new TimeSlot { Id = 12, DoctorId = 2, SlotDate = new DateTime(2026, 4, 15), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+    new TimeSlot { Id = 13, DoctorId = 3, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+    new TimeSlot { Id = 14, DoctorId = 3, SlotDate = new DateTime(2026, 4, 16), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+    new TimeSlot { Id = 15, DoctorId = 4, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+    new TimeSlot { Id = 16, DoctorId = 5, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true }
+);
 
             builder.Entity<Attendance>().HasData(
                 new Attendance { Id = 1, AppointmentID = 3, CheckInTime = new DateTime(2025, 6, 10, 9, 0, 0), CheckOutTime = new DateTime(2025, 6, 10, 9, 25, 0), ArriveTime = new DateTime(2025, 6, 10, 8, 55, 0), Status = AttendanceStatus.Present },
@@ -88,6 +111,7 @@ namespace HospitalManagmentSys.Data
                 new Attendance { Id = 3, AppointmentID = 1, CheckInTime = new DateTime(2025, 6, 10, 9, 30, 0), CheckOutTime = new DateTime(2025, 6, 10, 9, 55, 0), ArriveTime = new DateTime(2025, 6, 10, 9, 40, 0), Status = AttendanceStatus.Late },
                 new Attendance { Id = 4, AppointmentID = 5, CheckInTime = new DateTime(2025, 6, 10, 11, 0, 0), CheckOutTime = new DateTime(2025, 6, 10, 11, 0, 0), ArriveTime = new DateTime(2025, 6, 10, 11, 0, 0), Status = AttendanceStatus.Absent }
             );
+
         }
     }
 }

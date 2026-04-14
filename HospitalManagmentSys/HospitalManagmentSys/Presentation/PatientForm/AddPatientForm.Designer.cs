@@ -46,8 +46,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             FullNameTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             PhoneNumberTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             EmailTextBox = new Guna.UI2.WinForms.Guna2TextBox();
@@ -57,10 +55,6 @@
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            TotalAppointmentsTextBox = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2HtmlLabel5 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             genderLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
             genderCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             dobLabel = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -69,6 +63,8 @@
             urgencyCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             saveBtn = new Guna.UI2.WinForms.Guna2Button();
             cancelBtn = new Guna.UI2.WinForms.Guna2Button();
+            guna2HtmlLabel4 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            booldTypeCombo = new Guna.UI2.WinForms.Guna2ComboBox();
             headerPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -81,9 +77,9 @@
             FullNameTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             FullNameTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             FullNameTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            FullNameTextBox.Font = new Font("Segoe UI", 9F);
+            FullNameTextBox.Font = new Font("Segoe UI", 10F);
             FullNameTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            FullNameTextBox.Location = new Point(28, 177);
+            FullNameTextBox.Location = new Point(28, 157);
             FullNameTextBox.Margin = new Padding(3, 4, 3, 4);
             FullNameTextBox.Name = "FullNameTextBox";
             FullNameTextBox.PlaceholderText = "";
@@ -103,7 +99,7 @@
             PhoneNumberTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             PhoneNumberTextBox.Font = new Font("Segoe UI", 9F);
             PhoneNumberTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            PhoneNumberTextBox.Location = new Point(28, 255);
+            PhoneNumberTextBox.Location = new Point(28, 245);
             PhoneNumberTextBox.Margin = new Padding(3, 4, 3, 4);
             PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             PhoneNumberTextBox.PlaceholderText = "";
@@ -123,7 +119,7 @@
             EmailTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             EmailTextBox.Font = new Font("Segoe UI", 9F);
             EmailTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            EmailTextBox.Location = new Point(356, 177);
+            EmailTextBox.Location = new Point(346, 157);
             EmailTextBox.Margin = new Padding(3, 4, 3, 4);
             EmailTextBox.Name = "EmailTextBox";
             EmailTextBox.PlaceholderText = "";
@@ -166,7 +162,7 @@
             // guna2HtmlLabel1
             // 
             guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Location = new Point(28, 148);
+            guna2HtmlLabel1.Location = new Point(28, 128);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
             guna2HtmlLabel1.Size = new Size(80, 22);
             guna2HtmlLabel1.TabIndex = 4;
@@ -175,7 +171,7 @@
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
-            guna2HtmlLabel2.Location = new Point(28, 226);
+            guna2HtmlLabel2.Location = new Point(28, 216);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
             guna2HtmlLabel2.Size = new Size(112, 22);
             guna2HtmlLabel2.TabIndex = 5;
@@ -184,69 +180,11 @@
             // guna2HtmlLabel3
             // 
             guna2HtmlLabel3.BackColor = Color.Transparent;
-            guna2HtmlLabel3.Location = new Point(356, 148);
+            guna2HtmlLabel3.Location = new Point(356, 128);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
             guna2HtmlLabel3.Size = new Size(50, 22);
             guna2HtmlLabel3.TabIndex = 6;
             guna2HtmlLabel3.Text = "Email *";
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(28, 382);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(133, 22);
-            guna2HtmlLabel4.TabIndex = 7;
-            guna2HtmlLabel4.Text = "Total appointments ";
-            // 
-            // TotalAppointmentsTextBox
-            // 
-            TotalAppointmentsTextBox.CustomizableEdges = customizableEdges9;
-            TotalAppointmentsTextBox.DefaultText = "";
-            TotalAppointmentsTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            TotalAppointmentsTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            TotalAppointmentsTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            TotalAppointmentsTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TotalAppointmentsTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TotalAppointmentsTextBox.Font = new Font("Segoe UI", 9F);
-            TotalAppointmentsTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TotalAppointmentsTextBox.Location = new Point(28, 411);
-            TotalAppointmentsTextBox.Margin = new Padding(3, 4, 3, 4);
-            TotalAppointmentsTextBox.Name = "TotalAppointmentsTextBox";
-            TotalAppointmentsTextBox.PlaceholderText = "";
-            TotalAppointmentsTextBox.SelectedText = "";
-            TotalAppointmentsTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TotalAppointmentsTextBox.Size = new Size(274, 36);
-            TotalAppointmentsTextBox.TabIndex = 8;
-            // 
-            // guna2TextBox1
-            // 
-            guna2TextBox1.CustomizableEdges = customizableEdges11;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(28, 333);
-            guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PlaceholderText = "";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2TextBox1.Size = new Size(274, 42);
-            guna2TextBox1.TabIndex = 9;
-            // 
-            // guna2HtmlLabel5
-            // 
-            guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Location = new Point(28, 304);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(56, 22);
-            guna2HtmlLabel5.TabIndex = 10;
-            guna2HtmlLabel5.Text = "Address";
             // 
             // genderLabel
             // 
@@ -261,7 +199,7 @@
             // 
             genderCombo.BackColor = Color.Transparent;
             genderCombo.BorderRadius = 8;
-            genderCombo.CustomizableEdges = customizableEdges13;
+            genderCombo.CustomizableEdges = customizableEdges9;
             genderCombo.DrawMode = DrawMode.OwnerDrawFixed;
             genderCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             genderCombo.FocusedColor = Color.Empty;
@@ -269,16 +207,16 @@
             genderCombo.ForeColor = Color.FromArgb(68, 88, 112);
             genderCombo.ItemHeight = 30;
             genderCombo.Items.AddRange(new object[] { "Male", "Female" });
-            genderCombo.Location = new Point(356, 333);
+            genderCombo.Location = new Point(356, 332);
             genderCombo.Name = "genderCombo";
-            genderCombo.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            genderCombo.Size = new Size(284, 36);
+            genderCombo.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            genderCombo.Size = new Size(274, 36);
             genderCombo.TabIndex = 12;
             // 
             // dobLabel
             // 
             dobLabel.BackColor = Color.Transparent;
-            dobLabel.Location = new Point(356, 226);
+            dobLabel.Location = new Point(356, 216);
             dobLabel.Name = "dobLabel";
             dobLabel.Size = new Size(88, 22);
             dobLabel.TabIndex = 13;
@@ -288,7 +226,7 @@
             // 
             dobPicker.Font = new Font("Segoe UI", 9F);
             dobPicker.Format = DateTimePickerFormat.Short;
-            dobPicker.Location = new Point(356, 255);
+            dobPicker.Location = new Point(356, 245);
             dobPicker.Name = "dobPicker";
             dobPicker.Size = new Size(274, 27);
             dobPicker.TabIndex = 14;
@@ -296,7 +234,7 @@
             // urgencyLabel
             // 
             urgencyLabel.BackColor = Color.Transparent;
-            urgencyLabel.Location = new Point(356, 382);
+            urgencyLabel.Location = new Point(28, 383);
             urgencyLabel.Name = "urgencyLabel";
             urgencyLabel.Size = new Size(114, 22);
             urgencyLabel.TabIndex = 15;
@@ -306,31 +244,31 @@
             // 
             urgencyCombo.BackColor = Color.Transparent;
             urgencyCombo.BorderRadius = 8;
-            urgencyCombo.CustomizableEdges = customizableEdges15;
+            urgencyCombo.CustomizableEdges = customizableEdges11;
             urgencyCombo.DrawMode = DrawMode.OwnerDrawFixed;
             urgencyCombo.DropDownStyle = ComboBoxStyle.DropDownList;
             urgencyCombo.FocusedColor = Color.Empty;
             urgencyCombo.Font = new Font("Segoe UI", 9F);
             urgencyCombo.ForeColor = Color.FromArgb(68, 88, 112);
             urgencyCombo.ItemHeight = 30;
-            urgencyCombo.Items.AddRange(new object[] { "Low", "Medium", "High", "Critical" });
-            urgencyCombo.Location = new Point(356, 411);
+            urgencyCombo.Items.AddRange(new object[] { "Low", "Medium", "High" });
+            urgencyCombo.Location = new Point(28, 411);
             urgencyCombo.Name = "urgencyCombo";
-            urgencyCombo.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            urgencyCombo.Size = new Size(284, 36);
+            urgencyCombo.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            urgencyCombo.Size = new Size(274, 36);
             urgencyCombo.TabIndex = 16;
             // 
             // saveBtn
             // 
             saveBtn.BorderRadius = 8;
             saveBtn.Cursor = Cursors.Hand;
-            saveBtn.CustomizableEdges = customizableEdges17;
+            saveBtn.CustomizableEdges = customizableEdges13;
             saveBtn.FillColor = Color.FromArgb(59, 130, 246);
             saveBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             saveBtn.ForeColor = Color.White;
-            saveBtn.Location = new Point(510, 476);
+            saveBtn.Location = new Point(510, 443);
             saveBtn.Name = "saveBtn";
-            saveBtn.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            saveBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
             saveBtn.Size = new Size(130, 40);
             saveBtn.TabIndex = 18;
             saveBtn.Text = "Save Patient";
@@ -340,25 +278,51 @@
             cancelBtn.BorderColor = Color.FromArgb(229, 231, 235);
             cancelBtn.BorderRadius = 8;
             cancelBtn.Cursor = Cursors.Hand;
-            cancelBtn.CustomizableEdges = customizableEdges19;
+            cancelBtn.CustomizableEdges = customizableEdges15;
             cancelBtn.FillColor = Color.White;
             cancelBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             cancelBtn.ForeColor = Color.FromArgb(107, 114, 128);
-            cancelBtn.Location = new Point(356, 476);
+            cancelBtn.Location = new Point(356, 443);
             cancelBtn.Name = "cancelBtn";
-            cancelBtn.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            cancelBtn.ShadowDecoration.CustomizableEdges = customizableEdges16;
             cancelBtn.Size = new Size(130, 40);
             cancelBtn.TabIndex = 17;
             cancelBtn.Text = "Cancel";
+            cancelBtn.Click += cancelBtn_Click;
+            // 
+            // guna2HtmlLabel4
+            // 
+            guna2HtmlLabel4.BackColor = Color.Transparent;
+            guna2HtmlLabel4.Location = new Point(28, 304);
+            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
+            guna2HtmlLabel4.Size = new Size(89, 22);
+            guna2HtmlLabel4.TabIndex = 19;
+            guna2HtmlLabel4.Text = "Blood Type *";
+            // 
+            // booldTypeCombo
+            // 
+            booldTypeCombo.BackColor = Color.Transparent;
+            booldTypeCombo.BorderRadius = 8;
+            booldTypeCombo.CustomizableEdges = customizableEdges17;
+            booldTypeCombo.DrawMode = DrawMode.OwnerDrawFixed;
+            booldTypeCombo.DropDownStyle = ComboBoxStyle.DropDownList;
+            booldTypeCombo.FocusedColor = Color.Empty;
+            booldTypeCombo.Font = new Font("Segoe UI", 9F);
+            booldTypeCombo.ForeColor = Color.FromArgb(68, 88, 112);
+            booldTypeCombo.ItemHeight = 30;
+            booldTypeCombo.Items.AddRange(new object[] { "A_Positive", "A_Negative", "B_Positive", "B_Negative", "AB_Positive", "AB_Negative", "O_Positive", "O_Negative" });
+            booldTypeCombo.Location = new Point(28, 332);
+            booldTypeCombo.Name = "booldTypeCombo";
+            booldTypeCombo.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            booldTypeCombo.Size = new Size(274, 36);
+            booldTypeCombo.TabIndex = 20;
             // 
             // AddPatientForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(665, 553);
-            Controls.Add(guna2HtmlLabel5);
-            Controls.Add(guna2TextBox1);
-            Controls.Add(TotalAppointmentsTextBox);
+            ClientSize = new Size(651, 502);
+            Controls.Add(booldTypeCombo);
             Controls.Add(guna2HtmlLabel4);
             Controls.Add(guna2HtmlLabel3);
             Controls.Add(guna2HtmlLabel2);
@@ -395,10 +359,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
-        private Guna.UI2.WinForms.Guna2TextBox TotalAppointmentsTextBox;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel5;
         private Guna.UI2.WinForms.Guna2HtmlLabel genderLabel;
         private Guna.UI2.WinForms.Guna2ComboBox genderCombo;
         private Guna.UI2.WinForms.Guna2HtmlLabel dobLabel;
@@ -407,5 +367,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox urgencyCombo;
         private Guna.UI2.WinForms.Guna2Button saveBtn;
         private Guna.UI2.WinForms.Guna2Button cancelBtn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel4;
+        private Guna.UI2.WinForms.Guna2ComboBox booldTypeCombo;
     }
 }

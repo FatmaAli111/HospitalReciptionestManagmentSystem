@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <None Update="appsettings.json">
+<<<<<<< HEAD
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
@@ -36,4 +37,10 @@
     <Folder Include="Presentation\Controls\Sidebar\" />
   </ItemGroup>
 
+=======
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+>>>>>>> 1904a710a28764ac8bc3fe8ba415681d6a1a8978
 </Project>

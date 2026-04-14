@@ -30,6 +30,12 @@ namespace HospitalManagmentSys.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("AppointmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("DoctorId")
                         .HasColumnType("int");
 
@@ -64,12 +70,13 @@ namespace HospitalManagmentSys.Migrations
 
                     b.HasIndex("TimeSlotId");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Appointments", (string)null);
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DoctorId = 1,
                             PatientId = 1,
                             PriorityScore = 7.5,
@@ -81,6 +88,7 @@ namespace HospitalManagmentSys.Migrations
                         new
                         {
                             Id = 2,
+                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DoctorId = 1,
                             PatientId = 2,
                             PriorityScore = 9.0,
@@ -92,6 +100,7 @@ namespace HospitalManagmentSys.Migrations
                         new
                         {
                             Id = 3,
+                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DoctorId = 1,
                             PatientId = 3,
                             PriorityScore = 5.0,
@@ -103,6 +112,7 @@ namespace HospitalManagmentSys.Migrations
                         new
                         {
                             Id = 4,
+                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DoctorId = 2,
                             PatientId = 4,
                             PriorityScore = 6.5,
@@ -114,6 +124,7 @@ namespace HospitalManagmentSys.Migrations
                         new
                         {
                             Id = 5,
+                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DoctorId = 2,
                             PatientId = 5,
                             PriorityScore = 8.0,
@@ -125,6 +136,7 @@ namespace HospitalManagmentSys.Migrations
                         new
                         {
                             Id = 6,
+                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DoctorId = 3,
                             PatientId = 6,
                             PriorityScore = 4.5,
@@ -136,6 +148,7 @@ namespace HospitalManagmentSys.Migrations
                         new
                         {
                             Id = 7,
+                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DoctorId = 4,
                             PatientId = 7,
                             PriorityScore = 7.0,
@@ -147,6 +160,7 @@ namespace HospitalManagmentSys.Migrations
                         new
                         {
                             Id = 8,
+                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DoctorId = 5,
                             PatientId = 8,
                             PriorityScore = 8.5,
@@ -186,7 +200,7 @@ namespace HospitalManagmentSys.Migrations
                     b.HasIndex("AppointmentID")
                         .IsUnique();
 
-                    b.ToTable("Attendances");
+                    b.ToTable("Attendances", (string)null);
 
                     b.HasData(
                         new
@@ -242,7 +256,7 @@ namespace HospitalManagmentSys.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments");
+                    b.ToTable("Departments", (string)null);
 
                     b.HasData(
                         new
@@ -298,7 +312,7 @@ namespace HospitalManagmentSys.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Doctors");
+                    b.ToTable("Doctors", (string)null);
 
                     b.HasData(
                         new
@@ -397,7 +411,7 @@ namespace HospitalManagmentSys.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Patients");
+                    b.ToTable("Patients", (string)null);
 
                     b.HasData(
                         new
@@ -538,7 +552,7 @@ namespace HospitalManagmentSys.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("Queues");
+                    b.ToTable("Queues", (string)null);
 
                     b.HasData(
                         new
@@ -615,7 +629,7 @@ namespace HospitalManagmentSys.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("TimeSlots");
+                    b.ToTable("TimeSlots", (string)null);
 
                     b.HasData(
                         new
@@ -626,7 +640,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 9, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 5,
-                            SlotDate = new DateTime(2025, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
                         },
                         new
@@ -637,7 +651,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 10, 30, 0, 0),
                             IsAvailable = false,
                             MaxCapacity = 5,
-                            SlotDate = new DateTime(2025, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 10, 0, 0, 0)
                         },
                         new
@@ -648,7 +662,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 9, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 4,
-                            SlotDate = new DateTime(2025, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 9, 0, 0, 0)
                         },
                         new
@@ -659,7 +673,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 11, 30, 0, 0),
                             IsAvailable = false,
                             MaxCapacity = 4,
-                            SlotDate = new DateTime(2025, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 11, 0, 0, 0)
                         },
                         new
@@ -670,7 +684,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 8, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 3,
-                            SlotDate = new DateTime(2025, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 8, 0, 0, 0)
                         },
                         new
@@ -681,7 +695,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 14, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 3,
-                            SlotDate = new DateTime(2025, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 14, 0, 0, 0)
                         },
                         new
@@ -692,7 +706,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 10, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 6,
-                            SlotDate = new DateTime(2025, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 10, 0, 0, 0)
                         },
                         new
@@ -703,7 +717,7 @@ namespace HospitalManagmentSys.Migrations
                             EndTime = new TimeSpan(0, 13, 30, 0, 0),
                             IsAvailable = true,
                             MaxCapacity = 5,
-                            SlotDate = new DateTime(2025, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            SlotDate = new DateTime(2026, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             StartTime = new TimeSpan(0, 13, 0, 0, 0)
                         });
                 });
@@ -745,12 +759,15 @@ namespace HospitalManagmentSys.Migrations
                     b.Property<int>("Role")
                         .HasColumnType("int");
 
+                    b.Property<string>("Speciality")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
 
                     b.HasData(
                         new
@@ -840,72 +857,52 @@ namespace HospitalManagmentSys.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<bool>("IsAccountCreated")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
                         .HasDefaultValue(false);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PasswordHash")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("RequestDate")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime2")
                         .HasDefaultValueSql("GETDATE()");
 
+                    b.Property<int>("Role")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Speciality")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)");
 
-                    b.Property<int>("UserID")
+                    b.Property<int?>("UserID")
                         .HasColumnType("int");
 
                     b.HasKey("ID");
 
                     b.HasIndex("UserID")
-                        .IsUnique();
+                        .IsUnique()
+                        .HasFilter("[UserID] IS NOT NULL");
 
-                    b.ToTable("UserRequests");
-
-                    b.HasData(
-                        new
-                        {
-                            ID = 1,
-                            IsAccountCreated = true,
-                            RequestDate = new DateTime(2024, 1, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Approved",
-                            UserID = 1
-                        },
-                        new
-                        {
-                            ID = 2,
-                            IsAccountCreated = true,
-                            RequestDate = new DateTime(2024, 1, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Approved",
-                            UserID = 2
-                        },
-                        new
-                        {
-                            ID = 3,
-                            IsAccountCreated = true,
-                            RequestDate = new DateTime(2024, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Approved",
-                            UserID = 3
-                        },
-                        new
-                        {
-                            ID = 4,
-                            IsAccountCreated = true,
-                            RequestDate = new DateTime(2024, 2, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Approved",
-                            UserID = 4
-                        },
-                        new
-                        {
-                            ID = 5,
-                            IsAccountCreated = false,
-                            RequestDate = new DateTime(2024, 3, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Pending",
-                            UserID = 5
-                        });
+                    b.ToTable("UserRequests", (string)null);
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Appointment", b =>
@@ -996,13 +993,12 @@ namespace HospitalManagmentSys.Migrations
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.UserRequest", b =>
                 {
-                    b.HasOne("HospitalManagmentSys.Data.Models.User", "user")
+                    b.HasOne("HospitalManagmentSys.Data.Models.User", "User")
                         .WithOne("UserRequest")
                         .HasForeignKey("HospitalManagmentSys.Data.Models.UserRequest", "UserID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Cascade);
 
-                    b.Navigation("user");
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Appointment", b =>

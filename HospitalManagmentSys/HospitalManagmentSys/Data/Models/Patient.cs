@@ -17,7 +17,8 @@ namespace HospitalManagmentSys.Data.Models
     {
         Low = 1,
         Medium = 2,
-        High = 3
+        High = 3,
+        Emergency=4
     }
 
     public enum BloodType

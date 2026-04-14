@@ -50,9 +50,6 @@
             txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             cbStatus = new Guna.UI2.WinForms.Guna2ComboBox();
             flpList = new FlowLayoutPanel();
-            card1 = new AppointmentsCardView();
-            card2 = new AppointmentsCardView();
-            card3 = new AppointmentsCardView();
             tlpRoot.SuspendLayout();
             cardHeader.SuspendLayout();
             tlpHeader.SuspendLayout();
@@ -62,7 +59,6 @@
             pDateCenter.SuspendLayout();
             cardFilters.SuspendLayout();
             tlpFilters.SuspendLayout();
-            flpList.SuspendLayout();
             SuspendLayout();
             // 
             // tlpRoot
@@ -83,7 +79,6 @@
             tlpRoot.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tlpRoot.Size = new Size(1100, 760);
             tlpRoot.TabIndex = 0;
-            tlpRoot.Paint += tlpRoot_Paint;
             // 
             // cardHeader
             // 
@@ -165,6 +160,7 @@
             btnBook.Size = new Size(184, 40);
             btnBook.TabIndex = 1;
             btnBook.Text = "+  Book Appointment";
+            btnBook.Click += btnBook_Click;
             // 
             // cardDate
             // 
@@ -216,7 +212,7 @@
             btnPrev.Size = new Size(40, 40);
             btnPrev.TabIndex = 0;
             btnPrev.Text = "‹";
-            btnPrev.Click += btnPrev_Click;
+            btnPrev.Click += btnPrev_Click_1;
             // 
             // pDateCenter
             // 
@@ -266,6 +262,7 @@
             btnNext.Size = new Size(40, 40);
             btnNext.TabIndex = 2;
             btnNext.Text = "›";
+            btnNext.Click += btnNext_Click_1;
             // 
             // cardFilters
             // 
@@ -316,11 +313,12 @@
             txtSearch.Location = new Point(3, 3);
             txtSearch.Margin = new Padding(3, 3, 12, 3);
             txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Search by patient, doctor, or department...";
+            txtSearch.PlaceholderText = "Search by patient, doctor.";
             txtSearch.SelectedText = "";
             txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtSearch.Size = new Size(728, 46);
             txtSearch.TabIndex = 0;
+            txtSearch.TextChanged += txtSearch_TextChanged;
             // 
             // cbStatus
             // 
@@ -335,7 +333,7 @@
             cbStatus.Font = new Font("Segoe UI", 10F);
             cbStatus.ForeColor = Color.FromArgb(17, 24, 39);
             cbStatus.ItemHeight = 30;
-            cbStatus.Items.AddRange(new object[] { "All Status", "Scheduled", "Waiting", "Attended", "No-Show", "Cancelled" });
+            cbStatus.Items.AddRange(new object[] { "All Status", "Pending", "Completed", "Cancelled" });
             cbStatus.Location = new Point(746, 8);
             cbStatus.Margin = new Padding(3, 8, 3, 3);
             cbStatus.Name = "cbStatus";
@@ -348,9 +346,6 @@
             // 
             flpList.AutoScroll = true;
             flpList.BackColor = Color.Transparent;
-            flpList.Controls.Add(card1);
-            flpList.Controls.Add(card2);
-            flpList.Controls.Add(card3);
             flpList.Dock = DockStyle.Fill;
             flpList.FlowDirection = FlowDirection.TopDown;
             flpList.Location = new Point(3, 295);
@@ -359,30 +354,7 @@
             flpList.Size = new Size(1094, 462);
             flpList.TabIndex = 3;
             flpList.WrapContents = false;
-            // 
-            // card1
-            // 
-            card1.Location = new Point(0, 8);
-            card1.Margin = new Padding(0, 0, 0, 16);
-            card1.Name = "card1";
-            card1.Size = new Size(980, 150);
-            card1.TabIndex = 0;
-            // 
-            // card2
-            // 
-            card2.Location = new Point(0, 174);
-            card2.Margin = new Padding(0, 0, 0, 16);
-            card2.Name = "card2";
-            card2.Size = new Size(980, 150);
-            card2.TabIndex = 1;
-            // 
-            // card3
-            // 
-            card3.Location = new Point(0, 340);
-            card3.Margin = new Padding(0, 0, 0, 16);
-            card3.Name = "card3";
-            card3.Size = new Size(980, 150);
-            card3.TabIndex = 2;
+            flpList.Paint += flpList_Paint;
             // 
             // AppointmentsView
             // 
@@ -393,6 +365,7 @@
             Name = "AppointmentsView";
             Padding = new Padding(24);
             Size = new Size(1148, 808);
+            Load += AppointmentsView_Load;
             tlpRoot.ResumeLayout(false);
             cardHeader.ResumeLayout(false);
             tlpHeader.ResumeLayout(false);
@@ -404,7 +377,6 @@
             pDateCenter.PerformLayout();
             cardFilters.ResumeLayout(false);
             tlpFilters.ResumeLayout(false);
-            flpList.ResumeLayout(false);
             ResumeLayout(false);
 
         }
@@ -430,8 +402,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private Guna.UI2.WinForms.Guna2ComboBox cbStatus;
         private System.Windows.Forms.FlowLayoutPanel flpList;
-        private AppointmentsCardView card1;
-        private AppointmentsCardView card2;
         private AppointmentsCardView card3;
     }
 }

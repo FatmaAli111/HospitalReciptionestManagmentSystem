@@ -11,6 +11,7 @@ namespace HospitalManagmentSys.Data.Configuration
         public void Configure(EntityTypeBuilder<Doctor> builder)
         {
             builder.HasKey(d => d.Id);
+            builder.Property(e => e.Id).UseIdentityColumn();
 
             builder.Property(d => d.Specialty).IsRequired().HasMaxLength(30);
 

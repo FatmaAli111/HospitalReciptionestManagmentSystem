@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HospitalManagmentSys.Presentation
 {
-    public partial class AppointmentsHostForm: Form
+    public partial class AppointmentsHostForm : Form
     {
         public AppointmentsHostForm()
         {
             InitializeComponent();
+        }
+
+        private void appointmentsView1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

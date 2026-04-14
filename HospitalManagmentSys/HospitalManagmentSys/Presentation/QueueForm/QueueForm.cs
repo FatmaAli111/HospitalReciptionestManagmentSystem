@@ -1,3 +1,5 @@
+using HospitalManagmentSys.Presentation.Controls.Sidebar;
+
 namespace HospitalManagmentSys.Presentation
 {
     public partial class QueueForm : Form
@@ -5,17 +7,102 @@ namespace HospitalManagmentSys.Presentation
         private List<PatientData> _patients = new();
         private int _patientCount;
 
+        private readonly System.Windows.Forms.Timer _sidebarAnimTimer = new() { Interval = 12 };
+        private bool _sidebarOpen;
+        private bool _sidebarAnimatingClose;
+
         public QueueForm()
         {
             InitializeComponent();
+
+        }
+
+        protected override void OnFormClosed(FormClosedEventArgs e)
+        {
+            _sidebarAnimTimer.Dispose();
+            base.OnFormClosed(e);
         }
 
         private void QueueForm_Load(object sender, EventArgs e)
         {
             ApplyTheme();
+            InitializeSidebar();
             InitializePatients();
             LoadPatients();
         }
+
+        private Panel _sidebarDrawer;
+        private SidebarControl _sidebar;
+
+        private void InitializeSidebar()
+        {
+            _sidebarDrawer = new Panel
+            {
+                Dock = DockStyle.Left,
+                Width = 280, // Default open width
+                BackColor = Color.FromArgb(2, 29, 58)
+            };
+
+            _sidebar = new SidebarControl
+            {
+                Dock = DockStyle.Fill
+            };
+
+            // Optional: Handle events from the sidebar
+            _sidebar.NavigationChanged += (s, ev) =>
+            {
+                // Logic based on navigation item selected
+            };
+
+            _sidebarDrawer.Controls.Add(_sidebar);
+            this.Controls.Add(_sidebarDrawer);
+            _sidebarDrawer.SendToBack();
+
+            _sidebarOpen = true;
+            _sidebarAnimTimer.Tick += SidebarAnimTimer_Tick;
+        }
+
+        public void ToggleSidebar()
+        {
+            _sidebarAnimatingClose = _sidebarOpen;
+            _sidebarAnimTimer.Start();
+        }
+
+        private void SidebarAnimTimer_Tick(object? sender, EventArgs e)
+        {
+            const int targetOpen = 280;
+            const int targetClose = 0;
+            const int step = 25;
+
+            if (_sidebarAnimatingClose)
+            {
+                _sidebarDrawer.Width -= step;
+                if (_sidebarDrawer.Width <= targetClose)
+                {
+                    _sidebarDrawer.Width = targetClose;
+                    _sidebarOpen = false;
+                    _sidebarAnimTimer.Stop();
+                }
+            }
+            else
+            {
+                _sidebarDrawer.Width += step;
+                if (_sidebarDrawer.Width >= targetOpen)
+                {
+                    _sidebarDrawer.Width = targetOpen;
+                    _sidebarOpen = true;
+                    _sidebarAnimTimer.Stop();
+                }
+            }
+        }
+
+        private void AnimateSidebarClosed()
+        {
+            _sidebarAnimatingClose = true;
+            _sidebarAnimTimer.Start();
+        }
+
+
 
         private void ApplyTheme()
         {
