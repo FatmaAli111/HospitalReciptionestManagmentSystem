@@ -16,7 +16,7 @@ namespace Dashboard
     public partial class Dashbord : Form
     {
         private TableLayoutPanel root;
-        private Panel MainContainer;  // ?? ????? ????? ??? mainContainer (???? m ????)
+        private Panel MainContainer;  
         private DashbordServices dashbordServices;
         private Panel cardsPanel;
         private AppointmentsListSection appointmentsList;
@@ -34,7 +34,7 @@ namespace Dashboard
             this.MinimumSize = new Size(1100, 700);
             this.Controls.Clear();
 
-            MainContainer = new Panel  // mainContainer (???? m ????)
+            MainContainer = new Panel  
             {
                 Dock = DockStyle.Fill,
                 AutoScroll = true
@@ -85,7 +85,6 @@ namespace Dashboard
             queueGroup.Controls.Add(co1);
             queueGroup.Controls.Add(CreateSectionTitle(" "));
 
-            // ????? ????? ?? ????? ???????????
             appointmentsList = new AppointmentsListSection(co1);
             queueGroup.Controls.Add(appointmentsList);
 
@@ -248,7 +247,6 @@ namespace Dashboard
         }
     }
 
-    // ==================== AppointmentsListSection ====================
     public class AppointmentsListSection : FlowLayoutPanel
     {
         private int selectedD = 1;
@@ -264,7 +262,6 @@ namespace Dashboard
 
             doctorComboBox = comboBox;
 
-            // ????? ??????? ???????? ????????
             appointmentsContainer = new Panel
             {
                 Dock = DockStyle.Top,
@@ -275,11 +272,9 @@ namespace Dashboard
 
             this.Controls.Add(appointmentsContainer);
 
-            // ??? ??? ????? ????????
             if (doctorComboBox != null)
             {
                 doctorComboBox.SelectedIndexChanged += co1_SelectedIndexChanged;
-                // ????? ??? ???? ???? ?????????
                 if (doctorComboBox.Items.Count > 0)
                 {
                     doctorComboBox.SelectedIndex = 0;
@@ -293,11 +288,9 @@ namespace Dashboard
         {
             if (doctorComboBox.SelectedItem != null)
             {
-                // ??? ??? ?????? ?? ??? Doctor
                 dynamic selectedDoctor = doctorComboBox.SelectedItem;
                 if (selectedDoctor != null)
                 {
-                    // ?????? ?????? ??? Id ???? ??????
                     int doctorId = 1;
                     try
                     {
@@ -308,7 +301,6 @@ namespace Dashboard
                         }
                         else
                         {
-                            // ??? ?? ??? Id? ?????? ?????? ?????
                             doctorId = doctorComboBox.SelectedIndex + 1;
                         }
                     }
@@ -374,7 +366,6 @@ namespace Dashboard
         }
     }
 
-    // ==================== DoctorsListSection ====================
     public class DoctorsListSection : FlowLayoutPanel
     {
         public DoctorsListSection()
@@ -413,7 +404,6 @@ namespace Dashboard
         }
     }
 
-    // ==================== PatientListSection ====================
     public class PatientListSection : FlowLayoutPanel
     {
         public PatientListSection()

@@ -21,7 +21,7 @@ namespace HospitalManagmentSys
 
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new Dashbord());
+            Application.Run(new system());
         }
     }
 }
