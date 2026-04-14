@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HospitalManagmentSys.BiussnessLogic
 {
-    class AppointmentService
+    public class AppointmentService
     {
         private readonly AppDbContext _context;
         public AppointmentService()
@@ -32,51 +32,44 @@ namespace HospitalManagmentSys.BiussnessLogic
                        && a.DoctorId == appointment.DoctorId
                        && a.AppointmentDate.Date == dateTime.Date
                        && a.Status != AppointmentStatus.Cancelled);
-
             if (sameDoctorSameDay)
                 return "This patient already has an appointment with this doctor on the same day.";
 
-            bool sameTimeDifferentDoctor = _context.Appointments
+            bool samePatientSameDay = _context.Appointments
                 .Any(a => a.PatientId == appointment.PatientId
-                       && a.AppointmentDate == dateTime
+                       && a.AppointmentDate.Date == dateTime.Date
                        && a.Status != AppointmentStatus.Cancelled);
-
-            if (sameTimeDifferentDoctor)
-                return "This patient already has an appointment at this time.";
+            if (samePatientSameDay)
+                return "This patient already has an appointment on this day.";
 
             TimeSlot? timeSlot = _context.TimeSlots
-                .FirstOrDefault(t => t.DoctorId == appointment.DoctorId
-                                  && t.SlotDate.Date == dateTime.Date
-                                  && t.StartTime <= dateTime.TimeOfDay
-                                  && t.EndTime >= dateTime.TimeOfDay
-                                  && t.IsAvailable == true
-                                  && t.BookedCount < t.MaxCapacity);
-
+                .Include(t => t.Appointments)
+               .FirstOrDefault(t => t.DoctorId == appointment.DoctorId
+                      && t.SlotDate.Date == dateTime.Date);
             if (timeSlot == null)
-                return "No available time slots for this doctor on the selected date and time.";
-            TimeSpan appointmentTime = timeSlot.StartTime
-            .Add(TimeSpan.FromMinutes(30 * timeSlot.BookedCount));
+                return "No available time slots for this doctor on the selected date.";
 
-            bool sameTimeAlreadyBooked = _context.Appointments
-                .Any(a => a.TimeSlotId == timeSlot.Id
-                       && a.AppointmentDate == timeSlot.SlotDate.Date + appointmentTime
-                       && a.Status != AppointmentStatus.Cancelled);
+            TimeSpan nextTime = timeSlot.StartTime;
+            while (nextTime < timeSlot.EndTime)
+            {
+                bool isTaken = timeSlot.Appointments
+                    .Any(a => a.AppointmentDate == timeSlot.SlotDate.Date + nextTime
+                           && a.Status != AppointmentStatus.Cancelled);
+                if (!isTaken) break;
+                nextTime = nextTime.Add(TimeSpan.FromMinutes(30));
+            }
 
-            if (sameTimeAlreadyBooked)
-                return "This time is already booked, please choose another time.";
+            if (nextTime >= timeSlot.EndTime)
+                return "No available time slots for this doctor on the selected date.";
 
             appointment.TimeSlotId = timeSlot.Id;
             appointment.Status = AppointmentStatus.Pending;
-            appointment.QueueOrder = timeSlot.BookedCount + 1;
-            appointment.AppointmentDate = timeSlot.SlotDate.Date + appointmentTime;
-
-            timeSlot.BookedCount++;
-            if (timeSlot.BookedCount >= timeSlot.MaxCapacity)
-                timeSlot.IsAvailable = false;
+            appointment.QueueOrder = timeSlot.Appointments
+                .Count(a => a.Status != AppointmentStatus.Cancelled) + 1;
+            appointment.AppointmentDate = timeSlot.SlotDate.Date + nextTime;
 
             _context.Appointments.Add(appointment);
             _context.SaveChanges();
-
             return "Appointment booked successfully!";
         }
         public IEnumerable<Appointment> GetAppointmentsByDate(DateTime date)
@@ -85,9 +78,58 @@ namespace HospitalManagmentSys.BiussnessLogic
                 .Where(a => a.AppointmentDate.Date == date.Date)
                 .Include(a => a.Patient)
                 .Include(a => a.Doctor)
-                .ThenInclude(d => d.User)
-                .AsNoTracking();
+                .ThenInclude(d => d.User);
         }
+        //public void UpdateStatus(AppointmentStatus Status, int Id)
+        //{
+        //    Appointment? appointment = _context.Appointments
+        //        .Include(a => a.TimeSlot)
+        //            .ThenInclude(ts => ts.Appointments)
+        //        .FirstOrDefault(i => i.Id == Id);
 
+        //    if (appointment == null) return;
+
+        //    appointment.Status = Status;
+
+        //    if (Status == AppointmentStatus.Cancelled)
+        //    {
+        //        var timeSlot = appointment.TimeSlot;
+        //        bool isBefore = appointment.AppointmentDate > DateTime.Now;
+
+        //        if (isBefore)
+        //        {
+        //            var laterAppointments = timeSlot.Appointments
+        //                .Where(a => a.QueueOrder > appointment.QueueOrder
+        //                         && a.Status != AppointmentStatus.Cancelled)
+        //                .OrderBy(a => a.QueueOrder)
+        //                .ToList();
+
+        //            foreach (var apt in laterAppointments)
+        //            {
+        //                apt.QueueOrder--;
+        //                apt.AppointmentDate = apt.AppointmentDate.AddMinutes(-30);
+        //            }
+
+        //            timeSlot.BookedCount--;
+        //            timeSlot.IsAvailable = true;
+        //        }
+        //        else
+        //        {
+        //            if(timeSlot.BookedCount > 0)
+        //            timeSlot.BookedCount--;
+        //            timeSlot.IsAvailable = true;
+        //        }
+        //    }
+
+        //    _context.SaveChanges();
+        //}
+
+        public void UpdateStatus(AppointmentStatus status, int id)
+        {
+            Appointment? appointment = _context.Appointments.Find(id);
+            if (appointment == null) return;
+            appointment.Status = status;
+            _context.SaveChanges();
+        }
     }
 }

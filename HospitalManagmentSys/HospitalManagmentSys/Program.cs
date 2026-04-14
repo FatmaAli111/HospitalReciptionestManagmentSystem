@@ -1,5 +1,7 @@
 using Dashboard;
+using HospitalManagmentSys.Data;
 using HospitalManagmentSys.Presentation;
+using HospitalManagmentSys.Presentation.ProfilePatient;
 using WinFormsApp;
 
 namespace HospitalManagmentSys
@@ -17,10 +19,7 @@ namespace HospitalManagmentSys
             ApplicationConfiguration.Initialize();
             //Application.Run(new PatientsForm());
             //Application.Run(new AccountCreationTicket());
-            //Application.Run(new Sign_up_page());
-
-            ////Application.Run(new AdminPanel());
-
+            Application.Run(new AppointmentsHostForm());
         }
     }
 }

@@ -14,6 +14,7 @@ namespace HospitalManagmentSys.Data.Models
         Cancelled = 4
     }
 
+
     public class Appointment
     {
         public int Id { get; set; }

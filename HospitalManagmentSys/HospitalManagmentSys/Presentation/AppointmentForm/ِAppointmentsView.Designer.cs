@@ -313,7 +313,7 @@
             txtSearch.Location = new Point(3, 3);
             txtSearch.Margin = new Padding(3, 3, 12, 3);
             txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Search by patient, doctor, or department...";
+            txtSearch.PlaceholderText = "Search by patient, doctor.";
             txtSearch.SelectedText = "";
             txtSearch.ShadowDecoration.CustomizableEdges = customizableEdges12;
             txtSearch.Size = new Size(728, 46);
@@ -333,7 +333,7 @@
             cbStatus.Font = new Font("Segoe UI", 10F);
             cbStatus.ForeColor = Color.FromArgb(17, 24, 39);
             cbStatus.ItemHeight = 30;
-            cbStatus.Items.AddRange(new object[] { "All Status", "Scheduled", "Waiting", "Attended", "No-Show", "Cancelled" });
+            cbStatus.Items.AddRange(new object[] { "All Status", "Pending", "Completed", "Cancelled" });
             cbStatus.Location = new Point(746, 8);
             cbStatus.Margin = new Padding(3, 8, 3, 3);
             cbStatus.Name = "cbStatus";
