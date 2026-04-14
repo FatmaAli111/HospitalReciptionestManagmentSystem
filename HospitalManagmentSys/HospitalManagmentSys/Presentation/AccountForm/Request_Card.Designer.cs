@@ -54,9 +54,10 @@
             // Password_textBox2
             // 
             Password_textBox2.BackColor = Color.White;
-            Password_textBox2.Location = new Point(994, 39);
+            Password_textBox2.Location = new Point(870, 29);
+            Password_textBox2.Margin = new Padding(3, 2, 3, 2);
             Password_textBox2.Name = "Password_textBox2";
-            Password_textBox2.Size = new Size(262, 27);
+            Password_textBox2.Size = new Size(230, 23);
             Password_textBox2.TabIndex = 34;
             // 
             // Password
@@ -65,9 +66,9 @@
             Password.BackColor = Color.Transparent;
             Password.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Password.ForeColor = Color.Black;
-            Password.Location = new Point(891, 35);
+            Password.Location = new Point(780, 26);
             Password.Name = "Password";
-            Password.Size = new Size(97, 28);
+            Password.Size = new Size(79, 21);
             Password.TabIndex = 33;
             Password.Text = "Password";
             Password.Click += Password_Click;
@@ -79,16 +80,18 @@
             Doctor_View.Controls.Add(Speciality_textbox);
             Doctor_View.Controls.Add(Phone);
             Doctor_View.Controls.Add(Phone_textBox2);
-            Doctor_View.Location = new Point(447, 8);
+            Doctor_View.Location = new Point(391, 6);
+            Doctor_View.Margin = new Padding(3, 2, 3, 2);
             Doctor_View.Name = "Doctor_View";
-            Doctor_View.Size = new Size(420, 150);
+            Doctor_View.Size = new Size(368, 112);
             Doctor_View.TabIndex = 32;
             // 
             // Specialit_textBox
             // 
-            Specialit_textBox.Location = new Point(143, 26);
+            Specialit_textBox.Location = new Point(125, 20);
+            Specialit_textBox.Margin = new Padding(3, 2, 3, 2);
             Specialit_textBox.Name = "Specialit_textBox";
-            Specialit_textBox.Size = new Size(262, 27);
+            Specialit_textBox.Size = new Size(230, 23);
             Specialit_textBox.TabIndex = 18;
             // 
             // Speciality_textbox
@@ -96,9 +99,9 @@
             Speciality_textbox.AutoSize = true;
             Speciality_textbox.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Speciality_textbox.ForeColor = Color.Black;
-            Speciality_textbox.Location = new Point(29, 25);
+            Speciality_textbox.Location = new Point(25, 19);
             Speciality_textbox.Name = "Speciality_textbox";
-            Speciality_textbox.Size = new Size(97, 28);
+            Speciality_textbox.Size = new Size(80, 21);
             Speciality_textbox.TabIndex = 17;
             Speciality_textbox.Text = "Speciality";
             // 
@@ -107,26 +110,28 @@
             Phone.AutoSize = true;
             Phone.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Phone.ForeColor = Color.Black;
-            Phone.Location = new Point(38, 97);
+            Phone.Location = new Point(33, 73);
             Phone.Name = "Phone";
-            Phone.Size = new Size(71, 28);
+            Phone.Size = new Size(56, 21);
             Phone.TabIndex = 19;
             Phone.Text = "Phone";
             // 
             // Phone_textBox2
             // 
-            Phone_textBox2.Location = new Point(143, 98);
+            Phone_textBox2.Location = new Point(125, 74);
+            Phone_textBox2.Margin = new Padding(3, 2, 3, 2);
             Phone_textBox2.MaxLength = 11;
             Phone_textBox2.Name = "Phone_textBox2";
-            Phone_textBox2.Size = new Size(262, 27);
+            Phone_textBox2.Size = new Size(230, 23);
             Phone_textBox2.TabIndex = 20;
             // 
             // email_textBox1
             // 
             email_textBox1.BackColor = Color.White;
-            email_textBox1.Location = new Point(179, 104);
+            email_textBox1.Location = new Point(157, 78);
+            email_textBox1.Margin = new Padding(3, 2, 3, 2);
             email_textBox1.Name = "email_textBox1";
-            email_textBox1.Size = new Size(262, 27);
+            email_textBox1.Size = new Size(230, 23);
             email_textBox1.TabIndex = 31;
             // 
             // Email_Address
@@ -135,18 +140,19 @@
             Email_Address.BackColor = Color.Transparent;
             Email_Address.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Email_Address.ForeColor = Color.Black;
-            Email_Address.Location = new Point(12, 100);
+            Email_Address.Location = new Point(10, 75);
             Email_Address.Name = "Email_Address";
-            Email_Address.Size = new Size(139, 28);
+            Email_Address.Size = new Size(112, 21);
             Email_Address.TabIndex = 30;
             Email_Address.Text = "Email Address";
             // 
             // Full_Name_textBox
             // 
             Full_Name_textBox.BackColor = Color.White;
-            Full_Name_textBox.Location = new Point(179, 35);
+            Full_Name_textBox.Location = new Point(157, 26);
+            Full_Name_textBox.Margin = new Padding(3, 2, 3, 2);
             Full_Name_textBox.Name = "Full_Name_textBox";
-            Full_Name_textBox.Size = new Size(262, 27);
+            Full_Name_textBox.Size = new Size(230, 23);
             Full_Name_textBox.TabIndex = 29;
             // 
             // Full_Name
@@ -155,9 +161,9 @@
             Full_Name.BackColor = Color.Transparent;
             Full_Name.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Full_Name.ForeColor = Color.Black;
-            Full_Name.Location = new Point(31, 35);
+            Full_Name.Location = new Point(27, 26);
             Full_Name.Name = "Full_Name";
-            Full_Name.Size = new Size(104, 28);
+            Full_Name.Size = new Size(82, 21);
             Full_Name.TabIndex = 28;
             Full_Name.Text = "Full Name";
             // 
@@ -170,10 +176,11 @@
             ApproveBtn.FillColor = Color.FromArgb(0, 192, 0);
             ApproveBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             ApproveBtn.ForeColor = Color.White;
-            ApproveBtn.Location = new Point(925, 132);
+            ApproveBtn.Location = new Point(774, 99);
+            ApproveBtn.Margin = new Padding(3, 2, 3, 2);
             ApproveBtn.Name = "ApproveBtn";
             ApproveBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            ApproveBtn.Size = new Size(150, 38);
+            ApproveBtn.Size = new Size(131, 28);
             ApproveBtn.TabIndex = 35;
             ApproveBtn.Text = "Approve";
             ApproveBtn.Click += ApproveBtn_Click;
@@ -187,10 +194,11 @@
             DenyBtn.FillColor = Color.FromArgb(192, 0, 0);
             DenyBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             DenyBtn.ForeColor = Color.White;
-            DenyBtn.Location = new Point(1182, 132);
+            DenyBtn.Location = new Point(999, 99);
+            DenyBtn.Margin = new Padding(3, 2, 3, 2);
             DenyBtn.Name = "DenyBtn";
             DenyBtn.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            DenyBtn.Size = new Size(150, 38);
+            DenyBtn.Size = new Size(131, 28);
             DenyBtn.TabIndex = 36;
             DenyBtn.Text = "Deny";
             DenyBtn.Click += DenyBtn_Click;
@@ -205,10 +213,11 @@
             Exit_Btn.FillColor = Color.Transparent;
             Exit_Btn.Font = new Font("Segoe UI", 9F);
             Exit_Btn.ForeColor = Color.Black;
-            Exit_Btn.Location = new Point(1296, 3);
+            Exit_Btn.Location = new Point(1134, 2);
+            Exit_Btn.Margin = new Padding(3, 2, 3, 2);
             Exit_Btn.Name = "Exit_Btn";
             Exit_Btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            Exit_Btn.Size = new Size(53, 44);
+            Exit_Btn.Size = new Size(46, 33);
             Exit_Btn.TabIndex = 37;
             Exit_Btn.Text = "❌";
             Exit_Btn.Click += Exit_Btn_Click;
@@ -217,7 +226,7 @@
             // 
             // Request_Card
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Silver;
             Controls.Add(Exit_Btn);
@@ -230,8 +239,9 @@
             Controls.Add(Email_Address);
             Controls.Add(Full_Name_textBox);
             Controls.Add(Full_Name);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Request_Card";
-            Size = new Size(1352, 189);
+            Size = new Size(1148, 142);
             Doctor_View.ResumeLayout(false);
             Doctor_View.PerformLayout();
             ResumeLayout(false);

@@ -25,7 +25,36 @@ namespace HospitalManagmentSys.Data
                 new User { Id = 7, Role = UserRole.Receptionist, Name = "Mona Kamel", Email = "mona.kamel@hospital.com", Phone = "01067890123", PasswordHash = "hashed_pw_7", IsActive = true, CreatedAt = new DateTime(2024, 1, 5) }
             );
 
-           
+            builder.Entity<Appointment>().HasData(
+     // TimeSlot 9 - Doctor 1 - 14 April 9:00-12:00
+     new Appointment { Id = 1, PatientId = 1, DoctorId = 1, TimeSlotId = 9, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 9, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 2, Description = "صداع مستمر" },
+     new Appointment { Id = 2, PatientId = 2, DoctorId = 1, TimeSlotId = 9, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 9, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 1, Description = "كشف دوري" },
+     new Appointment { Id = 3, PatientId = 3, DoctorId = 1, TimeSlotId = 9, QueueOrder = 3, AppointmentDate = new DateTime(2026, 4, 14, 10, 0, 0), Status = AppointmentStatus.Cancelled, PriorityScore = 3, Description = "ألم في الظهر" },
+     new Appointment { Id = 4, PatientId = 4, DoctorId = 1, TimeSlotId = 9, QueueOrder = 4, AppointmentDate = new DateTime(2026, 4, 14, 10, 30, 0), Status = AppointmentStatus.Completed, PriorityScore = 4, Description = "متابعة علاج" },
+
+     // TimeSlot 10 - Doctor 1 - 15 April 13:00-16:00 (يوم تاني مفيش تعارض)
+     new Appointment { Id = 5, PatientId = 2, DoctorId = 1, TimeSlotId = 10, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 15, 13, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 2, Description = "متابعة" },
+     new Appointment { Id = 6, PatientId = 3, DoctorId = 1, TimeSlotId = 10, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 15, 13, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 3, Description = "فحص عام" },
+
+     // TimeSlot 11 - Doctor 2 - 14 April 9:00-12:00
+     new Appointment { Id = 7, PatientId = 1, DoctorId = 2, TimeSlotId = 11, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 9, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 3, Description = "ضغط دم" },
+     new Appointment { Id = 8, PatientId = 4, DoctorId = 2, TimeSlotId = 11, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 9, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 2, Description = "سكر" },
+
+     // TimeSlot 12 - Doctor 2 - 15 April 13:00-16:00
+     new Appointment { Id = 9, PatientId = 1, DoctorId = 2, TimeSlotId = 12, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 15, 13, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 1, Description = "استشارة" },
+
+     // TimeSlot 13 - Doctor 3 - 14 April 9:00-12:00
+     new Appointment { Id = 10, PatientId = 2, DoctorId = 3, TimeSlotId = 13, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 9, 0, 0), Status = AppointmentStatus.Completed, PriorityScore = 1, Description = "استشارة" },
+     new Appointment { Id = 11, PatientId = 3, DoctorId = 3, TimeSlotId = 13, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 9, 30, 0), Status = AppointmentStatus.Cancelled, PriorityScore = 2, Description = "أشعة" },
+
+     // TimeSlot 15 - Doctor 4 - 14 April 9:00-12:00
+     new Appointment { Id = 12, PatientId = 4, DoctorId = 4, TimeSlotId = 15, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 9, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 4, Description = "ألم مفاصل" },
+     new Appointment { Id = 13, PatientId = 1, DoctorId = 4, TimeSlotId = 15, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 9, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 1, Description = "كشف" },
+
+     // TimeSlot 16 - Doctor 5 - 14 April 13:00-16:00
+     new Appointment { Id = 14, PatientId = 2, DoctorId = 5, TimeSlotId = 16, QueueOrder = 1, AppointmentDate = new DateTime(2026, 4, 14, 13, 0, 0), Status = AppointmentStatus.Pending, PriorityScore = 2, Description = "فحص عيون" },
+     new Appointment { Id = 15, PatientId = 4, DoctorId = 5, TimeSlotId = 16, QueueOrder = 2, AppointmentDate = new DateTime(2026, 4, 14, 13, 30, 0), Status = AppointmentStatus.Pending, PriorityScore = 3, Description = "نظارة" }
+ );
 
             builder.Entity<Doctor>().HasData(
                 new { Id = 1, DepartmentId = 1, Specialty = "Interventional Cardiology", UserId = 1 },

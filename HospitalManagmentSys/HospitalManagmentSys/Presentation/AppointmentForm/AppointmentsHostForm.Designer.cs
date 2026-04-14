@@ -36,10 +36,10 @@
             // 
             appointmentsView1.BackColor = Color.FromArgb(245, 247, 251);
             appointmentsView1.Dock = DockStyle.Fill;
-            appointmentsView1.Location = new Point(280, 0);
+            appointmentsView1.Location = new Point(315, 0);
             appointmentsView1.Name = "appointmentsView1";
             appointmentsView1.Padding = new Padding(24);
-            appointmentsView1.Size = new Size(920, 700);
+            appointmentsView1.Size = new Size(885, 700);
             appointmentsView1.TabIndex = 0;
             appointmentsView1.Load += appointmentsView1_Load;
             // 
@@ -51,7 +51,7 @@
             sidebarControl1.Location = new Point(0, 0);
             sidebarControl1.MinimumSize = new Size(280, 400);
             sidebarControl1.Name = "sidebarControl1";
-            sidebarControl1.Size = new Size(280, 700);
+            sidebarControl1.Size = new Size(315, 700);
             sidebarControl1.TabIndex = 1;
             sidebarControl1.UserName = "Admin User";
             sidebarControl1.UserRole = "Admin";

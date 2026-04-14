@@ -50,7 +50,7 @@ namespace HospitalManagmentSys.Presentation
 
         private void btnBook_Click(object sender, EventArgs e)
         {
-            DateTime dateTime = dtpDate.Value.Date + dtpTime.Value.TimeOfDay;
+            DateTime dateTime = dtpDate.Value.Date;
 
             var appointment = new Appointment
             {

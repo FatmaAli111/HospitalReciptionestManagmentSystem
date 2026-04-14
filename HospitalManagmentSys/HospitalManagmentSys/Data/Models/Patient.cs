@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using HospitalManagmentSys.Data.Models;
 
 namespace HospitalManagmentSys.Data.Models
 {
@@ -16,7 +17,8 @@ namespace HospitalManagmentSys.Data.Models
     {
         Low = 1,
         Medium = 2,
-        High = 3
+        High = 3,
+        Emergency=4
     }
 
     public enum BloodType
