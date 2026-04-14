@@ -16,10 +16,7 @@ namespace HospitalManagmentSys.Data.Configuration
                 .HasForeignKey(d => d.DepartmentId)
                 .OnDelete(DeleteBehavior.Restrict);
 
-            builder.HasOne(d => d.User)       
-           .WithOne(u => u.Doctor)                    
-           .HasForeignKey<Doctor>(d=>d.UserId)
-           .OnDelete(DeleteBehavior.Cascade);
+         
 
             builder.HasMany(d => d.TimeSlots).WithOne(t => t.Doctor)
                    .HasForeignKey(t => t.DoctorId)

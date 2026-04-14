@@ -28,49 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Label PatientName;
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            QueuePatientPanel = new Panel();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            Urgency = new Guna.UI2.WinForms.Guna2Button();
             btnAvatar = new Guna.UI2.WinForms.Guna2CircleButton();
             ActualScore = new Label();
             Score = new Label();
             PatientName = new Label();
-            QueuePatientPanel.SuspendLayout();
             SuspendLayout();
             // 
-            // QueuePatientPanel
+            // PatientName
             // 
-            QueuePatientPanel.BackColor = Color.White;
-            QueuePatientPanel.Controls.Add(guna2Button1);
-            QueuePatientPanel.Controls.Add(btnAvatar);
-            QueuePatientPanel.Controls.Add(ActualScore);
-            QueuePatientPanel.Controls.Add(Score);
-            QueuePatientPanel.Controls.Add(PatientName);
-            QueuePatientPanel.ForeColor = SystemColors.ControlText;
-            QueuePatientPanel.Location = new Point(3, 3);
-            QueuePatientPanel.Name = "QueuePatientPanel";
-            QueuePatientPanel.Size = new Size(250, 62);
-            QueuePatientPanel.TabIndex = 4;
+            PatientName.AutoSize = true;
+            PatientName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            PatientName.Location = new Point(50, 3);
+            PatientName.Name = "PatientName";
+            PatientName.Size = new Size(90, 21);
+            PatientName.TabIndex = 0;
+            PatientName.Text = "John Smith";
+            PatientName.Click += PatientName_Click;
             // 
-            // guna2Button1
+            // Urgency
             // 
-            guna2Button1.BorderRadius = 5;
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(220, 38, 38);
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(162, 6);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(71, 21);
-            guna2Button1.TabIndex = 15;
-            guna2Button1.Text = "high";
+            Urgency.BorderRadius = 5;
+            Urgency.CustomizableEdges = customizableEdges1;
+            Urgency.DisabledState.BorderColor = Color.DarkGray;
+            Urgency.DisabledState.CustomBorderColor = Color.DarkGray;
+            Urgency.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            Urgency.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            Urgency.FillColor = Color.FromArgb(220, 38, 38);
+            Urgency.Font = new Font("Segoe UI", 9F);
+            Urgency.ForeColor = Color.White;
+            Urgency.Location = new Point(159, 26);
+            Urgency.Name = "Urgency";
+            Urgency.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            Urgency.Size = new Size(86, 21);
+            Urgency.TabIndex = 15;
+            Urgency.Text = "high";
+            Urgency.Click += Urgency_Click;
             // 
             // btnAvatar
             // 
@@ -82,7 +79,7 @@
             btnAvatar.FillColor = Color.Blue;
             btnAvatar.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnAvatar.ForeColor = Color.White;
-            btnAvatar.Location = new Point(3, 6);
+            btnAvatar.Location = new Point(0, 3);
             btnAvatar.Name = "btnAvatar";
             btnAvatar.ShadowDecoration.CustomizableEdges = customizableEdges3;
             btnAvatar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -95,7 +92,7 @@
             ActualScore.AutoSize = true;
             ActualScore.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ActualScore.ForeColor = Color.DarkGray;
-            ActualScore.Location = new Point(91, 34);
+            ActualScore.Location = new Point(90, 32);
             ActualScore.Name = "ActualScore";
             ActualScore.Size = new Size(22, 17);
             ActualScore.TabIndex = 3;
@@ -106,22 +103,11 @@
             Score.AutoSize = true;
             Score.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Score.ForeColor = Color.DarkGray;
-            Score.Location = new Point(49, 36);
+            Score.Location = new Point(50, 32);
             Score.Name = "Score";
             Score.Size = new Size(45, 15);
             Score.TabIndex = 1;
             Score.Text = "Score :";
-            // 
-            // PatientName
-            // 
-            PatientName.AutoSize = true;
-            PatientName.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            PatientName.Location = new Point(49, 6);
-            PatientName.Name = "PatientName";
-            PatientName.Size = new Size(90, 21);
-            PatientName.TabIndex = 0;
-            PatientName.Text = "John Smith";
-            PatientName.Click += PatientName_Click;
             // 
             // AppointmentCardControl
             // 
@@ -129,12 +115,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
             BackColor = Color.White;
-            Controls.Add(QueuePatientPanel);
+            Controls.Add(Urgency);
+            Controls.Add(PatientName);
+            Controls.Add(ActualScore);
+            Controls.Add(btnAvatar);
+            Controls.Add(Score);
             Name = "AppointmentCardControl";
-            Size = new Size(256, 68);
-            QueuePatientPanel.ResumeLayout(false);
-            QueuePatientPanel.PerformLayout();
+            Size = new Size(265, 62);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -148,5 +137,6 @@
         private Label label15;
         private Label DoctorName;
         private Label label5;
+        private Guna.UI2.WinForms.Guna2Button Urgency;
     }
 }

@@ -17,5 +17,9 @@ namespace HospitalManagmentSys.Presentation
             InitializeComponent();
         }
 
+        private void AddPatientForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

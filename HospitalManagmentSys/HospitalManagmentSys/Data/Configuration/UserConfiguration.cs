@@ -1,6 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using HospitalManagmentSys.Data.Models;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using HospitalManagmentSys.Data.Models;
+using System.Reflection.Emit;
 
 namespace HospitalManagmentSys.Data.Configuration
 {
@@ -19,7 +20,12 @@ namespace HospitalManagmentSys.Data.Configuration
            
             builder.HasOne<UserRequest>(e=>e.UserRequest).WithOne(e => e.user)
                 .HasForeignKey<UserRequest>(e=>e.UserID)
-                .OnDelete(DeleteBehavior.Cascade);  
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder
+         .HasOne(u => u.Doctor)
+        .WithOne(d => d.User)
+        .HasForeignKey<Doctor>(d => d.UserId);
         }
       
     }

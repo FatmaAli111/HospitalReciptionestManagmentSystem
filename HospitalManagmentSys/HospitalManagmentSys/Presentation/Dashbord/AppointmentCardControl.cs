@@ -21,5 +21,15 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         {
 
         }
+
+        private void QueuePatientPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Urgency_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -88,18 +88,58 @@ namespace HospitalManagmentSys.BiussnessLogic
 
             return name[0].ToString().ToUpper();
         }
+        //.Where(u => u.TimeSlot.SlotDate.Date == DateTime.Today && u.TimeSlot.StartTime >= DateTime.Now.TimeOfDay)
+
         public List<Appointment> Appoinments()
         {
 
-          return _appDbContext.Appointments
-         .AsNoTracking()
-         //.Where(u => u.TimeSlot.SlotDate.Date == DateTime.Today && u.TimeSlot.StartTime>= DateTime.Now.TimeOfDay)
-         .Include(u => u.TimeSlot)
-         .Include(u => u.Doctor )
-         .Include(u=>u.Patient)
-         .ToList();
+            return _appDbContext.Appointments
+        .AsNoTracking()
+        .Include(u => u.TimeSlot)
+        .Include(u => u.Doctor)
+        .Include(u => u.Doctor.User)
+        .Include(u => u.Patient)
+        .Where(u =>
+            u.TimeSlot != null &&
+            u.Doctor != null &&
+            u.Patient != null
+        //&&
+        //u.TimeSlot.SlotDate.Date == DateTime.Today &&
+        //u.TimeSlot.StartTime >= DateTime.Now.TimeOfDay
+        )
+        .ToList();
         }
+        public List<Appointment> AppoinmentQueue()
+        {
 
+            return _appDbContext.Appointments
+      .AsNoTracking()
+      .Include(u => u.TimeSlot)
+      .Include(u => u.Doctor)
+      .Include(u=>u.Doctor.User)
+      .Include(u => u.Patient)
+      .Where(u =>
+          u.TimeSlot != null &&
+          u.Doctor != null &&
+          u.Patient != null
+          //&&
+          //u.TimeSlot.SlotDate.Date == DateTime.Today &&
+          //u.TimeSlot.StartTime >= DateTime.Now.TimeOfDay
+      )
+      .OrderByDescending(u => u.PriorityScore)
+      .ToList();
+        }
+        public List<Appointment> AppoinmentQueue( int id )
+        {
+
+            return _appDbContext.Appointments
+           .AsNoTracking()
+           .Include(u => u.TimeSlot)
+           .Include(u => u.Doctor)
+           .Include(u => u.Doctor.User)
+           .Include(u => u.Patient).Where(u => u.Doctor.User.Id == id && u.Doctor != null && u.Patient != null && u.TimeSlot != null).OrderByDescending(u => u.PriorityScore)
+           .ToList();
+        }
 
 
 

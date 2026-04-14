@@ -31,16 +31,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashbord));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             PatientsWating = new Panel();
             PatientWaiting = new Label();
             PatientsWatingNow = new Label();
@@ -64,7 +62,6 @@
             ViewQueu = new Guna.UI2.WinForms.Guna2Button();
             header = new Panel();
             flowLayoutPanel4 = new FlowLayoutPanel();
-            ViewAll = new Guna.UI2.WinForms.Guna2Button();
             label4 = new Label();
             label6 = new Label();
             label5 = new Label();
@@ -201,10 +198,10 @@
             // guna2Panel1
             // 
             guna2Panel1.BackgroundImage = (Image)resources.GetObject("guna2Panel1.BackgroundImage");
-            guna2Panel1.CustomizableEdges = customizableEdges21;
+            guna2Panel1.CustomizableEdges = customizableEdges1;
             guna2Panel1.Location = new Point(59, 30);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Panel1.Size = new Size(30, 29);
             guna2Panel1.TabIndex = 3;
             // 
@@ -312,7 +309,7 @@
             // 
             NewAppoint.Anchor = AnchorStyles.None;
             NewAppoint.BorderRadius = 5;
-            NewAppoint.CustomizableEdges = customizableEdges23;
+            NewAppoint.CustomizableEdges = customizableEdges3;
             NewAppoint.DisabledState.BorderColor = Color.DarkGray;
             NewAppoint.DisabledState.CustomBorderColor = Color.DarkGray;
             NewAppoint.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -322,10 +319,11 @@
             NewAppoint.ForeColor = Color.White;
             NewAppoint.Location = new Point(648, 14);
             NewAppoint.Name = "NewAppoint";
-            NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges4;
             NewAppoint.Size = new Size(153, 34);
             NewAppoint.TabIndex = 17;
             NewAppoint.Text = "New Appointment";
+            NewAppoint.Click += NewAppoint_Click;
             // 
             // ViewQueu
             // 
@@ -333,7 +331,7 @@
             ViewQueu.BackColor = SystemColors.Control;
             ViewQueu.BorderColor = Color.DimGray;
             ViewQueu.BorderRadius = 5;
-            ViewQueu.CustomizableEdges = customizableEdges25;
+            ViewQueu.CustomizableEdges = customizableEdges5;
             ViewQueu.DisabledState.BorderColor = Color.DarkGray;
             ViewQueu.DisabledState.CustomBorderColor = Color.DarkGray;
             ViewQueu.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -344,10 +342,11 @@
             ViewQueu.Location = new Point(472, 14);
             ViewQueu.Name = "ViewQueu";
             ViewQueu.RightToLeft = RightToLeft.No;
-            ViewQueu.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            ViewQueu.ShadowDecoration.CustomizableEdges = customizableEdges6;
             ViewQueu.Size = new Size(155, 34);
             ViewQueu.TabIndex = 18;
             ViewQueu.Text = "View Queue";
+            ViewQueu.Click += ViewQueu_Click;
             // 
             // header
             // 
@@ -372,27 +371,6 @@
             flowLayoutPanel4.Size = new Size(696, 215);
             flowLayoutPanel4.TabIndex = 21;
             // 
-            // ViewAll
-            // 
-            ViewAll.Anchor = AnchorStyles.None;
-            ViewAll.BackColor = Color.White;
-            ViewAll.BorderRadius = 5;
-            ViewAll.CustomizableEdges = customizableEdges27;
-            ViewAll.DisabledState.BorderColor = Color.DarkGray;
-            ViewAll.DisabledState.CustomBorderColor = Color.DarkGray;
-            ViewAll.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            ViewAll.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            ViewAll.FillColor = Color.Silver;
-            ViewAll.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ViewAll.ForeColor = SystemColors.InactiveCaptionText;
-            ViewAll.Location = new Point(663, 356);
-            ViewAll.Name = "ViewAll";
-            ViewAll.RightToLeft = RightToLeft.No;
-            ViewAll.ShadowDecoration.CustomizableEdges = customizableEdges28;
-            ViewAll.Size = new Size(111, 29);
-            ViewAll.TabIndex = 31;
-            ViewAll.Text = "View all";
-            // 
             // label4
             // 
             label4.Anchor = AnchorStyles.None;
@@ -401,9 +379,9 @@
             label4.ForeColor = Color.Black;
             label4.Location = new Point(269, 512);
             label4.Name = "label4";
-            label4.Size = new Size(162, 21);
+            label4.Size = new Size(0, 21);
             label4.TabIndex = 25;
-            label4.Text = "Doctor Availabiltiy :";
+            label4.TextAlign = ContentAlignment.TopCenter;
             // 
             // label6
             // 
@@ -413,9 +391,8 @@
             label6.ForeColor = Color.DarkGray;
             label6.Location = new Point(346, 534);
             label6.Name = "label6";
-            label6.Size = new Size(140, 15);
+            label6.Size = new Size(0, 15);
             label6.TabIndex = 26;
-            label6.Text = "Current on-duty  Doctors";
             // 
             // label5
             // 
@@ -425,9 +402,8 @@
             label5.ForeColor = Color.Black;
             label5.Location = new Point(825, 364);
             label5.Name = "label5";
-            label5.Size = new Size(229, 21);
+            label5.Size = new Size(0, 21);
             label5.TabIndex = 27;
-            label5.Text = "Queue Overview For Doctor :";
             // 
             // DoctorName
             // 
@@ -437,9 +413,8 @@
             DoctorName.ForeColor = Color.LightSlateGray;
             DoctorName.Location = new Point(1062, 364);
             DoctorName.Name = "DoctorName";
-            DoctorName.Size = new Size(90, 21);
+            DoctorName.Size = new Size(0, 21);
             DoctorName.TabIndex = 28;
-            DoctorName.Text = "Ahmed Ali";
             // 
             // label15
             // 
@@ -449,9 +424,8 @@
             label15.ForeColor = Color.DarkGray;
             label15.Location = new Point(891, 385);
             label15.Name = "label15";
-            label15.Size = new Size(202, 15);
+            label15.Size = new Size(0, 15);
             label15.TabIndex = 29;
-            label15.Text = "Current waiting patients by priority";
             // 
             // Appointment
             // 
@@ -603,13 +577,13 @@
             // prgUrgency
             // 
             prgUrgency.BorderRadius = 4;
-            prgUrgency.CustomizableEdges = customizableEdges29;
+            prgUrgency.CustomizableEdges = customizableEdges7;
             prgUrgency.FillColor = Color.FromArgb(229, 231, 235);
             prgUrgency.Location = new Point(38, 39);
             prgUrgency.Name = "prgUrgency";
             prgUrgency.ProgressColor = Color.FromArgb(245, 158, 11);
             prgUrgency.ProgressColor2 = Color.FromArgb(245, 158, 11);
-            prgUrgency.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            prgUrgency.ShadowDecoration.CustomizableEdges = customizableEdges8;
             prgUrgency.Size = new Size(340, 8);
             prgUrgency.TabIndex = 8;
             prgUrgency.Text = "guna2ProgressBar1";
@@ -638,7 +612,6 @@
             AutoScroll = true;
             AutoSize = true;
             ClientSize = new Size(1187, 749);
-            Controls.Add(ViewAll);
             Controls.Add(Appointment);
             Controls.Add(label15);
             Controls.Add(DoctorName);
@@ -653,7 +626,7 @@
             Name = "Dashbord";
             Text = "Dashbord";
             WindowState = FormWindowState.Maximized;
-            Load += Dashbord_Load;
+            //Load += Dashbord_Load;
             PatientsWating.ResumeLayout(false);
             PatientsWating.PerformLayout();
             TPatients.ResumeLayout(false);
@@ -730,5 +703,7 @@
         private Panel nosho;
         private Panel waiting;
         private Panel progress;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
     }
 }
