@@ -1,4 +1,8 @@
-﻿using Guna.UI2.WinForms;
+﻿
+using Guna.UI2.WinForms;
+using HospitalManagmentSys.BiussnessLogic;
+using HospitalManagmentSys.Presentation.Dashbord;
+using Guna.UI2.WinForms;
 using HospitalManagmentSys.BiussnessLogic;
 using HospitalManagmentSys.Presentation.Dashbord;
 using System;
@@ -13,35 +17,31 @@ using System.Windows.Forms;
 
 namespace HospitalManagmentSys.Presentation
 {
-    public partial class system : Form
+    public partial class systenm : UserControl
     {
-        private DoctorsListSection doctorsListSection;
+        private DoctorsListsection doctorsListSection;
         private Panel secondTablePanel;
-        private Panel mainContainer; // حاوية رئيسية للصفحة كلها
+        private Panel mainContainer; 
 
-        public system()
+        public systenm()
         {
             InitializeComponent();
-            SetupFormScroll(); // إعداد التمرير للصفحة
+            SetupFormScroll(); 
             AddSecondTable();
         }
 
-        // إعداد التمرير للصفحة كلها
         private void SetupFormScroll()
         {
-            // تفعيل AutoScroll للفورم نفسه
             this.AutoScroll = true;
-            this.AutoScrollMinSize = new Size(this.Width, 800); // الحد الأدنى للارتفاع
+            this.AutoScrollMinSize = new Size(this.Width, 800); 
 
-            // إنشاء حاوية رئيسية لكل المحتوى
             mainContainer = new Panel
             {
                 Location = new Point(0, 0),
-                Size = new Size(this.ClientSize.Width - 20, 1200), // ارتفاع كبير للسماح بالتمرير
+                Size = new Size(this.ClientSize.Width - 20, 1200),
                 BackColor = Color.Transparent
             };
 
-            // نقل جميع العناصر الموجودة إلى الحاوية الرئيسية
             foreach (Control ctrl in this.Controls)
             {
                 if (ctrl != mainContainer)
@@ -54,13 +54,10 @@ namespace HospitalManagmentSys.Presentation
             this.Controls.Add(mainContainer);
         }
 
-        // إضافة الجدول الثاني بنفس حجم الجدول الأول
         private void AddSecondTable()
         {
-            // حساب الموقع: تحت الجدول الأول بمسافة 20 بكسل
             int secondTableTop = guna2CustomGradientPanel1.Bottom + 20;
 
-            // إنشاء الجدول الثاني بنفس حجم الجدول الأول
             secondTablePanel = new Panel
             {
                 Location = new Point(guna2CustomGradientPanel1.Left, secondTableTop),
@@ -69,7 +66,6 @@ namespace HospitalManagmentSys.Presentation
                 BorderStyle = BorderStyle.FixedSingle
             };
 
-            // إضافة عنوان للجدول الثاني
             Label secondTableTitle = new Label
             {
                 Text = "Doctors Availability",
@@ -89,26 +85,21 @@ namespace HospitalManagmentSys.Presentation
                 BackColor = Color.White
             };
 
-            // إنشاء قائمة الأطباء
-            doctorsListSection = new DoctorsListSection();
+            doctorsListSection = new DoctorsListsection();
             doctorsListSection.Location = new Point(22, 85);
             doctorsListSection.Width = secondTablePanel.Width;
             doctorsListSection.Height = secondTablePanel.Height - 110;
             doctorsListSection.BackColor = Color.White;
 
-            // إضافة العناصر إلى الجدول الثاني
             secondTablePanel.Controls.Add(secondTableTitle);
             secondTablePanel.Controls.Add(secondTableSubtitle);
             secondTablePanel.Controls.Add(doctorsListSection);
 
-            // إضافة الجدول الثاني إلى الحاوية الرئيسية
             mainContainer.Controls.Add(secondTablePanel);
 
-            // تحديث ارتفاع الحاوية الرئيسية
             UpdateMainContainerHeight();
         }
 
-        // تحديث ارتفاع الحاوية الرئيسية
         private void UpdateMainContainerHeight()
         {
             if (mainContainer != null)
@@ -124,11 +115,9 @@ namespace HospitalManagmentSys.Presentation
 
         private void system_Load(object sender, EventArgs e)
         {
-            // تحديث الارتفاع عند التحميل
             UpdateMainContainerHeight();
         }
 
-        // تحديث حجم العناصر عند تغيير حجم الفورم
         protected override void OnResize(EventArgs e)
         {
             base.OnResize(e);
@@ -137,7 +126,6 @@ namespace HospitalManagmentSys.Presentation
             {
                 mainContainer.Width = this.ClientSize.Width - 20;
 
-                // تحديث موقع وحجم الجدول الثاني
                 if (secondTablePanel != null && guna2CustomGradientPanel1 != null)
                 {
                     secondTablePanel.Location = new Point(guna2CustomGradientPanel1.Left, guna2CustomGradientPanel1.Bottom + 20);
@@ -156,9 +144,9 @@ namespace HospitalManagmentSys.Presentation
     }
 
     // ==================== DoctorsListSection ====================
-    public class DoctorsListSection : FlowLayoutPanel
+    public class DoctorsListsection : FlowLayoutPanel
     {
-        public DoctorsListSection()
+        public DoctorsListsection()
         {
             this.AutoSize = false;
             this.FlowDirection = FlowDirection.TopDown;

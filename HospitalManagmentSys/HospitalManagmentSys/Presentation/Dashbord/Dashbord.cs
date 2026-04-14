@@ -227,7 +227,7 @@ namespace Dashboard
 
         private void NewAppoint_Click(object sender, EventArgs e)
         {
-            LoadControl(new AppointmentsView());
+            LoadControl(new systenm());
         }
 
         private void LoadControl(UserControl control)
