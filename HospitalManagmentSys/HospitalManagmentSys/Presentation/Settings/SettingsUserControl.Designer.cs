@@ -14,92 +14,147 @@
 
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-
-            // ── Controls ─────────────────────────────
-            this.pnlHeader = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.lblSubtitle = new System.Windows.Forms.Label();
-
-            this.tabControl = new Guna.UI2.WinForms.Guna2TabControl();
-            this.tabProfile = new System.Windows.Forms.TabPage();
-            this.tabQueue = new System.Windows.Forms.TabPage();
-            this.tabSystem = new System.Windows.Forms.TabPage();
-
-            this.ucProfile = new ProfileTabControl();
-            this.ucQueue = new QueueTabControl();
-
-            // ── Header ─────────────────────────────
-            this.pnlHeader.BackColor = System.Drawing.Color.White;
-            this.pnlHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHeader.Height = 80;
-            this.pnlHeader.Padding = new System.Windows.Forms.Padding(24, 10, 24, 10);
-
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Bold);
-            this.lblTitle.ForeColor = System.Drawing.Color.FromArgb(15, 23, 42);
-            this.lblTitle.Location = new System.Drawing.Point(24, 10);
-            this.lblTitle.Text = "Settings";
-
-            this.lblSubtitle.AutoSize = true;
-            this.lblSubtitle.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.lblSubtitle.ForeColor = System.Drawing.Color.FromArgb(120, 130, 150);
-            this.lblSubtitle.Location = new System.Drawing.Point(25, 45);
-            this.lblSubtitle.Text = "Manage your preferences and system configuration";
-
-            this.pnlHeader.Controls.Add(this.lblSubtitle);
-            this.pnlHeader.Controls.Add(this.lblTitle);
-
-            // ── TabControl (SOFT MODERN STYLE) ──────
-            this.tabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl.Font = new System.Drawing.Font("Segoe UI", 10F);
-
-            this.tabControl.Alignment = System.Windows.Forms.TabAlignment.Top;
-            this.tabControl.ItemSize = new System.Drawing.Size(120, 40);
-            this.tabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-
-            // 🎨 ألوان ناعمة
-            this.tabControl.TabMenuBackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-
-            this.tabControl.TabButtonIdleState.FillColor = System.Drawing.Color.Transparent;
-            this.tabControl.TabButtonIdleState.ForeColor = System.Drawing.Color.FromArgb(120, 130, 150);
-
-            this.tabControl.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(240, 245, 255);
-            this.tabControl.TabButtonHoverState.ForeColor = System.Drawing.Color.FromArgb(37, 99, 235);
-
-            this.tabControl.TabButtonSelectedState.FillColor = System.Drawing.Color.FromArgb(230, 240, 255);
-            this.tabControl.TabButtonSelectedState.ForeColor = System.Drawing.Color.FromArgb(37, 99, 235);
-
-            this.tabControl.TabButtonSelectedState.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-
-            // ── Tabs ─────────────────────────────
-            this.tabProfile.Text = "Profile";
-            this.tabProfile.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-
-            this.tabQueue.Text = "Queue";
-            this.tabQueue.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-
-            this.tabSystem.Text = "System";
-            this.tabSystem.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-
-            // ── Sub Controls ─────────────────────
-            this.ucProfile.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucQueue.Dock = System.Windows.Forms.DockStyle.Fill;
-
-            this.tabProfile.Controls.Add(this.ucProfile);
-            this.tabQueue.Controls.Add(this.ucQueue);
-
-            // ── Add Tabs ─────────────────────────
-            this.tabControl.Controls.Add(this.tabProfile);
-            this.tabControl.Controls.Add(this.tabQueue);
-            this.tabControl.Controls.Add(this.tabSystem);
-
-            // ── UserControl ──────────────────────
-            this.BackColor = System.Drawing.Color.FromArgb(248, 250, 252);
-            this.Size = new System.Drawing.Size(900, 580);
-
-            this.Controls.Add(this.tabControl);
-            this.Controls.Add(this.pnlHeader);
+            pnlHeader = new Panel();
+            lblSubtitle = new Label();
+            lblTitle = new Label();
+            tabControl = new Guna.UI2.WinForms.Guna2TabControl();
+            tabProfile = new TabPage();
+            ucProfile = new ProfileTabControl();
+            tabQueue = new TabPage();
+            ucQueue = new QueueTabControl();
+            tabSystem = new TabPage();
+            pnlHeader.SuspendLayout();
+            tabControl.SuspendLayout();
+            tabProfile.SuspendLayout();
+            tabQueue.SuspendLayout();
+            SuspendLayout();
+            // 
+            // pnlHeader
+            // 
+            pnlHeader.BackColor = Color.White;
+            pnlHeader.Controls.Add(lblSubtitle);
+            pnlHeader.Controls.Add(lblTitle);
+            pnlHeader.Dock = DockStyle.Top;
+            pnlHeader.Location = new Point(0, 0);
+            pnlHeader.Name = "pnlHeader";
+            pnlHeader.Padding = new Padding(24, 10, 24, 10);
+            pnlHeader.Size = new Size(900, 80);
+            pnlHeader.TabIndex = 1;
+            // 
+            // lblSubtitle
+            // 
+            lblSubtitle.AutoSize = true;
+            lblSubtitle.Font = new Font("Segoe UI", 10F);
+            lblSubtitle.ForeColor = Color.FromArgb(120, 130, 150);
+            lblSubtitle.Location = new Point(25, 45);
+            lblSubtitle.Name = "lblSubtitle";
+            lblSubtitle.Size = new Size(324, 19);
+            lblSubtitle.TabIndex = 0;
+            lblSubtitle.Text = "Manage your preferences and system configuration";
+            // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitle.ForeColor = Color.FromArgb(15, 23, 42);
+            lblTitle.Location = new Point(24, 10);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(106, 32);
+            lblTitle.TabIndex = 1;
+            lblTitle.Text = "Settings";
+            // 
+            // tabControl
+            // 
+            tabControl.Controls.Add(tabProfile);
+            tabControl.Controls.Add(tabQueue);
+            tabControl.Controls.Add(tabSystem);
+            tabControl.Dock = DockStyle.Fill;
+            tabControl.Font = new Font("Segoe UI", 10F);
+            tabControl.ItemSize = new Size(120, 40);
+            tabControl.Location = new Point(0, 80);
+            tabControl.Name = "tabControl";
+            tabControl.SelectedIndex = 0;
+            tabControl.Size = new Size(900, 500);
+            tabControl.TabButtonHoverState.BorderColor = Color.Empty;
+            tabControl.TabButtonHoverState.FillColor = Color.FromArgb(240, 245, 255);
+            tabControl.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
+            tabControl.TabButtonHoverState.ForeColor = Color.FromArgb(37, 99, 235);
+            tabControl.TabButtonHoverState.InnerColor = Color.FromArgb(40, 52, 70);
+            tabControl.TabButtonIdleState.BorderColor = Color.Empty;
+            tabControl.TabButtonIdleState.FillColor = Color.Transparent;
+            tabControl.TabButtonIdleState.Font = new Font("Segoe UI Semibold", 10F);
+            tabControl.TabButtonIdleState.ForeColor = Color.FromArgb(120, 130, 150);
+            tabControl.TabButtonIdleState.InnerColor = Color.FromArgb(33, 42, 57);
+            tabControl.TabButtonSelectedState.BorderColor = Color.Empty;
+            tabControl.TabButtonSelectedState.FillColor = Color.FromArgb(230, 240, 255);
+            tabControl.TabButtonSelectedState.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            tabControl.TabButtonSelectedState.ForeColor = Color.FromArgb(37, 99, 235);
+            tabControl.TabButtonSelectedState.InnerColor = Color.FromArgb(76, 132, 255);
+            tabControl.TabButtonSize = new Size(120, 40);
+            tabControl.TabIndex = 0;
+            tabControl.TabMenuBackColor = Color.FromArgb(248, 250, 252);
+            tabControl.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop;
+            // 
+            // tabProfile
+            // 
+            tabProfile.BackColor = Color.FromArgb(248, 250, 252);
+            tabProfile.Controls.Add(ucProfile);
+            tabProfile.Location = new Point(4, 44);
+            tabProfile.Name = "tabProfile";
+            tabProfile.Size = new Size(892, 452);
+            tabProfile.TabIndex = 0;
+            tabProfile.Text = "Profile";
+            // 
+            // ucProfile
+            // 
+            ucProfile.BackColor = Color.FromArgb(248, 249, 250);
+            ucProfile.Dock = DockStyle.Fill;
+            ucProfile.Location = new Point(0, 0);
+            ucProfile.Name = "ucProfile";
+            ucProfile.Size = new Size(892, 452);
+            ucProfile.TabIndex = 0;
+            // 
+            // tabQueue
+            // 
+            tabQueue.BackColor = Color.FromArgb(248, 250, 252);
+            tabQueue.Controls.Add(ucQueue);
+            tabQueue.Location = new Point(4, 44);
+            tabQueue.Name = "tabQueue";
+            tabQueue.Size = new Size(892, 452);
+            tabQueue.TabIndex = 1;
+            tabQueue.Text = "Queue";
+            // 
+            // ucQueue
+            // 
+            ucQueue.BackColor = Color.FromArgb(248, 249, 250);
+            ucQueue.Dock = DockStyle.Fill;
+            ucQueue.Location = new Point(0, 0);
+            ucQueue.Name = "ucQueue";
+            ucQueue.Size = new Size(892, 452);
+            ucQueue.TabIndex = 0;
+            // 
+            // tabSystem
+            // 
+            tabSystem.BackColor = Color.FromArgb(248, 250, 252);
+            tabSystem.Location = new Point(4, 44);
+            tabSystem.Name = "tabSystem";
+            tabSystem.Size = new Size(892, 452);
+            tabSystem.TabIndex = 2;
+            tabSystem.Text = "System";
+            // 
+            // SettingsUserControl
+            // 
+            BackColor = Color.FromArgb(248, 250, 252);
+            Controls.Add(tabControl);
+            Controls.Add(pnlHeader);
+            Name = "SettingsUserControl";
+            Size = new Size(900, 580);
+            pnlHeader.ResumeLayout(false);
+            pnlHeader.PerformLayout();
+            tabControl.ResumeLayout(false);
+            tabProfile.ResumeLayout(false);
+            tabQueue.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion
@@ -113,5 +168,6 @@
         private System.Windows.Forms.TabPage tabSystem;
         private ProfileTabControl ucProfile;
         private QueueTabControl ucQueue;
+
     }
 }
