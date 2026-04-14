@@ -5,13 +5,13 @@
     <TargetFramework>net8.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
+	  <UseWPF>true</UseWPF>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UseWPF>true</UseWPF>
   </PropertyGroup>
 
-    <ItemGroup>
+  <ItemGroup>
+	  <PackageReference Include="LiveCharts.WinForms" Version="0.9.7" />
     <PackageReference Include="Guna.UI2.WinForms" Version="2.0.4.7" />
-    <PackageReference Include="LiveCharts.WinForms" Version="0.9.7.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.14" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.14">
       <PrivateAssets>all</PrivateAssets>
@@ -28,19 +28,8 @@
 
   <ItemGroup>
     <None Update="appsettings.json">
-<<<<<<< HEAD
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Presentation\Controls\Sidebar\" />
-  </ItemGroup>
-
-=======
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
->>>>>>> 1904a710a28764ac8bc3fe8ba415681d6a1a8978
 </Project>

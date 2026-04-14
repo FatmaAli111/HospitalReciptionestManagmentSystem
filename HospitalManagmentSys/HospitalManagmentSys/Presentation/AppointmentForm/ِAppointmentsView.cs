@@ -14,6 +14,7 @@ namespace HospitalManagmentSys.Presentation
         {
             InitializeComponent();
             _service = new AppointmentService();
+
         }
         private void AppointmentsView_Load(object sender, EventArgs e)
         {

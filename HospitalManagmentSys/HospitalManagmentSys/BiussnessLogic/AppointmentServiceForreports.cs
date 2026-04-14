@@ -6,7 +6,7 @@ using HospitalManagmentSys.Data.Models;
 
 namespace HospitalManagmentSys.BiussnessLogic
 {
-    public static class AppointmentService
+    public static class AppointmentServiceForreports
     {
         // Small helper methods moved to business logic so UI can call them.
         public static (int pending, int confirmed, int completed, int cancelled) GetAppointmentStatusCounts(AppDbContext ctx)

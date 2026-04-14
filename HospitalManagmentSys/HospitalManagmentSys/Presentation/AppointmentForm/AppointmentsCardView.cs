@@ -15,6 +15,7 @@ namespace HospitalManagmentSys.Presentation
             InitializeComponent();
             _service = service;
             _appointment = appointment;
+
             lblTimeStart.Text = appointment.AppointmentDate.ToString("hh:mm tt");
             lblTimeEnd.Text = $"to {appointment.AppointmentDate.AddMinutes(30).ToString("hh:mm tt")}";
             lblPatient.Text = appointment.Patient.FullName;

@@ -18,8 +18,7 @@ namespace HospitalManagmentSys
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             
-            AppointmentsHostForm
-            Application.Run(new AppointmentsHostForm());
+            Application.Run(new Form1());
         }
     }
 }

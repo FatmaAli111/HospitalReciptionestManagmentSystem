@@ -154,7 +154,7 @@ namespace HospitalManagmentSys.Presentation
                 mainPanel.Controls.Clear();
                 mainPanel.AutoScroll = false;
 
-                var counts = AppointmentService.GetAppointmentStatusCounts(_context);
+                var counts = AppointmentServiceForreports.GetAppointmentStatusCounts(_context);
                 int pending = counts.pending;
                 int confirmed = counts.confirmed;
                 int completed = counts.completed;
