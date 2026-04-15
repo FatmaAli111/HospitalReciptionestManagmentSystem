@@ -355,6 +355,7 @@
             flpList.TabIndex = 3;
             flpList.WrapContents = false;
             flpList.Paint += flpList_Paint;
+        
             // 
             // AppointmentsView
             // 

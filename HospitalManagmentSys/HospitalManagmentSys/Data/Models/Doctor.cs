@@ -1,3 +1,4 @@
+
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace HospitalManagmentSys.Data.Models
         public Doctor(User user, string spec)
         {
             this.User = user;
+            this.UserId = user.Id;
             this.Specialty = spec;
         }
 

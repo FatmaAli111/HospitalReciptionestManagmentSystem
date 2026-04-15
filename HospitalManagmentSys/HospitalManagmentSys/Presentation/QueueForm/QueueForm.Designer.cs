@@ -57,16 +57,13 @@ namespace HospitalManagmentSys.Presentation
             pnlDoctorSelection.SuspendLayout();
             pnlHeader.SuspendLayout();
             pnlStats.SuspendLayout();
-            tableStats.SuspendLayout();
-            cardPatientsWaiting.SuspendLayout();
             pnlPatientsIconHost.SuspendLayout();
-            cardEmergencies.SuspendLayout();
             pnlEmergenciesIconHost.SuspendLayout();
-            cardAvgWaitTime.SuspendLayout();
             pnlAvgWaitIconHost.SuspendLayout();
-            cardCurrentTime.SuspendLayout();
             pnlCurrentTimeIconHost.SuspendLayout();
             pnlQueueSection.SuspendLayout();
+            pnlQueueContainer.SuspendLayout();
+            pnlQueueContainer.SuspendLayout();
             pnlQueueContainer.SuspendLayout();
             tblQueueHeader.SuspendLayout();
             SuspendLayout();
@@ -81,10 +78,8 @@ namespace HospitalManagmentSys.Presentation
             pnlHeader.Dock = DockStyle.Top;
             pnlHeader.Location = new Point(0, 0);
             pnlHeader.Margin = new Padding(3, 4, 3, 4);
-            pnlHeader.Name = "pnlHeader";
-            pnlHeader.Padding = new Padding(34, 36, 34, 28);
             pnlHeader.Size = new Size(1200, 180);
-            pnlHeader.TabIndex = 2;
+            pnlHeader.Size = new Size(1200, 128);
             // 
             // pnlDoctorSelection
             // 
@@ -136,6 +131,8 @@ namespace HospitalManagmentSys.Presentation
             btnReorderQueue.UseVisualStyleBackColor = false;
             btnReorderQueue.Click += BtnReorderQueue_Click;
             // 
+            //
+            //
             // btnEmergency
             // 
             btnEmergency.Anchor = AnchorStyles.Top | AnchorStyles.Right;
@@ -145,10 +142,9 @@ namespace HospitalManagmentSys.Presentation
             btnEmergency.FlatStyle = FlatStyle.Flat;
             btnEmergency.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
             btnEmergency.ForeColor = Color.White;
-            btnEmergency.Location = new Point(946, 44);
-            btnEmergency.Margin = new Padding(3, 4, 3, 4);
+            btnEmergency.Location = new Point(-87, 0);
             btnEmergency.Name = "btnEmergency";
-            btnEmergency.Size = new Size(220, 48);
+            btnEmergency.Size = new Size(75, 23);
             btnEmergency.TabIndex = 0;
             btnEmergency.Text = "🚨  Emergency Patient";
             btnEmergency.UseVisualStyleBackColor = false;
@@ -156,9 +152,9 @@ namespace HospitalManagmentSys.Presentation
             // lblSubtitle
             // 
             lblSubtitle.AutoSize = true;
-            lblSubtitle.Font = new Font("Segoe UI", 10F);
-            lblSubtitle.ForeColor = Color.FromArgb(120, 120, 120);
             lblSubtitle.Location = new Point(66, 86);
+            lblSubtitle.Location = new Point(34, 78);
+            lblSubtitle.Location = new Point(34, 78);
             lblSubtitle.Name = "lblSubtitle";
             lblSubtitle.Size = new Size(297, 23);
             lblSubtitle.TabIndex = 1;
@@ -169,7 +165,7 @@ namespace HospitalManagmentSys.Presentation
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 22F, FontStyle.Bold);
             lblTitle.ForeColor = Color.FromArgb(30, 30, 30);
-            lblTitle.Location = new Point(34, 36);
+            lblTitle.Location = new Point(0, 0);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(374, 50);
             lblTitle.TabIndex = 2;
@@ -181,10 +177,8 @@ namespace HospitalManagmentSys.Presentation
             pnlStats.Controls.Add(tableStats);
             pnlStats.Dock = DockStyle.Top;
             pnlStats.Location = new Point(0, 128);
-            pnlStats.Margin = new Padding(3, 4, 3, 4);
             pnlStats.Name = "pnlStats";
-            pnlStats.Padding = new Padding(34, 20, 34, 20);
-            pnlStats.Size = new Size(1200, 156);
+            pnlStats.Size = new Size(1113, 100);
             pnlStats.TabIndex = 1;
             // 
             // tableStats
@@ -194,18 +188,12 @@ namespace HospitalManagmentSys.Presentation
             tableStats.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableStats.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
             tableStats.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            tableStats.Controls.Add(cardPatientsWaiting, 0, 0);
-            tableStats.Controls.Add(cardEmergencies, 1, 0);
-            tableStats.Controls.Add(cardAvgWaitTime, 2, 0);
-            tableStats.Controls.Add(cardCurrentTime, 3, 0);
             tableStats.Dock = DockStyle.Fill;
-            tableStats.Location = new Point(34, 20);
+            tableStats.Location = new Point(0, 0);
             tableStats.Margin = new Padding(0);
             tableStats.Name = "tableStats";
             tableStats.RowCount = 1;
             tableStats.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableStats.Size = new Size(1132, 116);
-            tableStats.TabIndex = 0;
             // 
             // cardPatientsWaiting
             // 
@@ -243,26 +231,26 @@ namespace HospitalManagmentSys.Presentation
             lblPatientsWaitingValue.TabIndex = 1;
             lblPatientsWaitingValue.Text = "2";
             // 
+            //
+            //
             // pnlPatientsIconHost
             // 
             pnlPatientsIconHost.BackColor = Color.FromArgb(240, 242, 245);
             pnlPatientsIconHost.Controls.Add(lblPatientsWaitingIcon);
-            pnlPatientsIconHost.Location = new Point(14, 22);
+            pnlPatientsIconHost.Location = new Point(0, 0);
             pnlPatientsIconHost.Name = "pnlPatientsIconHost";
-            pnlPatientsIconHost.Size = new Size(48, 48);
+            pnlPatientsIconHost.Size = new Size(200, 100);
             pnlPatientsIconHost.TabIndex = 0;
             // 
             // lblPatientsWaitingIcon
-            // 
-            lblPatientsWaitingIcon.Dock = DockStyle.Fill;
             lblPatientsWaitingIcon.Font = new Font("Segoe MDL2 Assets", 20F);
             lblPatientsWaitingIcon.ForeColor = Color.FromArgb(0, 86, 179);
+            lblPatientsWaitingIcon.ForeColor = QueueTheme.PrimaryBlue;
+            lblPatientsWaitingIcon.ForeColor = QueueTheme.PrimaryBlue;
             lblPatientsWaitingIcon.Location = new Point(0, 0);
             lblPatientsWaitingIcon.Name = "lblPatientsWaitingIcon";
-            lblPatientsWaitingIcon.Size = new Size(48, 48);
-            lblPatientsWaitingIcon.TabIndex = 0;
             lblPatientsWaitingIcon.Text = "";
-            lblPatientsWaitingIcon.TextAlign = ContentAlignment.MiddleCenter;
+            lblPatientsWaitingIcon.Text = "\uE716";
             // 
             // cardEmergencies
             // 
@@ -300,26 +288,26 @@ namespace HospitalManagmentSys.Presentation
             lblEmergenciesValue.TabIndex = 1;
             lblEmergenciesValue.Text = "0";
             // 
+            //
+            //
             // pnlEmergenciesIconHost
             // 
             pnlEmergenciesIconHost.BackColor = Color.FromArgb(240, 242, 245);
             pnlEmergenciesIconHost.Controls.Add(lblEmergenciesIcon);
-            pnlEmergenciesIconHost.Location = new Point(14, 22);
+            pnlEmergenciesIconHost.Location = new Point(0, 0);
             pnlEmergenciesIconHost.Name = "pnlEmergenciesIconHost";
-            pnlEmergenciesIconHost.Size = new Size(48, 48);
+            pnlEmergenciesIconHost.Size = new Size(200, 100);
             pnlEmergenciesIconHost.TabIndex = 0;
             // 
             // lblEmergenciesIcon
-            // 
-            lblEmergenciesIcon.Dock = DockStyle.Fill;
             lblEmergenciesIcon.Font = new Font("Segoe MDL2 Assets", 20F);
             lblEmergenciesIcon.ForeColor = Color.FromArgb(211, 47, 47);
+            lblEmergenciesIcon.ForeColor = QueueTheme.EmergencyRed;
+            lblEmergenciesIcon.ForeColor = QueueTheme.EmergencyRed;
             lblEmergenciesIcon.Location = new Point(0, 0);
             lblEmergenciesIcon.Name = "lblEmergenciesIcon";
-            lblEmergenciesIcon.Size = new Size(48, 48);
-            lblEmergenciesIcon.TabIndex = 0;
             lblEmergenciesIcon.Text = "";
-            lblEmergenciesIcon.TextAlign = ContentAlignment.MiddleCenter;
+            lblEmergenciesIcon.Text = "\uE7BA";
             // 
             // cardAvgWaitTime
             // 
@@ -357,26 +345,26 @@ namespace HospitalManagmentSys.Presentation
             lblAvgWaitTimeValue.TabIndex = 1;
             lblAvgWaitTimeValue.Text = "14 min";
             // 
+            //
+            //
             // pnlAvgWaitIconHost
             // 
             pnlAvgWaitIconHost.BackColor = Color.FromArgb(240, 242, 245);
             pnlAvgWaitIconHost.Controls.Add(lblAvgWaitTimeIcon);
-            pnlAvgWaitIconHost.Location = new Point(14, 22);
+            pnlAvgWaitIconHost.Location = new Point(0, 0);
             pnlAvgWaitIconHost.Name = "pnlAvgWaitIconHost";
-            pnlAvgWaitIconHost.Size = new Size(48, 48);
+            pnlAvgWaitIconHost.Size = new Size(200, 100);
             pnlAvgWaitIconHost.TabIndex = 0;
             // 
             // lblAvgWaitTimeIcon
-            // 
-            lblAvgWaitTimeIcon.Dock = DockStyle.Fill;
             lblAvgWaitTimeIcon.Font = new Font("Segoe MDL2 Assets", 20F);
             lblAvgWaitTimeIcon.ForeColor = Color.FromArgb(251, 192, 45);
+            lblAvgWaitTimeIcon.ForeColor = QueueTheme.AccentGold;
+            lblAvgWaitTimeIcon.ForeColor = QueueTheme.AccentGold;
             lblAvgWaitTimeIcon.Location = new Point(0, 0);
             lblAvgWaitTimeIcon.Name = "lblAvgWaitTimeIcon";
-            lblAvgWaitTimeIcon.Size = new Size(48, 48);
-            lblAvgWaitTimeIcon.TabIndex = 0;
             lblAvgWaitTimeIcon.Text = "";
-            lblAvgWaitTimeIcon.TextAlign = ContentAlignment.MiddleCenter;
+            lblAvgWaitTimeIcon.Text = "\uE916";
             // 
             // cardCurrentTime
             // 
@@ -414,52 +402,48 @@ namespace HospitalManagmentSys.Presentation
             lblCurrentTimeValue.TabIndex = 1;
             lblCurrentTimeValue.Text = "08:12 AM";
             // 
+            //
+            //
             // pnlCurrentTimeIconHost
             // 
             pnlCurrentTimeIconHost.BackColor = Color.FromArgb(240, 242, 245);
             pnlCurrentTimeIconHost.Controls.Add(lblCurrentTimeIcon);
-            pnlCurrentTimeIconHost.Location = new Point(14, 22);
+            pnlCurrentTimeIconHost.Location = new Point(0, 0);
             pnlCurrentTimeIconHost.Name = "pnlCurrentTimeIconHost";
-            pnlCurrentTimeIconHost.Size = new Size(48, 48);
+            pnlCurrentTimeIconHost.Size = new Size(200, 100);
             pnlCurrentTimeIconHost.TabIndex = 0;
             // 
             // lblCurrentTimeIcon
-            // 
-            lblCurrentTimeIcon.Dock = DockStyle.Fill;
             lblCurrentTimeIcon.Font = new Font("Segoe MDL2 Assets", 20F);
             lblCurrentTimeIcon.ForeColor = Color.FromArgb(0, 86, 179);
+            lblCurrentTimeIcon.ForeColor = QueueTheme.PrimaryBlue;
+            lblCurrentTimeIcon.ForeColor = QueueTheme.PrimaryBlue;
             lblCurrentTimeIcon.Location = new Point(0, 0);
             lblCurrentTimeIcon.Name = "lblCurrentTimeIcon";
-            lblCurrentTimeIcon.Size = new Size(48, 48);
-            lblCurrentTimeIcon.TabIndex = 0;
             lblCurrentTimeIcon.Text = "";
+            lblCurrentTimeIcon.Text = "\uE823";
+            lblCurrentTimeIcon.Text = "\uE823";
             lblCurrentTimeIcon.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // pnlQueueSection
             // 
             pnlQueueSection.BackColor = Color.White;
             pnlQueueSection.Controls.Add(pnlQueueContainer);
-            pnlQueueSection.Controls.Add(pnlPriorityLegend);
             pnlQueueSection.Controls.Add(tblQueueHeader);
             pnlQueueSection.Dock = DockStyle.Fill;
-            pnlQueueSection.Location = new Point(0, 284);
-            pnlQueueSection.Margin = new Padding(3, 4, 3, 4);
+            pnlQueueSection.Location = new Point(0, 228);
             pnlQueueSection.Name = "pnlQueueSection";
-            pnlQueueSection.Padding = new Padding(34, 28, 34, 28);
-            pnlQueueSection.Size = new Size(1200, 516);
+            pnlQueueSection.Size = new Size(1113, 25);
             pnlQueueSection.TabIndex = 0;
             // 
             // pnlQueueContainer
             // 
-            pnlQueueContainer.BackColor = Color.FromArgb(248, 249, 250);
-            pnlQueueContainer.Controls.Add(flowPatients);
-            pnlQueueContainer.Dock = DockStyle.Fill;
             pnlQueueContainer.Location = new Point(34, 90);
             pnlQueueContainer.Margin = new Padding(3, 4, 3, 4);
-            pnlQueueContainer.Name = "pnlQueueContainer";
+            pnlQueueContainer.Margin = new Padding(3, 4, 3, 4);
             pnlQueueContainer.Padding = new Padding(8);
             pnlQueueContainer.Size = new Size(1132, 262);
-            pnlQueueContainer.TabIndex = 0;
+            pnlQueueContainer.Size = new Size(1132, 374);
             // 
             // flowPatients
             // 
@@ -487,22 +471,23 @@ namespace HospitalManagmentSys.Presentation
             pnlPriorityLegend.TabIndex = 2;
             pnlPriorityLegend.Paint += pnlPriorityLegend_Paint;
             // 
+            //
+            //
             // tblQueueHeader
             // 
             tblQueueHeader.ColumnCount = 2;
             tblQueueHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tblQueueHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 200F));
+            tblQueueHeader.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tblQueueHeader.Controls.Add(lblQueueTitle, 0, 0);
             tblQueueHeader.Controls.Add(lblQueueSubtitle, 0, 1);
             tblQueueHeader.Controls.Add(chkAutoRefresh, 1, 0);
             tblQueueHeader.Dock = DockStyle.Top;
-            tblQueueHeader.Location = new Point(34, 28);
-            tblQueueHeader.Margin = new Padding(0, 0, 0, 12);
+            tblQueueHeader.Location = new Point(0, 0);
             tblQueueHeader.Name = "tblQueueHeader";
             tblQueueHeader.RowCount = 2;
-            tblQueueHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 36F));
-            tblQueueHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 26F));
-            tblQueueHeader.Size = new Size(1132, 62);
+            tblQueueHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tblQueueHeader.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tblQueueHeader.Size = new Size(1113, 100);
             tblQueueHeader.TabIndex = 1;
             // 
             // lblQueueTitle
@@ -511,10 +496,9 @@ namespace HospitalManagmentSys.Presentation
             lblQueueTitle.Dock = DockStyle.Fill;
             lblQueueTitle.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblQueueTitle.ForeColor = Color.FromArgb(30, 30, 30);
-            lblQueueTitle.Location = new Point(0, 0);
-            lblQueueTitle.Margin = new Padding(0, 0, 0, 4);
-            lblQueueTitle.Name = "lblQueueTitle";
             lblQueueTitle.Size = new Size(932, 32);
+            lblQueueTitle.Size = new Size(932, 36);
+            lblQueueTitle.Size = new Size(932, 36);
             lblQueueTitle.TabIndex = 0;
             lblQueueTitle.Text = "Patient Queue";
             lblQueueTitle.TextAlign = ContentAlignment.BottomLeft;
@@ -525,10 +509,10 @@ namespace HospitalManagmentSys.Presentation
             lblQueueSubtitle.Dock = DockStyle.Fill;
             lblQueueSubtitle.Font = new Font("Segoe UI", 9F);
             lblQueueSubtitle.ForeColor = Color.FromArgb(120, 120, 120);
-            lblQueueSubtitle.Location = new Point(0, 36);
+            lblQueueSubtitle.Location = new Point(0, 20);
             lblQueueSubtitle.Margin = new Padding(0);
             lblQueueSubtitle.Name = "lblQueueSubtitle";
-            lblQueueSubtitle.Size = new Size(932, 26);
+            lblQueueSubtitle.Size = new Size(1093, 80);
             lblQueueSubtitle.TabIndex = 1;
             lblQueueSubtitle.Text = "Ordered by urgency score...";
             lblQueueSubtitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -540,14 +524,14 @@ namespace HospitalManagmentSys.Presentation
             chkAutoRefresh.Checked = true;
             chkAutoRefresh.CheckState = CheckState.Checked;
             chkAutoRefresh.Cursor = Cursors.Hand;
-            chkAutoRefresh.Dock = DockStyle.Fill;
-            chkAutoRefresh.FlatStyle = FlatStyle.Flat;
             chkAutoRefresh.Font = new Font("Segoe UI", 9F);
-            chkAutoRefresh.ForeColor = Color.FromArgb(100, 100, 100);
+            chkAutoRefresh.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
             chkAutoRefresh.Location = new Point(932, 0);
-            chkAutoRefresh.Margin = new Padding(0);
-            chkAutoRefresh.Name = "chkAutoRefresh";
+            chkAutoRefresh.Font = new Font("Segoe UI", 9F, FontStyle.Regular);
+            chkAutoRefresh.ForeColor = Color.FromArgb(100, 100, 100);
             tblQueueHeader.SetRowSpan(chkAutoRefresh, 2);
+            chkAutoRefresh.Size = new Size(200, 62);
+            chkAutoRefresh.Size = new Size(200, 62);
             chkAutoRefresh.Size = new Size(200, 62);
             chkAutoRefresh.TabIndex = 2;
             chkAutoRefresh.Text = "Auto-refresh: ON";
@@ -571,13 +555,11 @@ namespace HospitalManagmentSys.Presentation
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1200, 800);
+            ClientSize = new Size(1113, 253);
             Controls.Add(pnlQueueSection);
             Controls.Add(pnlStats);
             Controls.Add(pnlHeader);
             Font = new Font("Segoe UI", 9F);
-            Margin = new Padding(3, 4, 3, 4);
-            MinimumSize = new Size(960, 600);
             Name = "QueueForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Hospital Reception - Queue Management";
@@ -589,20 +571,13 @@ namespace HospitalManagmentSys.Presentation
             pnlDoctorSelection.ResumeLayout(false);
             pnlDoctorSelection.PerformLayout();
             pnlStats.ResumeLayout(false);
-            tableStats.ResumeLayout(false);
-            cardPatientsWaiting.ResumeLayout(false);
-            cardPatientsWaiting.PerformLayout();
             pnlPatientsIconHost.ResumeLayout(false);
-            cardEmergencies.ResumeLayout(false);
-            cardEmergencies.PerformLayout();
             pnlEmergenciesIconHost.ResumeLayout(false);
-            cardAvgWaitTime.ResumeLayout(false);
-            cardAvgWaitTime.PerformLayout();
             pnlAvgWaitIconHost.ResumeLayout(false);
-            cardCurrentTime.ResumeLayout(false);
-            cardCurrentTime.PerformLayout();
-            pnlCurrentTimeIconHost.ResumeLayout(false);
-            pnlQueueSection.ResumeLayout(false);
+            pnlQueueContainer.ResumeLayout(false);
+            pnlPriorityLegend.ResumeLayout(false);
+            pnlQueueContainer.ResumeLayout(false);
+            pnlPriorityLegend.ResumeLayout(false);
             pnlQueueContainer.ResumeLayout(false);
             tblQueueHeader.ResumeLayout(false);
             tblQueueHeader.PerformLayout();

@@ -66,8 +66,9 @@ namespace HospitalManagmentSys.Presentation
             headerPanel.Name = "headerPanel";
             headerPanel.Padding = new Padding(24, 0, 24, 0);
             headerPanel.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            headerPanel.Size = new Size(1100, 80);
+            headerPanel.Size = new Size(1252, 80);
             headerPanel.TabIndex = 2;
+            headerPanel.Paint += headerPanel_Paint;
             // 
             // AddPatientBtn
             // 
@@ -78,7 +79,7 @@ namespace HospitalManagmentSys.Presentation
             AddPatientBtn.FillColor = Color.FromArgb(59, 130, 246);
             AddPatientBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             AddPatientBtn.ForeColor = Color.White;
-            AddPatientBtn.Location = new Point(922, 21);
+            AddPatientBtn.Location = new Point(1074, 21);
             AddPatientBtn.Name = "AddPatientBtn";
             AddPatientBtn.ShadowDecoration.CustomizableEdges = customizableEdges2;
             AddPatientBtn.Size = new Size(150, 38);
@@ -113,13 +114,13 @@ namespace HospitalManagmentSys.Presentation
             searchPanel.Controls.Add(filterCombo);
             searchPanel.Controls.Add(searchBox);
             searchPanel.CustomizableEdges = customizableEdges9;
-            searchPanel.Dock = DockStyle.Top;
             searchPanel.FillColor = Color.White;
-            searchPanel.Location = new Point(0, 80);
+            searchPanel.Location = new Point(0, 97);
             searchPanel.Name = "searchPanel";
             searchPanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            searchPanel.Size = new Size(1100, 70);
+            searchPanel.Size = new Size(1252, 70);
             searchPanel.TabIndex = 1;
+            searchPanel.Paint += searchPanel_Paint;
             // 
             // filterCombo
             // 
@@ -135,8 +136,7 @@ namespace HospitalManagmentSys.Presentation
             filterCombo.ForeColor = Color.FromArgb(68, 88, 112);
             filterCombo.ItemHeight = 30;
             filterCombo.Items.AddRange(new object[] { "All Patients", "High Risk", "Medium Risk", "Low Risk" });
-            filterCombo.SelectedIndex = 0;
-            filterCombo.Location = new Point(862, 18);
+            filterCombo.Location = new Point(1014, 18);
             filterCombo.Name = "filterCombo";
             filterCombo.ShadowDecoration.CustomizableEdges = customizableEdges6;
             filterCombo.Size = new Size(200, 36);
@@ -163,13 +163,11 @@ namespace HospitalManagmentSys.Presentation
             // contentPanel
             // 
             contentPanel.CustomizableEdges = customizableEdges11;
-            contentPanel.Dock = DockStyle.Fill;
             contentPanel.FillColor = Color.FromArgb(243, 244, 246);
-            contentPanel.Location = new Point(0, 150);
+            contentPanel.Location = new Point(0, 199);
             contentPanel.Name = "contentPanel";
-            contentPanel.Padding = new Padding(0);
             contentPanel.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            contentPanel.Size = new Size(1100, 550);
+            contentPanel.Size = new Size(1252, 550);
             contentPanel.TabIndex = 0;
             // 
             // PatientsForm
@@ -177,7 +175,7 @@ namespace HospitalManagmentSys.Presentation
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 244, 246);
-            ClientSize = new Size(1100, 700);
+            ClientSize = new Size(1252, 700);
             Controls.Add(contentPanel);
             Controls.Add(searchPanel);
             Controls.Add(headerPanel);

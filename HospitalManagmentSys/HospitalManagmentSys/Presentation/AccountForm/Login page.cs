@@ -96,7 +96,7 @@ namespace WinFormsApp
             UserSession.SetUser(user);
 
             MessageBox.Show("Login successful!🎉");
-
+            SessionManager.CurrentUser = user;
             Dashbord dashbord = new Dashbord();
             dashbord.Show();
             this.Hide();

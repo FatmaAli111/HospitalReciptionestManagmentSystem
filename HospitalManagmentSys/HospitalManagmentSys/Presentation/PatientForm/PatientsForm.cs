@@ -148,5 +148,15 @@ namespace HospitalManagmentSys.Presentation
             var form = new AddPatientForm();
             form.ShowDialog();
         }
+
+        private void searchPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void headerPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

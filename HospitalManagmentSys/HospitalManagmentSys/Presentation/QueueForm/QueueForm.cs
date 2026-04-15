@@ -131,7 +131,7 @@ namespace HospitalManagmentSys.Presentation
             pnlStats.BackColor = QueueTheme.SurfaceMuted;
             pnlQueueSection.BackColor = QueueTheme.Background;
             pnlQueueContainer.BackColor = QueueTheme.SurfaceMuted;
-            flowPatients.BackColor = QueueTheme.SurfaceMuted;
+            //flowPatients.BackColor = QueueTheme.SurfaceMuted;
 
             lblTitle.Font = QueueTheme.TitleFont;
             lblTitle.ForeColor = QueueTheme.TextPrimary;
