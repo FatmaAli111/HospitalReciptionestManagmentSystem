@@ -3,6 +3,7 @@ using HospitalManagmentSys.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
+using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,6 @@ namespace HospitalManagmentSys.Data
         public DbSet<Appointment> Appointments { get; set; }
         public DbSet<TimeSlot> TimeSlots { get; set; }
         public DbSet<Attendance> Attendances { get; set; }
-        public DbSet<Queue> Queues { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<UserRequest> UserRequests { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -40,7 +40,6 @@ namespace HospitalManagmentSys.Data
         {
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(AppDbContext).Assembly);
             SeedData.Seed(modelBuilder);
-
 
         }
     }

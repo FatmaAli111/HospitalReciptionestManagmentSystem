@@ -10,7 +10,7 @@ namespace HospitalManagmentSys.Data.Configuration
         public void Configure(EntityTypeBuilder<Attendance> builder)
         {
             builder.HasKey(e => e.Id);
-
+            builder.Property(e => e.Id).UseIdentityColumn();
             builder.Property(e => e.CheckInTime).IsRequired();
             builder.Property(e => e.CheckOutTime).IsRequired();
             builder.Property(e => e.ArriveTime).IsRequired();

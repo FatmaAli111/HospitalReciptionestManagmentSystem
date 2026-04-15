@@ -8,15 +8,19 @@ namespace HospitalManagmentSys.Data.Configuration
         public void Configure(EntityTypeBuilder<UserRequest> builder)
         {
             builder.HasKey(e => e.ID);
+            builder.Property(e => e.ID).UseIdentityColumn();
+
             builder.Property(e => e.Status).IsRequired().HasMaxLength(20);
             builder.Property(e => e.RequestDate).HasDefaultValueSql("GETDATE()"); 
 
             builder.Property(e => e.IsAccountCreated).HasDefaultValue(false);
 
-            builder.HasOne(e => e.user).WithOne(e => e.UserRequest)
+            builder.HasOne(e => e.User).WithOne(e => e.UserRequest)
                    .HasForeignKey<UserRequest>(e => e.UserID)
                    .OnDelete(DeleteBehavior.Cascade);
         }
+
     }
+
 }
 

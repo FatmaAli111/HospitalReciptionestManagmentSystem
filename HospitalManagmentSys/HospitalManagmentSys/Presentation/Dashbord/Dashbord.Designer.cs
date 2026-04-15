@@ -83,6 +83,7 @@
             label11 = new Label();
             prgUrgency = new Guna.UI2.WinForms.Guna2ProgressBar();
             progress = new Panel();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             PatientsWating.SuspendLayout();
             TPatients.SuspendLayout();
             NoShow.SuspendLayout();
@@ -605,6 +606,11 @@
             progress.Size = new Size(464, 202);
             progress.TabIndex = 16;
             // 
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
             // Dashbord
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -626,7 +632,6 @@
             Name = "Dashbord";
             Text = "Dashbord";
             WindowState = FormWindowState.Maximized;
-            //Load += Dashbord_Load;
             PatientsWating.ResumeLayout(false);
             PatientsWating.PerformLayout();
             TPatients.ResumeLayout(false);
@@ -705,5 +710,6 @@
         private Panel progress;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
         private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

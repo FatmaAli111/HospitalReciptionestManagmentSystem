@@ -1,7 +1,10 @@
 using Dashboard;
+
+using HospitalManagmentSys.Data;
 using HospitalManagmentSys.BiussnessLogic;
 using HospitalManagmentSys.Presentation;
-using SmartHospitalSystem;
+using HospitalManagmentSys.Presentation.ProfilePatient;
+using WinFormsApp;
 
 namespace HospitalManagmentSys
 {
@@ -15,13 +18,10 @@ namespace HospitalManagmentSys
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-           // DashbordServices dashbordServices = new DashbordServices();
-           //Console.WriteLine($"{dashbordServices.todayAppointments()},{ dashbordServices.NoShowNumber()};{dashbordServices.WaitingNow()};{dashbordServices.totalPatients()};") ;
-
-
 
             ApplicationConfiguration.Initialize();
-            Application.Run(new Dashbord());
+            
+            Application.Run(new Form1());
         }
     }
 }

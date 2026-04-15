@@ -10,6 +10,8 @@ namespace HospitalManagmentSys.Data.Configuration
         public void Configure(EntityTypeBuilder<Patient> builder)
         {
             builder.HasKey(e => e.Id);
+            builder.Property(e => e.Id).UseIdentityColumn();
+
             builder.Property(e=>e.FullName).HasMaxLength(30).IsRequired();
             builder.Property(e => e.Email).IsRequired().HasMaxLength(50);
             builder.HasIndex(e => e.Email).IsUnique();
