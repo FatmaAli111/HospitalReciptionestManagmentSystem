@@ -7,9 +7,16 @@ namespace HospitalManagmentSys.Presentation
         private int _progressPercent;
         private Color _progressColor = QueueTheme.EmergencyRed;
         private bool _rankPrimary = true;
+        private int _appointmentId;
 
         public event EventHandler? StartClicked;
         public event EventHandler? NoShowClicked;
+
+        public int AppointmentId
+        {
+            get => _appointmentId;
+            set => _appointmentId = value;
+        }
 
         public PatientQueueItem()
         {

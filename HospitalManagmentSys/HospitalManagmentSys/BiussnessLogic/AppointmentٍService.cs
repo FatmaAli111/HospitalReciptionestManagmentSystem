@@ -1,6 +1,7 @@
 ﻿using HospitalManagmentSys.Data;
 using HospitalManagmentSys.Data.Models;
 using Microsoft.EntityFrameworkCore;
+using HospitalManagmentSys.BiussnessLogic;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,6 +71,8 @@ namespace HospitalManagmentSys.BiussnessLogic
 
             _context.Appointments.Add(appointment);
             _context.SaveChanges();
+            var queueService = new QueueService(_context);
+            queueService.ReorderQueue(appointment.TimeSlotId);
             return "Appointment booked successfully!";
         }
         public IEnumerable<Appointment> GetAppointmentsByDate(DateTime date)
@@ -130,6 +133,8 @@ namespace HospitalManagmentSys.BiussnessLogic
             if (appointment == null) return;
             appointment.Status = status;
             _context.SaveChanges();
+            var queueService = new QueueService(_context);
+            queueService.ReorderQueue(appointment.TimeSlotId);
         }
     }
 }

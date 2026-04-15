@@ -44,10 +44,10 @@ namespace HospitalManagmentSys.Presentation
                 table.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25f));
             table.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
 
-            table.Controls.Add(MakeItem(QueueTheme.EmergencyRed, "Emergency (100)", "Immediate attention, bypasses queue"), 0, 0);
-            table.Controls.Add(MakeItem(QueueTheme.EmergencyRed, "High (70-99)", "Urgent care needed"), 1, 0);
-            table.Controls.Add(MakeItem(QueueTheme.AccentGold, "Medium (40-69)", "Standard priority"), 2, 0);
-            table.Controls.Add(MakeItem(QueueTheme.PriorityLowGreen, "Low (0-39)", "Routine checkups"), 3, 0);
+            table.Controls.Add(MakeItem(QueueTheme.EmergencyRed, "Emergency (8)", "Immediate attention, bypasses queue"), 0, 0);
+            table.Controls.Add(MakeItem(QueueTheme.EmergencyRed, "High (6)", "Urgent care needed"), 1, 0);
+            table.Controls.Add(MakeItem(QueueTheme.AccentGold, "Medium (4)", "Standard priority"), 2, 0);
+            table.Controls.Add(MakeItem(QueueTheme.PriorityLowGreen, "Low (2)", "Routine checkups"), 3, 0);
 
             Controls.Add(table);
             Controls.Add(lblHeader);
