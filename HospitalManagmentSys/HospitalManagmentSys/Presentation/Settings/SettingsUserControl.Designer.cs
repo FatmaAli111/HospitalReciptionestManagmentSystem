@@ -38,7 +38,7 @@
             pnlHeader.Location = new Point(0, 0);
             pnlHeader.Name = "pnlHeader";
             pnlHeader.Padding = new Padding(24, 10, 24, 10);
-            pnlHeader.Size = new Size(900, 80);
+            pnlHeader.Size = new Size(1494, 80);
             pnlHeader.TabIndex = 1;
             // 
             // lblSubtitle
@@ -48,7 +48,7 @@
             lblSubtitle.ForeColor = Color.FromArgb(120, 130, 150);
             lblSubtitle.Location = new Point(25, 45);
             lblSubtitle.Name = "lblSubtitle";
-            lblSubtitle.Size = new Size(324, 19);
+            lblSubtitle.Size = new Size(402, 23);
             lblSubtitle.TabIndex = 0;
             lblSubtitle.Text = "Manage your preferences and system configuration";
             // 
@@ -59,7 +59,7 @@
             lblTitle.ForeColor = Color.FromArgb(15, 23, 42);
             lblTitle.Location = new Point(24, 10);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(106, 32);
+            lblTitle.Size = new Size(134, 41);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Settings";
             // 
@@ -74,7 +74,7 @@
             tabControl.Location = new Point(0, 80);
             tabControl.Name = "tabControl";
             tabControl.SelectedIndex = 0;
-            tabControl.Size = new Size(900, 500);
+            tabControl.Size = new Size(1494, 953);
             tabControl.TabButtonHoverState.BorderColor = Color.Empty;
             tabControl.TabButtonHoverState.FillColor = Color.FromArgb(240, 245, 255);
             tabControl.TabButtonHoverState.Font = new Font("Segoe UI Semibold", 10F);
@@ -101,7 +101,7 @@
             tabProfile.Controls.Add(ucProfile);
             tabProfile.Location = new Point(4, 44);
             tabProfile.Name = "tabProfile";
-            tabProfile.Size = new Size(892, 452);
+            tabProfile.Size = new Size(1486, 905);
             tabProfile.TabIndex = 0;
             tabProfile.Text = "Profile";
             // 
@@ -111,7 +111,7 @@
             ucProfile.Dock = DockStyle.Fill;
             ucProfile.Location = new Point(0, 0);
             ucProfile.Name = "ucProfile";
-            ucProfile.Size = new Size(892, 452);
+            ucProfile.Size = new Size(1486, 905);
             ucProfile.TabIndex = 0;
             // 
             // tabQueue
@@ -138,7 +138,7 @@
             tabSystem.BackColor = Color.FromArgb(248, 250, 252);
             tabSystem.Location = new Point(4, 44);
             tabSystem.Name = "tabSystem";
-            tabSystem.Size = new Size(892, 452);
+            tabSystem.Size = new Size(1486, 905);
             tabSystem.TabIndex = 2;
             tabSystem.Text = "System";
             // 
@@ -148,7 +148,7 @@
             Controls.Add(tabControl);
             Controls.Add(pnlHeader);
             Name = "SettingsUserControl";
-            Size = new Size(900, 580);
+            Size = new Size(1494, 1033);
             pnlHeader.ResumeLayout(false);
             pnlHeader.PerformLayout();
             tabControl.ResumeLayout(false);

@@ -1,6 +1,8 @@
-﻿using HospitalManagmentSys.Presentation.Controls.Sidebar;
+﻿using HospitalManagmentSys.Presentation;
+using HospitalManagmentSys.Presentation.Controls.Sidebar;
 using HospitalManagmentSys.Presentation.Dashbord;
-using HospitalManagmentSys.Presentation;
+using HospitalManagmentSys.Presentation.ReportsForm;
+using HospitalManagmentSys.Presentation.Settings;
 using HospitalManagmentSys.Presentation.UserControls;
 using System;
 using System.Collections.Generic;
@@ -11,7 +13,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HospitalManagmentSys.Presentation.ReportsForm;
 
 namespace HospitalManagmentSys.Presentation.Controls.Sidebar
 {
@@ -26,17 +27,17 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
 
         private void Sidebar_NavigationChanged(object? sender, SidebarNavigationChangedEventArgs e)
         {
-        
+
             switch (e.Item)
             {
-                
+
                 case SidebarNavigationItem.Dashboard:
                     LoadPage(new DashboardControl1());
                     break;
 
                 case SidebarNavigationItem.Patients:
                     LoadPage(new PatientControl());
-                  
+
 
                     break;
 
@@ -53,12 +54,12 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
                     break;
 
                 case SidebarNavigationItem.Settings:
-                    // افتح فورم الـ Settings
+                    LoadPage(new SettingsUserControl());
                     break;
 
             }
         }
-        
+
 
         private void LoadPage(UserControl page)
         {
@@ -68,6 +69,11 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
         }
 
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void sidebarControl1_Load(object sender, EventArgs e)
         {
 
         }

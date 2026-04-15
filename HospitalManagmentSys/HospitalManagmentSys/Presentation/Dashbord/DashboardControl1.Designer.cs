@@ -324,26 +324,27 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // flowLayoutPanel4
             // 
             flowLayoutPanel4.AutoSize = true;
+            flowLayoutPanel4.BackColor = Color.FromArgb(0, 0, 64);
             flowLayoutPanel4.Controls.Add(TPatients);
             flowLayoutPanel4.Controls.Add(TodayAppoin);
             flowLayoutPanel4.Controls.Add(NoShow);
             flowLayoutPanel4.Controls.Add(PatientsWating);
-            flowLayoutPanel4.Location = new Point(18, 133);
+            flowLayoutPanel4.Location = new Point(0, 133);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(1480, 286);
+            flowLayoutPanel4.Size = new Size(1532, 286);
             flowLayoutPanel4.TabIndex = 1;
             // 
             // TPatients
             // 
             TPatients.Anchor = AnchorStyles.None;
-            TPatients.BackColor = Color.White;
+            TPatients.BackColor = Color.Lavender;
             TPatients.Controls.Add(label16);
             TPatients.Controls.Add(panel1);
             TPatients.Controls.Add(label17);
             TPatients.Location = new Point(11, 13);
             TPatients.Margin = new Padding(11, 13, 11, 13);
             TPatients.Name = "TPatients";
-            TPatients.Size = new Size(313, 258);
+            TPatients.Size = new Size(350, 258);
             TPatients.TabIndex = 1;
             // 
             // label16
@@ -351,7 +352,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label16.AutoSize = true;
             label16.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label16.ForeColor = Color.DarkGray;
-            label16.Location = new Point(132, 112);
+            label16.Location = new Point(152, 112);
             label16.Name = "label16";
             label16.Size = new Size(40, 46);
             label16.TabIndex = 2;
@@ -360,10 +361,10 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // panel1
             // 
             panel1.BackgroundImage = (Image)resources.GetObject("panel1.BackgroundImage");
-            panel1.Location = new Point(132, 48);
+            panel1.Location = new Point(152, 48);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(27, 31);
+            panel1.Size = new Size(30, 31);
             panel1.TabIndex = 0;
             // 
             // label17
@@ -371,7 +372,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label17.AutoSize = true;
             label17.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label17.ForeColor = Color.Black;
-            label17.Location = new Point(100, 186);
+            label17.Location = new Point(120, 186);
             label17.Name = "label17";
             label17.Size = new Size(105, 20);
             label17.TabIndex = 1;
@@ -380,14 +381,14 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // TodayAppoin
             // 
             TodayAppoin.Anchor = AnchorStyles.None;
-            TodayAppoin.BackColor = Color.White;
+            TodayAppoin.BackColor = Color.Lavender;
             TodayAppoin.Controls.Add(label18);
             TodayAppoin.Controls.Add(label19);
             TodayAppoin.Controls.Add(panel2);
-            TodayAppoin.Location = new Point(346, 13);
+            TodayAppoin.Location = new Point(383, 13);
             TodayAppoin.Margin = new Padding(11, 13, 11, 13);
             TodayAppoin.Name = "TodayAppoin";
-            TodayAppoin.Size = new Size(313, 258);
+            TodayAppoin.Size = new Size(350, 258);
             TodayAppoin.TabIndex = 2;
             // 
             // label18
@@ -395,7 +396,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label18.AutoSize = true;
             label18.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label18.ForeColor = Color.DarkGray;
-            label18.Location = new Point(132, 97);
+            label18.Location = new Point(147, 104);
             label18.Name = "label18";
             label18.Size = new Size(40, 46);
             label18.TabIndex = 2;
@@ -406,7 +407,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label19.AutoSize = true;
             label19.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label19.ForeColor = Color.Black;
-            label19.Location = new Point(77, 171);
+            label19.Location = new Point(87, 178);
             label19.Name = "label19";
             label19.Size = new Size(167, 20);
             label19.TabIndex = 1;
@@ -415,34 +416,34 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // panel2
             // 
             panel2.BackgroundImage = (Image)resources.GetObject("panel2.BackgroundImage");
-            panel2.Location = new Point(132, 40);
+            panel2.Location = new Point(150, 48);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(42, 33);
+            panel2.Size = new Size(37, 29);
             panel2.TabIndex = 0;
             // 
             // NoShow
             // 
             NoShow.Anchor = AnchorStyles.None;
-            NoShow.BackColor = Color.White;
+            NoShow.BackColor = Color.Lavender;
             NoShow.Controls.Add(guna2Panel1);
             NoShow.Controls.Add(label20);
             NoShow.Controls.Add(label21);
-            NoShow.Location = new Point(681, 13);
+            NoShow.Location = new Point(755, 13);
             NoShow.Margin = new Padding(11, 13, 11, 13);
             NoShow.Name = "NoShow";
-            NoShow.Size = new Size(313, 258);
+            NoShow.Size = new Size(350, 258);
             NoShow.TabIndex = 3;
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackgroundImage = (Image)resources.GetObject("guna2Panel1.BackgroundImage");
             guna2Panel1.CustomizableEdges = customizableEdges3;
-            guna2Panel1.Location = new Point(134, 48);
+            guna2Panel1.Location = new Point(163, 48);
             guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel1.Size = new Size(34, 39);
+            guna2Panel1.Size = new Size(32, 31);
             guna2Panel1.TabIndex = 3;
             // 
             // label20
@@ -450,7 +451,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label20.AutoSize = true;
             label20.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label20.ForeColor = Color.DarkGray;
-            label20.Location = new Point(134, 105);
+            label20.Location = new Point(163, 104);
             label20.Name = "label20";
             label20.Size = new Size(40, 46);
             label20.TabIndex = 2;
@@ -461,7 +462,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label21.AutoSize = true;
             label21.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label21.ForeColor = Color.Black;
-            label21.Location = new Point(101, 179);
+            label21.Location = new Point(132, 178);
             label21.Name = "label21";
             label21.Size = new Size(108, 20);
             label21.TabIndex = 1;
@@ -470,14 +471,14 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // PatientsWating
             // 
             PatientsWating.Anchor = AnchorStyles.None;
-            PatientsWating.BackColor = Color.White;
+            PatientsWating.BackColor = Color.Lavender;
             PatientsWating.Controls.Add(label22);
             PatientsWating.Controls.Add(label23);
             PatientsWating.Controls.Add(panel3);
-            PatientsWating.Location = new Point(1016, 13);
+            PatientsWating.Location = new Point(1127, 13);
             PatientsWating.Margin = new Padding(11, 13, 11, 13);
             PatientsWating.Name = "PatientsWating";
-            PatientsWating.Size = new Size(313, 258);
+            PatientsWating.Size = new Size(350, 258);
             PatientsWating.TabIndex = 4;
             // 
             // label22
@@ -485,7 +486,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label22.AutoSize = true;
             label22.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label22.ForeColor = Color.DarkGray;
-            label22.Location = new Point(129, 104);
+            label22.Location = new Point(160, 112);
             label22.Name = "label22";
             label22.Size = new Size(40, 46);
             label22.TabIndex = 2;
@@ -496,7 +497,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label23.AutoSize = true;
             label23.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label23.ForeColor = Color.Black;
-            label23.Location = new Point(75, 178);
+            label23.Location = new Point(106, 186);
             label23.Name = "label23";
             label23.Size = new Size(157, 20);
             label23.TabIndex = 1;
@@ -506,16 +507,16 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // 
             panel3.BackColor = Color.White;
             panel3.BackgroundImage = (Image)resources.GetObject("panel3.BackgroundImage");
-            panel3.Location = new Point(133, 40);
+            panel3.Location = new Point(164, 48);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(36, 33);
+            panel3.Size = new Size(30, 28);
             panel3.TabIndex = 0;
             // 
             // ViewQueu
             // 
             ViewQueu.CustomizableEdges = customizableEdges5;
-            ViewQueu.FillColor = Color.FromArgb(224, 224, 224);
+            ViewQueu.FillColor = Color.Yellow;
             ViewQueu.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ViewQueu.ForeColor = Color.Black;
             ViewQueu.Location = new Point(946, 20);
@@ -530,10 +531,10 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // 
             NewAppoint.BackColor = SystemColors.Window;
             NewAppoint.CustomizableEdges = customizableEdges7;
-            NewAppoint.FillColor = Color.Blue;
+            NewAppoint.FillColor = Color.FromArgb(0, 0, 64);
             NewAppoint.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NewAppoint.ForeColor = Color.White;
-            NewAppoint.Location = new Point(1195, 14);
+            NewAppoint.Location = new Point(1195, 17);
             NewAppoint.Name = "NewAppoint";
             NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges8;
             NewAppoint.Size = new Size(190, 48);
@@ -569,13 +570,14 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // 
             // header
             // 
+            header.BackColor = Color.Lavender;
             header.Controls.Add(label2);
             header.Controls.Add(label3);
             header.Controls.Add(NewAppoint);
             header.Controls.Add(ViewQueu);
-            header.Location = new Point(18, 3);
+            header.Location = new Point(0, 0);
             header.Name = "header";
-            header.Size = new Size(1450, 124);
+            header.Size = new Size(1494, 127);
             header.TabIndex = 0;
             // 
             // label25
@@ -584,7 +586,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label25.AutoSize = true;
             label25.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label25.ForeColor = Color.DarkGray;
-            label25.Location = new Point(1099, 354);
+            label25.Location = new Point(1162, 283);
             label25.Name = "label25";
             label25.Size = new Size(0, 20);
             label25.TabIndex = 37;
@@ -595,7 +597,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label26.AutoSize = true;
             label26.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label26.ForeColor = Color.LightSlateGray;
-            label26.Location = new Point(1295, 326);
+            label26.Location = new Point(1358, 255);
             label26.Name = "label26";
             label26.Size = new Size(0, 28);
             label26.TabIndex = 36;
@@ -606,7 +608,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label27.AutoSize = true;
             label27.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label27.ForeColor = Color.Black;
-            label27.Location = new Point(1024, 326);
+            label27.Location = new Point(1087, 255);
             label27.Name = "label27";
             label27.Size = new Size(0, 28);
             label27.TabIndex = 35;
@@ -617,7 +619,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label29.AutoSize = true;
             label29.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label29.ForeColor = Color.Black;
-            label29.Location = new Point(388, 524);
+            label29.Location = new Point(451, 453);
             label29.Name = "label29";
             label29.Size = new Size(0, 28);
             label29.TabIndex = 33;
@@ -629,7 +631,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label28.AutoSize = true;
             label28.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label28.ForeColor = Color.DarkGray;
-            label28.Location = new Point(475, 553);
+            label28.Location = new Point(538, 482);
             label28.Name = "label28";
             label28.Size = new Size(0, 20);
             label28.TabIndex = 34;
@@ -654,7 +656,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             Controls.Add(label4);
             Controls.Add(label29);
             Name = "DashboardControl1";
-            Size = new Size(1494, 802);
+            Size = new Size(1494, 682);
             flowLayoutPanel4.ResumeLayout(false);
             TPatients.ResumeLayout(false);
             TPatients.PerformLayout();

@@ -46,6 +46,7 @@
             sidebarControl1.TabIndex = 0;
             sidebarControl1.UserName = "Admin User";
             sidebarControl1.UserRole = "Admin";
+            sidebarControl1.Load += sidebarControl1_Load;
             // 
             // guna2Panel1
             // 

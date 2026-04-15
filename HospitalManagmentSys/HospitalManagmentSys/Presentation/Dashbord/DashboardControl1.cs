@@ -32,15 +32,13 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         {
 
 
-            // Don't clear designer controls - InitializeComponent already builds the visual layout
-            // Create a dedicated MainContainer panel under the designer KPI panel so designer controls remain visible
+            
             MainContainer = new Panel
             {
                 AutoScroll = true,
                 BorderStyle = BorderStyle.None
             };
 
-            // position MainContainer under the KPI panel created by the designer (flowLayoutPanel4)
             try
             {
                 var x = flowLayoutPanel4.Location.X;
@@ -56,7 +54,6 @@ namespace HospitalManagmentSys.Presentation.Dashbord
                 MainContainer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
             }
 
-            // root is the dynamic content layout inside MainContainer
             root = new TableLayoutPanel
             {
                 Dock = DockStyle.Fill,
@@ -71,10 +68,8 @@ namespace HospitalManagmentSys.Presentation.Dashbord
 
         private void BuildDashboardLayout()
         {
-            // removed cardsPanel overlay - it covered MainContainer and hid controls at runtime
 
             dashbordServices = new DashbordServices();
-            // Update designer header/kpi controls instead of creating duplicates
             CreateKPIs();
 
             FlowLayoutPanel horizontalWrapper = new FlowLayoutPanel
@@ -127,7 +122,6 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         {
             dashbordServices = new DashbordServices();
 
-            // Update labels inside the designer KPI panels without changing their parent
             var tPatientLabel = TPatients.Controls["TPtient"] as Label;
             if (tPatientLabel != null) tPatientLabel.Text = dashbordServices.totalPatients().ToString();
 
@@ -140,7 +134,6 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             var patientWaitingLabel = PatientsWating.Controls["PatientWaiting"] as Label;
             if (patientWaitingLabel != null) patientWaitingLabel.Text = dashbordServices.WaitingNow().ToString();
 
-            // Ensure designer flow panel has consistent spacing
             try
             {
                 foreach (Control c in flowLayoutPanel4.Controls)
@@ -150,7 +143,6 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             }
             catch { }
 
-            // return the existing designer KPI container
             return flowLayoutPanel4;
         }
 
@@ -244,10 +236,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             ControlPaint.DrawBorder3D(e.Graphics, panel.ClientRectangle, Border3DStyle.RaisedInner);
         }
 
-        private void NewAppoint_Click(object sender, EventArgs e)
-        {
-            LoadControl(new AppointmentsView());
-        }
+    
 
         private void LoadControl(UserControl control)
         {
@@ -278,7 +267,8 @@ namespace HospitalManagmentSys.Presentation.Dashbord
 
         private void NewAppoint_Click_2(object sender, EventArgs e)
         {
-            LoadControl(new AppointmentsView());
+            BookAppointmentForm form = new BookAppointmentForm();
+            form.ShowDialog();
         }
 
         private void ViewQueu_Click_1(object sender, EventArgs e)

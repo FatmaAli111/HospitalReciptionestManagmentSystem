@@ -62,5 +62,10 @@ namespace HospitalManagmentSys.Presentation.Settings
                     break;
             }
         }
+
+        private void pnlCard_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
