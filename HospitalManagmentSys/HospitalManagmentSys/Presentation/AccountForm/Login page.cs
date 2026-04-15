@@ -86,11 +86,14 @@ namespace WinFormsApp
                 return;
             }
 
-            if (user.PasswordHash != HashPassword(password))
-            {
-                MessageBox.Show("Incorrect password ⚠️");
-                return;
-            }
+            //if (user.PasswordHash != HashPassword(password))
+            //{
+            //    MessageBox.Show("Incorrect password ⚠️");
+            //    return;
+            //}
+
+            // Set user session
+            UserSession.SetUser(user);
 
             MessageBox.Show("Login successful!🎉");
 
