@@ -52,8 +52,8 @@ namespace HospitalManagmentSys.Presentation
         public bool validation()
         {
             if (string.IsNullOrWhiteSpace(FullName_textBox1.Text) ||
-        string.IsNullOrWhiteSpace(EmailAddress_textBox.Text) ||
-        string.IsNullOrWhiteSpace(Password_textBox.Text))
+                string.IsNullOrWhiteSpace(EmailAddress_textBox.Text) ||
+                string.IsNullOrWhiteSpace(Password_textBox.Text))
 
             {
                 MessageBox.Show("Please fill all required fields ⚠️");

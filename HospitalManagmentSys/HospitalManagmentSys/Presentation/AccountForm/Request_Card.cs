@@ -1,5 +1,6 @@
 ﻿using Azure.Core;
 using HospitalManagmentSys.BiussnessLogic;
+using HospitalManagmentSys.Data;
 using HospitalManagmentSys.Data.Models;
 using System;
 using System.Collections.Generic;
@@ -70,14 +71,58 @@ namespace HospitalManagmentSys.Presentation
         }
         private void ApproveBtn_Click(object sender, EventArgs e)
         {
-            var service = new UserRequestService();
-            service.ApproveRequest(_request.ID);
-            DenyBtn.Enabled = false;
-            DenyBtn.DisabledState.FillColor = Color.Red;
-            DenyBtn.DisabledState.ForeColor = Color.White;
-            DenyBtn.DisabledState.BorderColor = Color.Red;
-            ApproveBtn.Enabled = false;
-            ApproveBtn.Text = "Approved";
+            using (var db = new AppDbContext())
+            {
+                using (var transaction = db.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        var newUser = new User
+                        {
+                            Name = _request.Name,
+                            Email = _request.Email,
+                            PasswordHash = _request.PasswordHash,
+                            Phone = _request.Phone,
+                            Role = _request.Role,
+                            Speciality = _request.Speciality // if the role is doctor
+                        };
+                        db.Users.Add(newUser);
+
+                        // ده الكود اللي هيظهرلك الأسماء في رسالة بدل الـ Output
+                        var allUsers = db.Users.ToList();
+                        string usersList = "Current Users in DB:\n";
+                        foreach (var u in allUsers)
+                        {
+                            usersList += $"- {u.Name} ({u.Email})\n";
+                        }
+                        MessageBox.Show(usersList, "Database Check");
+
+                        // 3. Delete the requset of UserRequest after approved the operation
+                        var requestInDb = db.UserRequests.Find(_request.ID);
+                        if (requestInDb != null)
+                        {
+                            db.UserRequests.Remove(requestInDb);
+                        }
+                        db.SaveChanges();
+
+                        // confirming operation of adding user
+                        transaction.Commit();
+
+                        // update btn view
+                        DenyBtn.Enabled = false;
+                        ApproveBtn.Enabled = false;
+                        ApproveBtn.Text = "Approved";
+
+                        MessageBox.Show("User Approved and Registered Successfully!");
+                    }
+                    catch (Exception ex)
+                    {
+                        // apply (Rollback) if it has any error
+                        transaction.Rollback();
+                        MessageBox.Show("Error: " + ex.Message);
+                    }
+                }
+            }
         }
 
 
