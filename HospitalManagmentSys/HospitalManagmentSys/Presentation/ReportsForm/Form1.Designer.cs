@@ -997,7 +997,7 @@ namespace HospitalManagmentSys.Presentation
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = SystemColors.Control;
-            ClientSize = new Size(1523, 881);
+            ClientSize = new Size(1370, 749);
             Controls.Add(guna2CustomGradientPanel4);
             Controls.Add(mainPanel);
             Controls.Add(guna2CustomGradientPanel3);
