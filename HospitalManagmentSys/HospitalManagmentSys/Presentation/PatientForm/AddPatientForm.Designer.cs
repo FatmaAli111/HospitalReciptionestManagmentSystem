@@ -1,4 +1,4 @@
-﻿namespace HospitalManagmentSys.Presentation.PatientForm
+﻿namespace HospitalManagmentSys.Presentation
 {
     partial class AddPatientForm
     {
@@ -79,12 +79,13 @@
             FullNameTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             FullNameTextBox.Font = new Font("Segoe UI", 10F);
             FullNameTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            FullNameTextBox.Location = new Point(24, 118);
+            FullNameTextBox.Location = new Point(28, 157);
+            FullNameTextBox.Margin = new Padding(3, 4, 3, 4);
             FullNameTextBox.Name = "FullNameTextBox";
             FullNameTextBox.PlaceholderText = "";
             FullNameTextBox.SelectedText = "";
             FullNameTextBox.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            FullNameTextBox.Size = new Size(240, 29);
+            FullNameTextBox.Size = new Size(274, 39);
             FullNameTextBox.TabIndex = 0;
             // 
             // PhoneNumberTextBox
@@ -98,12 +99,13 @@
             PhoneNumberTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             PhoneNumberTextBox.Font = new Font("Segoe UI", 9F);
             PhoneNumberTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            PhoneNumberTextBox.Location = new Point(24, 184);
+            PhoneNumberTextBox.Location = new Point(28, 245);
+            PhoneNumberTextBox.Margin = new Padding(3, 4, 3, 4);
             PhoneNumberTextBox.Name = "PhoneNumberTextBox";
             PhoneNumberTextBox.PlaceholderText = "";
             PhoneNumberTextBox.SelectedText = "";
             PhoneNumberTextBox.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            PhoneNumberTextBox.Size = new Size(240, 32);
+            PhoneNumberTextBox.Size = new Size(274, 42);
             PhoneNumberTextBox.TabIndex = 1;
             // 
             // EmailTextBox
@@ -123,7 +125,7 @@
             EmailTextBox.PlaceholderText = "";
             EmailTextBox.SelectedText = "";
             EmailTextBox.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            EmailTextBox.Size = new Size(248, 29);
+            EmailTextBox.Size = new Size(284, 39);
             EmailTextBox.TabIndex = 2;
             // 
             // headerPanel1
@@ -131,21 +133,19 @@
             headerPanel1.Controls.Add(subTiltleLabel1);
             headerPanel1.Controls.Add(titleLabel1);
             headerPanel1.CustomizableEdges = customizableEdges7;
-            headerPanel1.Location = new Point(10, 16);
-            headerPanel1.Margin = new Padding(3, 2, 3, 2);
+            headerPanel1.Location = new Point(12, 22);
             headerPanel1.Name = "headerPanel1";
             headerPanel1.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            headerPanel1.Size = new Size(550, 62);
+            headerPanel1.Size = new Size(628, 83);
             headerPanel1.TabIndex = 3;
             // 
             // subTiltleLabel1
             // 
             subTiltleLabel1.BackColor = Color.Transparent;
             subTiltleLabel1.Font = new Font("Segoe UI", 9.5F);
-            subTiltleLabel1.Location = new Point(14, 29);
-            subTiltleLabel1.Margin = new Padding(3, 2, 3, 2);
+            subTiltleLabel1.Location = new Point(16, 39);
             subTiltleLabel1.Name = "subTiltleLabel1";
-            subTiltleLabel1.Size = new Size(316, 19);
+            subTiltleLabel1.Size = new Size(372, 23);
             subTiltleLabel1.TabIndex = 1;
             subTiltleLabel1.Text = "Enter the patient's information to create a new record";
             // 
@@ -153,10 +153,9 @@
             // 
             titleLabel1.BackColor = Color.Transparent;
             titleLabel1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            titleLabel1.Location = new Point(14, 2);
-            titleLabel1.Margin = new Padding(3, 2, 3, 2);
+            titleLabel1.Location = new Point(16, 3);
             titleLabel1.Name = "titleLabel1";
-            titleLabel1.Size = new Size(163, 23);
+            titleLabel1.Size = new Size(204, 30);
             titleLabel1.TabIndex = 0;
             titleLabel1.Text = "Register New Patient";
             // 
@@ -165,7 +164,7 @@
             guna2HtmlLabel1.BackColor = Color.Transparent;
             guna2HtmlLabel1.Location = new Point(28, 128);
             guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(65, 17);
+            guna2HtmlLabel1.Size = new Size(80, 22);
             guna2HtmlLabel1.TabIndex = 4;
             guna2HtmlLabel1.Text = "Full Name *";
             // 
@@ -174,7 +173,7 @@
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Location = new Point(28, 216);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(92, 17);
+            guna2HtmlLabel2.Size = new Size(112, 22);
             guna2HtmlLabel2.TabIndex = 5;
             guna2HtmlLabel2.Text = "Phone Number *";
             // 
@@ -183,75 +182,16 @@
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Location = new Point(356, 128);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(40, 17);
+            guna2HtmlLabel3.Size = new Size(50, 22);
             guna2HtmlLabel3.TabIndex = 6;
             guna2HtmlLabel3.Text = "Email *";
-            // 
-            // guna2HtmlLabel4
-            // 
-            guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(28, 382);
-            guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(133, 22);
-            guna2HtmlLabel4.TabIndex = 7;
-            guna2HtmlLabel4.Text = "Total appointments ";
-            // 
-            // TotalAppointmentsTextBox
-            // 
-            TotalAppointmentsTextBox.CustomizableEdges = customizableEdges9;
-            TotalAppointmentsTextBox.DefaultText = "";
-            TotalAppointmentsTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            TotalAppointmentsTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            TotalAppointmentsTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            TotalAppointmentsTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TotalAppointmentsTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TotalAppointmentsTextBox.Font = new Font("Segoe UI", 9F);
-            TotalAppointmentsTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TotalAppointmentsTextBox.Location = new Point(28, 411);
-            TotalAppointmentsTextBox.Margin = new Padding(3, 4, 3, 4);
-            TotalAppointmentsTextBox.Name = "TotalAppointmentsTextBox";
-            TotalAppointmentsTextBox.PlaceholderText = "";
-            TotalAppointmentsTextBox.SelectedText = "";
-            TotalAppointmentsTextBox.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            TotalAppointmentsTextBox.Size = new Size(274, 36);
-            TotalAppointmentsTextBox.TabIndex = 8;
-            // 
-            // guna2TextBox1
-            // 
-            guna2TextBox1.CustomizableEdges = customizableEdges11;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Segoe UI", 9F);
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(28, 333);
-            guna2TextBox1.Margin = new Padding(3, 4, 3, 4);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PlaceholderText = "";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2TextBox1.Size = new Size(274, 42);
-            guna2TextBox1.TabIndex = 9;
-            // 
-            // guna2HtmlLabel5
-            // 
-            guna2HtmlLabel5.BackColor = Color.Transparent;
-            guna2HtmlLabel5.Location = new Point(28, 304);
-            guna2HtmlLabel5.Name = "guna2HtmlLabel5";
-            guna2HtmlLabel5.Size = new Size(56, 22);
-            guna2HtmlLabel5.TabIndex = 10;
-            guna2HtmlLabel5.Text = "Address";
             // 
             // genderLabel
             // 
             genderLabel.BackColor = Color.Transparent;
-            genderLabel.Location = new Point(312, 228);
-            genderLabel.Margin = new Padding(3, 2, 3, 2);
+            genderLabel.Location = new Point(356, 304);
             genderLabel.Name = "genderLabel";
-            genderLabel.Size = new Size(41, 17);
+            genderLabel.Size = new Size(51, 22);
             genderLabel.TabIndex = 11;
             genderLabel.Text = "Gender";
             // 
@@ -278,7 +218,7 @@
             dobLabel.BackColor = Color.Transparent;
             dobLabel.Location = new Point(356, 216);
             dobLabel.Name = "dobLabel";
-            dobLabel.Size = new Size(69, 17);
+            dobLabel.Size = new Size(88, 22);
             dobLabel.TabIndex = 13;
             dobLabel.Text = "Date of Birth";
             // 
@@ -288,7 +228,7 @@
             dobPicker.Format = DateTimePickerFormat.Short;
             dobPicker.Location = new Point(356, 245);
             dobPicker.Name = "dobPicker";
-            dobPicker.Size = new Size(240, 23);
+            dobPicker.Size = new Size(274, 27);
             dobPicker.TabIndex = 14;
             // 
             // urgencyLabel
@@ -296,7 +236,7 @@
             urgencyLabel.BackColor = Color.Transparent;
             urgencyLabel.Location = new Point(28, 383);
             urgencyLabel.Name = "urgencyLabel";
-            urgencyLabel.Size = new Size(92, 17);
+            urgencyLabel.Size = new Size(114, 22);
             urgencyLabel.TabIndex = 15;
             urgencyLabel.Text = "Medical Urgency";
             // 
@@ -332,7 +272,6 @@
             saveBtn.Size = new Size(130, 40);
             saveBtn.TabIndex = 18;
             saveBtn.Text = "Save Patient";
-            saveBtn.Click += saveBtn_Click;
             // 
             // cancelBtn
             // 
@@ -349,15 +288,14 @@
             cancelBtn.Size = new Size(130, 40);
             cancelBtn.TabIndex = 17;
             cancelBtn.Text = "Cancel";
-            this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
+            cancelBtn.Click += cancelBtn_Click;
             // 
             // guna2HtmlLabel4
             // 
             guna2HtmlLabel4.BackColor = Color.Transparent;
-            guna2HtmlLabel4.Location = new Point(24, 228);
-            guna2HtmlLabel4.Margin = new Padding(3, 2, 3, 2);
+            guna2HtmlLabel4.Location = new Point(28, 304);
             guna2HtmlLabel4.Name = "guna2HtmlLabel4";
-            guna2HtmlLabel4.Size = new Size(70, 17);
+            guna2HtmlLabel4.Size = new Size(89, 22);
             guna2HtmlLabel4.TabIndex = 19;
             guna2HtmlLabel4.Text = "Blood Type *";
             // 
@@ -373,16 +311,15 @@
             booldTypeCombo.ForeColor = Color.FromArgb(68, 88, 112);
             booldTypeCombo.ItemHeight = 30;
             booldTypeCombo.Items.AddRange(new object[] { "A_Positive", "A_Negative", "B_Positive", "B_Negative", "AB_Positive", "AB_Negative", "O_Positive", "O_Negative" });
-            booldTypeCombo.Location = new Point(24, 249);
-            booldTypeCombo.Margin = new Padding(3, 2, 3, 2);
+            booldTypeCombo.Location = new Point(28, 332);
             booldTypeCombo.Name = "booldTypeCombo";
             booldTypeCombo.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            booldTypeCombo.Size = new Size(240, 36);
+            booldTypeCombo.Size = new Size(274, 36);
             booldTypeCombo.TabIndex = 20;
             // 
             // AddPatientForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(651, 502);
             Controls.Add(booldTypeCombo);
@@ -402,10 +339,8 @@
             Controls.Add(urgencyCombo);
             Controls.Add(cancelBtn);
             Controls.Add(saveBtn);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "AddPatientForm";
             Text = "AddPatientForm";
-            Load += AddPatientForm_Load;
             headerPanel1.ResumeLayout(false);
             headerPanel1.PerformLayout();
             ResumeLayout(false);

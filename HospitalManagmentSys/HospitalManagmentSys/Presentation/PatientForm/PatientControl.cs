@@ -1,19 +1,26 @@
-﻿using Guna.UI2.WinForms;
-using HospitalManagmentSys.Data.Models;
+﻿using HospitalManagmentSys.Data.Models;
 using HospitalManagmentSys.Presentation.ProfilePatient;
 using HospitalManagmentSys.Presentation.UserControls;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
-using TheArtOfDevHtmlRenderer.Adapters;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace HospitalManagmentSys.Presentation
+namespace HospitalManagmentSys.Presentation.Controls.Sidebar
 {
-    public partial class PatientsForm : Form
+    public partial class PatientControl : UserControl
     {
+        public PatientControl()
+        {
+            InitializeComponent();
+            LoadPatients();
+        }
+
         private readonly Color[] avatarColors =
         {
             Color.FromArgb(59, 130, 246),
@@ -23,13 +30,7 @@ namespace HospitalManagmentSys.Presentation
             Color.FromArgb(20, 184, 166),
         };
         private List<Patient> allPatients = new List<Patient>();
-        public PatientsForm()
-        {
-            InitializeComponent();
-            LoadPatients();
 
-
-        }
         private void LoadPatients()
         {
             //Load Patients from DB هنعمله هنا
@@ -106,15 +107,9 @@ namespace HospitalManagmentSys.Presentation
             contentPanel.Controls.Add(header);
         }
 
-        private void searchBox_TextChanged(object sender, EventArgs e)
-        {
-            ApplyFilters();
-        }
 
-        private void filterCombo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            ApplyFilters();
-        }
+
+      
 
         private void ApplyFilters()
         {
@@ -143,10 +138,28 @@ namespace HospitalManagmentSys.Presentation
             RenderPatients(result.ToList());
         }
 
+
+
+
+
+
+
         private void AddPatientBtn_Click(object sender, EventArgs e)
         {
             var form = new AddPatientForm();
             form.ShowDialog();
+        }
+
+        private void searchBox_TextChanged_1(object sender, EventArgs e)
+        {
+            ApplyFilters();
+
+        }
+
+        private void guna2ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ApplyFilters();
+
         }
     }
 }

@@ -355,14 +355,7 @@
             flpList.TabIndex = 3;
             flpList.WrapContents = false;
             flpList.Paint += flpList_Paint;
-            // 
-            // card3
-            // 
-            card3.Location = new Point(0, 340);
-            card3.Margin = new Padding(0, 0, 0, 16);
-            card3.Name = "card3";
-            card3.Size = new Size(980, 150);
-            card3.TabIndex = 2;
+        
             // 
             // AppointmentsView
             // 

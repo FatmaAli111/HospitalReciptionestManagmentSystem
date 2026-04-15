@@ -30,27 +30,25 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            headerPanel = new Guna2Panel();
-            avatarLabel = new Guna2CircleButton();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             nameLabel = new Guna2HtmlLabel();
             metaLabel = new Guna2HtmlLabel();
             cardsPanel = new Guna2Panel();
@@ -72,41 +70,16 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             footerPanel = new Guna2Panel();
             closeBtn = new Guna2Button();
             bookBtn = new Guna2Button();
-            headerPanel.SuspendLayout();
+            avatarLabel = new Guna2CircleButton();
+            headerPanel = new Guna2Panel();
             cardsPanel.SuspendLayout();
             ageCard.SuspendLayout();
             bloodCard.SuspendLayout();
             appointmentsCard.SuspendLayout();
             contactPanel.SuspendLayout();
             footerPanel.SuspendLayout();
+            headerPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // headerPanel
-            // 
-            headerPanel.Controls.Add(avatarLabel);
-            headerPanel.Controls.Add(nameLabel);
-            headerPanel.Controls.Add(metaLabel);
-            headerPanel.CustomizableEdges = customizableEdges2;
-            headerPanel.Dock = DockStyle.Top;
-            headerPanel.FillColor = Color.White;
-            headerPanel.Location = new Point(0, 0);
-            headerPanel.Name = "headerPanel";
-            headerPanel.Padding = new Padding(24, 0, 24, 0);
-            headerPanel.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            headerPanel.Size = new Size(594, 90);
-            headerPanel.TabIndex = 0;
-            // 
-            // avatarLabel
-            // 
-            avatarLabel.FillColor = Color.FromArgb(59, 130, 246);
-            avatarLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            avatarLabel.ForeColor = Color.White;
-            avatarLabel.Location = new Point(24, 17);
-            avatarLabel.Name = "avatarLabel";
-            avatarLabel.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            avatarLabel.Size = new Size(56, 56);
-            avatarLabel.TabIndex = 0;
-            avatarLabel.TabStop = false;
             // 
             // nameLabel
             // 
@@ -135,14 +108,14 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             cardsPanel.Controls.Add(ageCard);
             cardsPanel.Controls.Add(bloodCard);
             cardsPanel.Controls.Add(appointmentsCard);
-            cardsPanel.CustomizableEdges = customizableEdges10;
+            cardsPanel.CustomizableEdges = customizableEdges7;
             cardsPanel.Dock = DockStyle.Top;
             cardsPanel.FillColor = Color.FromArgb(243, 244, 246);
             cardsPanel.Location = new Point(0, 90);
             cardsPanel.Name = "cardsPanel";
             cardsPanel.Padding = new Padding(24, 16, 24, 16);
-            cardsPanel.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            cardsPanel.Size = new Size(594, 142);
+            cardsPanel.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            cardsPanel.Size = new Size(565, 142);
             cardsPanel.TabIndex = 1;
             // 
             // ageCard
@@ -153,11 +126,11 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             ageCard.Controls.Add(ageTitleLabel);
             ageCard.Controls.Add(ageValueLabel);
             ageCard.Controls.Add(dobLabel);
-            ageCard.CustomizableEdges = customizableEdges4;
+            ageCard.CustomizableEdges = customizableEdges1;
             ageCard.FillColor = Color.White;
             ageCard.Location = new Point(24, 16);
             ageCard.Name = "ageCard";
-            ageCard.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            ageCard.ShadowDecoration.CustomizableEdges = customizableEdges2;
             ageCard.Size = new Size(162, 110);
             ageCard.TabIndex = 0;
             // 
@@ -201,11 +174,11 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             bloodCard.BorderThickness = 1;
             bloodCard.Controls.Add(bloodTitleLabel);
             bloodCard.Controls.Add(bloodValueLabel);
-            bloodCard.CustomizableEdges = customizableEdges6;
+            bloodCard.CustomizableEdges = customizableEdges3;
             bloodCard.FillColor = Color.White;
             bloodCard.Location = new Point(202, 16);
             bloodCard.Name = "bloodCard";
-            bloodCard.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            bloodCard.ShadowDecoration.CustomizableEdges = customizableEdges4;
             bloodCard.Size = new Size(162, 110);
             bloodCard.TabIndex = 1;
             // 
@@ -239,11 +212,11 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             appointmentsCard.Controls.Add(appointmentsTitleLabel);
             appointmentsCard.Controls.Add(appointmentsValueLabel);
             appointmentsCard.Controls.Add(noShowLabel);
-            appointmentsCard.CustomizableEdges = customizableEdges8;
+            appointmentsCard.CustomizableEdges = customizableEdges5;
             appointmentsCard.FillColor = Color.White;
             appointmentsCard.Location = new Point(380, 16);
             appointmentsCard.Name = "appointmentsCard";
-            appointmentsCard.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            appointmentsCard.ShadowDecoration.CustomizableEdges = customizableEdges6;
             appointmentsCard.Size = new Size(162, 110);
             appointmentsCard.TabIndex = 2;
             // 
@@ -285,14 +258,14 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             contactPanel.Controls.Add(contactTitleLabel);
             contactPanel.Controls.Add(phoneLabel);
             contactPanel.Controls.Add(emailLabel);
-            contactPanel.CustomizableEdges = customizableEdges12;
+            contactPanel.CustomizableEdges = customizableEdges9;
             contactPanel.Dock = DockStyle.Top;
             contactPanel.FillColor = Color.White;
             contactPanel.Location = new Point(0, 232);
             contactPanel.Name = "contactPanel";
             contactPanel.Padding = new Padding(24, 16, 24, 16);
-            contactPanel.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            contactPanel.Size = new Size(594, 100);
+            contactPanel.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            contactPanel.Size = new Size(565, 100);
             contactPanel.TabIndex = 2;
             // 
             // contactTitleLabel
@@ -332,14 +305,14 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             // 
             footerPanel.Controls.Add(closeBtn);
             footerPanel.Controls.Add(bookBtn);
-            footerPanel.CustomizableEdges = customizableEdges18;
+            footerPanel.CustomizableEdges = customizableEdges15;
             footerPanel.Dock = DockStyle.Bottom;
             footerPanel.FillColor = Color.White;
             footerPanel.Location = new Point(0, 392);
             footerPanel.Name = "footerPanel";
             footerPanel.Padding = new Padding(24, 0, 24, 0);
-            footerPanel.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            footerPanel.Size = new Size(594, 68);
+            footerPanel.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            footerPanel.Size = new Size(565, 68);
             footerPanel.TabIndex = 3;
             // 
             // closeBtn
@@ -348,13 +321,13 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             closeBtn.BorderRadius = 8;
             closeBtn.BorderThickness = 1;
             closeBtn.Cursor = Cursors.Hand;
-            closeBtn.CustomizableEdges = customizableEdges14;
+            closeBtn.CustomizableEdges = customizableEdges11;
             closeBtn.FillColor = Color.White;
             closeBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             closeBtn.ForeColor = Color.FromArgb(107, 114, 128);
             closeBtn.Location = new Point(24, 14);
             closeBtn.Name = "closeBtn";
-            closeBtn.ShadowDecoration.CustomizableEdges = customizableEdges15;
+            closeBtn.ShadowDecoration.CustomizableEdges = customizableEdges12;
             closeBtn.Size = new Size(120, 40);
             closeBtn.TabIndex = 0;
             closeBtn.Text = "Close";
@@ -365,23 +338,53 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             bookBtn.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             bookBtn.BorderRadius = 8;
             bookBtn.Cursor = Cursors.Hand;
-            bookBtn.CustomizableEdges = customizableEdges16;
+            bookBtn.CustomizableEdges = customizableEdges13;
             bookBtn.FillColor = Color.FromArgb(59, 130, 246);
             bookBtn.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             bookBtn.ForeColor = Color.White;
-            bookBtn.Location = new Point(384, 14);
+            bookBtn.Location = new Point(355, 14);
             bookBtn.Name = "bookBtn";
-            bookBtn.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            bookBtn.ShadowDecoration.CustomizableEdges = customizableEdges14;
             bookBtn.Size = new Size(186, 40);
             bookBtn.TabIndex = 1;
             bookBtn.Text = "Book Appointment";
+            bookBtn.Click += bookBtn_Click;
+            // 
+            // avatarLabel
+            // 
+            avatarLabel.FillColor = Color.FromArgb(59, 130, 246);
+            avatarLabel.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            avatarLabel.ForeColor = Color.White;
+            avatarLabel.Location = new Point(24, 17);
+            avatarLabel.Name = "avatarLabel";
+            avatarLabel.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            avatarLabel.Size = new Size(56, 56);
+            avatarLabel.TabIndex = 0;
+            avatarLabel.TabStop = false;
+            avatarLabel.Click += avatarLabel_Click;
+            // 
+            // headerPanel
+            // 
+            headerPanel.Controls.Add(avatarLabel);
+            headerPanel.Controls.Add(nameLabel);
+            headerPanel.Controls.Add(metaLabel);
+            headerPanel.CustomizableEdges = customizableEdges18;
+            headerPanel.Dock = DockStyle.Top;
+            headerPanel.FillColor = Color.White;
+            headerPanel.Location = new Point(0, 0);
+            headerPanel.Name = "headerPanel";
+            headerPanel.Padding = new Padding(24, 0, 24, 0);
+            headerPanel.ShadowDecoration.CustomizableEdges = customizableEdges19;
+            headerPanel.Size = new Size(565, 90);
+            headerPanel.TabIndex = 0;
+            headerPanel.Paint += headerPanel_Paint;
             // 
             // PatientDetailsForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(243, 244, 246);
-            ClientSize = new Size(594, 460);
+            ClientSize = new Size(565, 460);
             Controls.Add(footerPanel);
             Controls.Add(contactPanel);
             Controls.Add(cardsPanel);
@@ -393,8 +396,7 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             Name = "PatientDetailsForm";
             StartPosition = FormStartPosition.CenterParent;
             Text = "Patient Details";
-            headerPanel.ResumeLayout(false);
-            headerPanel.PerformLayout();
+            Load += PatientDetailsForm_Load;
             cardsPanel.ResumeLayout(false);
             ageCard.ResumeLayout(false);
             ageCard.PerformLayout();
@@ -405,13 +407,12 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
             contactPanel.ResumeLayout(false);
             contactPanel.PerformLayout();
             footerPanel.ResumeLayout(false);
+            headerPanel.ResumeLayout(false);
+            headerPanel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Guna2Panel headerPanel;
-        private Guna2CircleButton avatarLabel;
         private Guna2HtmlLabel nameLabel;
         private Guna2HtmlLabel metaLabel;
         private Guna2Panel cardsPanel;
@@ -433,5 +434,7 @@ namespace HospitalManagmentSys.Presentation.ProfilePatient
         private Guna2Panel footerPanel;
         private Guna2Button closeBtn;
         private Guna2Button bookBtn;
+        private Guna2CircleButton avatarLabel;
+        private Guna2Panel headerPanel;
     }
 }

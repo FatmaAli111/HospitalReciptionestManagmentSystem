@@ -1,30 +1,27 @@
 ﻿using Guna.UI2.WinForms;
 using HospitalManagmentSys.Data.Models;
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace HospitalManagmentSys.Presentation.PatientForm
+namespace HospitalManagmentSys.Presentation.UserControls
 {
     public partial class PatientRowControl : UserControl
     {
         public event EventHandler<Patient> OnPatientSelected;
         private Patient _patient;
-
-        public PatientRowControl(Patient patient, Color avatarColor)
+        public PatientRowControl()
         {
             InitializeComponent();
-            _patient = patient;
 
             this.Click += (s, e) => OnPatientSelected?.Invoke(this, _patient);
             foreach (Control ctrl in this.Controls)
                 ctrl.Click += (s, e) => OnPatientSelected?.Invoke(this, _patient);
-
-            UpdateUI(patient, avatarColor);
         }
 
-        private void UpdateUI(Patient patient, Color avatarColor)
+        public void SetData(Patient patient, Color avatarColor)
         {
+            _patient = patient;
+
             avatarLabel.Text = patient.Initials;
             avatarLabel.FillColor = avatarColor;
 

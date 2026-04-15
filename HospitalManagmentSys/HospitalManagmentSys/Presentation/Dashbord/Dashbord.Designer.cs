@@ -103,10 +103,10 @@
             PatientsWating.Controls.Add(PatientWaiting);
             PatientsWating.Controls.Add(PatientsWatingNow);
             PatientsWating.Controls.Add(panel11);
-            PatientsWating.Location = new Point(532, 10);
-            PatientsWating.Margin = new Padding(10);
+            PatientsWating.Location = new Point(605, 13);
+            PatientsWating.Margin = new Padding(11, 13, 11, 13);
             PatientsWating.Name = "PatientsWating";
-            PatientsWating.Size = new Size(154, 195);
+            PatientsWating.Size = new Size(176, 260);
             PatientsWating.TabIndex = 0;
             // 
             // PatientWaiting
@@ -114,9 +114,9 @@
             PatientWaiting.AutoSize = true;
             PatientWaiting.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PatientWaiting.ForeColor = Color.DarkGray;
-            PatientWaiting.Location = new Point(55, 73);
+            PatientWaiting.Location = new Point(63, 97);
             PatientWaiting.Name = "PatientWaiting";
-            PatientWaiting.Size = new Size(33, 37);
+            PatientWaiting.Size = new Size(40, 46);
             PatientWaiting.TabIndex = 2;
             PatientWaiting.Text = "5";
             // 
@@ -125,9 +125,9 @@
             PatientsWatingNow.AutoSize = true;
             PatientsWatingNow.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             PatientsWatingNow.ForeColor = Color.Black;
-            PatientsWatingNow.Location = new Point(8, 128);
+            PatientsWatingNow.Location = new Point(9, 171);
             PatientsWatingNow.Name = "PatientsWatingNow";
-            PatientsWatingNow.Size = new Size(124, 15);
+            PatientsWatingNow.Size = new Size(157, 20);
             PatientsWatingNow.TabIndex = 1;
             PatientsWatingNow.Text = "Patients Wating Now";
             // 
@@ -135,9 +135,10 @@
             // 
             panel11.BackColor = Color.White;
             panel11.BackgroundImage = (Image)resources.GetObject("panel11.BackgroundImage");
-            panel11.Location = new Point(59, 25);
+            panel11.Location = new Point(67, 33);
+            panel11.Margin = new Padding(3, 4, 3, 4);
             panel11.Name = "panel11";
-            panel11.Size = new Size(32, 30);
+            panel11.Size = new Size(37, 40);
             panel11.TabIndex = 0;
             // 
             // TPatients
@@ -147,10 +148,10 @@
             TPatients.Controls.Add(TPtient);
             TPatients.Controls.Add(panel8);
             TPatients.Controls.Add(TotalPatients);
-            TPatients.Location = new Point(10, 10);
-            TPatients.Margin = new Padding(10);
+            TPatients.Location = new Point(11, 13);
+            TPatients.Margin = new Padding(11, 13, 11, 13);
             TPatients.Name = "TPatients";
-            TPatients.Size = new Size(154, 195);
+            TPatients.Size = new Size(176, 260);
             TPatients.TabIndex = 0;
             // 
             // TPtient
@@ -158,18 +159,19 @@
             TPtient.AutoSize = true;
             TPtient.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TPtient.ForeColor = Color.DarkGray;
-            TPtient.Location = new Point(59, 73);
+            TPtient.Location = new Point(67, 97);
             TPtient.Name = "TPtient";
-            TPtient.Size = new Size(33, 37);
+            TPtient.Size = new Size(40, 46);
             TPtient.TabIndex = 2;
             TPtient.Text = "5";
             // 
             // panel8
             // 
             panel8.BackgroundImage = (Image)resources.GetObject("panel8.BackgroundImage");
-            panel8.Location = new Point(59, 25);
+            panel8.Location = new Point(67, 33);
+            panel8.Margin = new Padding(3, 4, 3, 4);
             panel8.Name = "panel8";
-            panel8.Size = new Size(33, 34);
+            panel8.Size = new Size(38, 45);
             panel8.TabIndex = 0;
             // 
             // TotalPatients
@@ -177,9 +179,9 @@
             TotalPatients.AutoSize = true;
             TotalPatients.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TotalPatients.ForeColor = Color.Black;
-            TotalPatients.Location = new Point(31, 128);
+            TotalPatients.Location = new Point(35, 171);
             TotalPatients.Name = "TotalPatients";
-            TotalPatients.Size = new Size(82, 15);
+            TotalPatients.Size = new Size(105, 20);
             TotalPatients.TabIndex = 1;
             TotalPatients.Text = "Total Patients";
             // 
@@ -190,20 +192,21 @@
             NoShow.Controls.Add(guna2Panel1);
             NoShow.Controls.Add(NoSH);
             NoShow.Controls.Add(label1);
-            NoShow.Location = new Point(358, 10);
-            NoShow.Margin = new Padding(10);
+            NoShow.Location = new Point(407, 13);
+            NoShow.Margin = new Padding(11, 13, 11, 13);
             NoShow.Name = "NoShow";
-            NoShow.Size = new Size(154, 195);
+            NoShow.Size = new Size(176, 260);
             NoShow.TabIndex = 0;
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackgroundImage = (Image)resources.GetObject("guna2Panel1.BackgroundImage");
             guna2Panel1.CustomizableEdges = customizableEdges1;
-            guna2Panel1.Location = new Point(59, 30);
+            guna2Panel1.Location = new Point(67, 40);
+            guna2Panel1.Margin = new Padding(3, 4, 3, 4);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel1.Size = new Size(30, 29);
+            guna2Panel1.Size = new Size(34, 39);
             guna2Panel1.TabIndex = 3;
             // 
             // NoSH
@@ -211,9 +214,9 @@
             NoSH.AutoSize = true;
             NoSH.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NoSH.ForeColor = Color.DarkGray;
-            NoSH.Location = new Point(59, 73);
+            NoSH.Location = new Point(67, 97);
             NoSH.Name = "NoSH";
-            NoSH.Size = new Size(33, 37);
+            NoSH.Size = new Size(40, 46);
             NoSH.TabIndex = 2;
             NoSH.Text = "5";
             // 
@@ -222,9 +225,9 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Black;
-            label1.Location = new Point(30, 128);
+            label1.Location = new Point(34, 171);
             label1.Name = "label1";
-            label1.Size = new Size(86, 15);
+            label1.Size = new Size(108, 20);
             label1.TabIndex = 1;
             label1.Text = "No Show Rate";
             // 
@@ -235,10 +238,10 @@
             TodayAppoin.Controls.Add(TAppoint);
             TodayAppoin.Controls.Add(TodaysAppointments);
             TodayAppoin.Controls.Add(panel7);
-            TodayAppoin.Location = new Point(184, 10);
-            TodayAppoin.Margin = new Padding(10);
+            TodayAppoin.Location = new Point(209, 13);
+            TodayAppoin.Margin = new Padding(11, 13, 11, 13);
             TodayAppoin.Name = "TodayAppoin";
-            TodayAppoin.Size = new Size(154, 195);
+            TodayAppoin.Size = new Size(176, 260);
             TodayAppoin.TabIndex = 0;
             // 
             // TAppoint
@@ -246,9 +249,9 @@
             TAppoint.AutoSize = true;
             TAppoint.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TAppoint.ForeColor = Color.DarkGray;
-            TAppoint.Location = new Point(60, 73);
+            TAppoint.Location = new Point(69, 97);
             TAppoint.Name = "TAppoint";
-            TAppoint.Size = new Size(33, 37);
+            TAppoint.Size = new Size(40, 46);
             TAppoint.TabIndex = 2;
             TAppoint.Text = "5";
             // 
@@ -257,18 +260,19 @@
             TodaysAppointments.AutoSize = true;
             TodaysAppointments.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TodaysAppointments.ForeColor = Color.Black;
-            TodaysAppointments.Location = new Point(12, 128);
+            TodaysAppointments.Location = new Point(14, 171);
             TodaysAppointments.Name = "TodaysAppointments";
-            TodaysAppointments.Size = new Size(129, 15);
+            TodaysAppointments.Size = new Size(167, 20);
             TodaysAppointments.TabIndex = 1;
             TodaysAppointments.Text = "Today’s Appointments";
             // 
             // panel7
             // 
             panel7.BackgroundImage = (Image)resources.GetObject("panel7.BackgroundImage");
-            panel7.Location = new Point(60, 30);
+            panel7.Location = new Point(69, 40);
+            panel7.Margin = new Padding(3, 4, 3, 4);
             panel7.Name = "panel7";
-            panel7.Size = new Size(37, 29);
+            panel7.Size = new Size(42, 39);
             panel7.TabIndex = 0;
             // 
             // label2
@@ -276,9 +280,9 @@
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(16, 13);
+            label2.Location = new Point(18, 17);
             label2.Name = "label2";
-            label2.Size = new Size(124, 32);
+            label2.Size = new Size(153, 41);
             label2.TabIndex = 1;
             label2.Text = "Dasboard";
             // 
@@ -288,9 +292,9 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DarkGray;
-            label3.Location = new Point(16, 45);
+            label3.Location = new Point(18, 60);
             label3.Name = "label3";
-            label3.Size = new Size(324, 20);
+            label3.Size = new Size(406, 25);
             label3.TabIndex = 2;
             label3.Text = "Welcome back! Here’s your hospital overview.";
             // 
@@ -300,9 +304,9 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Black;
-            label7.Location = new Point(704, 528);
+            label7.Location = new Point(754, 714);
             label7.Name = "label7";
-            label7.Size = new Size(140, 21);
+            label7.Size = new Size(175, 28);
             label7.TabIndex = 15;
             label7.Text = "Today’s Progress :";
             // 
@@ -318,10 +322,11 @@
             NewAppoint.FillColor = Color.FromArgb(0, 0, 192);
             NewAppoint.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NewAppoint.ForeColor = Color.White;
-            NewAppoint.Location = new Point(648, 14);
+            NewAppoint.Location = new Point(1107, 160);
+            NewAppoint.Margin = new Padding(3, 4, 3, 4);
             NewAppoint.Name = "NewAppoint";
             NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            NewAppoint.Size = new Size(153, 34);
+            NewAppoint.Size = new Size(175, 45);
             NewAppoint.TabIndex = 17;
             NewAppoint.Text = "New Appointment";
             NewAppoint.Click += NewAppoint_Click;
@@ -340,11 +345,12 @@
             ViewQueu.FillColor = SystemColors.ControlLight;
             ViewQueu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ViewQueu.ForeColor = SystemColors.InactiveCaptionText;
-            ViewQueu.Location = new Point(472, 14);
+            ViewQueu.Location = new Point(1105, 213);
+            ViewQueu.Margin = new Padding(3, 4, 3, 4);
             ViewQueu.Name = "ViewQueu";
             ViewQueu.RightToLeft = RightToLeft.No;
             ViewQueu.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            ViewQueu.Size = new Size(155, 34);
+            ViewQueu.Size = new Size(177, 45);
             ViewQueu.TabIndex = 18;
             ViewQueu.Text = "View Queue";
             ViewQueu.Click += ViewQueu_Click;
@@ -353,11 +359,10 @@
             // 
             header.Controls.Add(label2);
             header.Controls.Add(label3);
-            header.Controls.Add(ViewQueu);
-            header.Controls.Add(NewAppoint);
-            header.Location = new Point(275, 11);
+            header.Location = new Point(271, 13);
+            header.Margin = new Padding(3, 4, 3, 4);
             header.Name = "header";
-            header.Size = new Size(900, 93);
+            header.Size = new Size(1029, 124);
             header.TabIndex = 20;
             // 
             // flowLayoutPanel4
@@ -367,9 +372,10 @@
             flowLayoutPanel4.Controls.Add(TodayAppoin);
             flowLayoutPanel4.Controls.Add(NoShow);
             flowLayoutPanel4.Controls.Add(PatientsWating);
-            flowLayoutPanel4.Location = new Point(275, 135);
+            flowLayoutPanel4.Location = new Point(314, 180);
+            flowLayoutPanel4.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
-            flowLayoutPanel4.Size = new Size(696, 215);
+            flowLayoutPanel4.Size = new Size(795, 287);
             flowLayoutPanel4.TabIndex = 21;
             // 
             // label4
@@ -378,9 +384,9 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Black;
-            label4.Location = new Point(269, 512);
+            label4.Location = new Point(256, 693);
             label4.Name = "label4";
-            label4.Size = new Size(0, 21);
+            label4.Size = new Size(0, 28);
             label4.TabIndex = 25;
             label4.TextAlign = ContentAlignment.TopCenter;
             // 
@@ -390,9 +396,9 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.DarkGray;
-            label6.Location = new Point(346, 534);
+            label6.Location = new Point(344, 722);
             label6.Name = "label6";
-            label6.Size = new Size(0, 15);
+            label6.Size = new Size(0, 20);
             label6.TabIndex = 26;
             // 
             // label5
@@ -401,9 +407,9 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.Black;
-            label5.Location = new Point(825, 364);
+            label5.Location = new Point(892, 495);
             label5.Name = "label5";
-            label5.Size = new Size(0, 21);
+            label5.Size = new Size(0, 28);
             label5.TabIndex = 27;
             // 
             // DoctorName
@@ -412,9 +418,9 @@
             DoctorName.AutoSize = true;
             DoctorName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DoctorName.ForeColor = Color.LightSlateGray;
-            DoctorName.Location = new Point(1062, 364);
+            DoctorName.Location = new Point(1163, 495);
             DoctorName.Name = "DoctorName";
-            DoctorName.Size = new Size(0, 21);
+            DoctorName.Size = new Size(0, 28);
             DoctorName.TabIndex = 28;
             // 
             // label15
@@ -423,9 +429,9 @@
             label15.AutoSize = true;
             label15.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label15.ForeColor = Color.DarkGray;
-            label15.Location = new Point(891, 385);
+            label15.Location = new Point(967, 523);
             label15.Name = "label15";
-            label15.Size = new Size(0, 15);
+            label15.Size = new Size(0, 20);
             label15.TabIndex = 29;
             // 
             // Appointment
@@ -435,9 +441,9 @@
             Appointment.BackColor = SystemColors.Control;
             Appointment.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Appointment.ForeColor = Color.Black;
-            Appointment.Location = new Point(260, 364);
+            Appointment.Location = new Point(246, 495);
             Appointment.Name = "Appointment";
-            Appointment.Size = new Size(171, 21);
+            Appointment.Size = new Size(210, 28);
             Appointment.TabIndex = 30;
             Appointment.Text = "Today’Appointment :";
             // 
@@ -448,9 +454,10 @@
             completed.Controls.Add(panel14);
             completed.Controls.Add(label8);
             completed.ForeColor = SystemColors.GradientInactiveCaption;
-            completed.Location = new Point(40, 67);
+            completed.Location = new Point(46, 89);
+            completed.Margin = new Padding(3, 4, 3, 4);
             completed.Name = "completed";
-            completed.Size = new Size(126, 124);
+            completed.Size = new Size(144, 165);
             completed.TabIndex = 0;
             // 
             // label12
@@ -458,27 +465,28 @@
             label12.AutoSize = true;
             label12.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label12.ForeColor = Color.Black;
-            label12.Location = new Point(47, 44);
+            label12.Location = new Point(54, 59);
             label12.Name = "label12";
-            label12.Size = new Size(33, 37);
+            label12.Size = new Size(40, 46);
             label12.TabIndex = 3;
             label12.Text = "5";
             // 
             // panel14
             // 
             panel14.BackgroundImage = (Image)resources.GetObject("panel14.BackgroundImage");
-            panel14.Location = new Point(42, 17);
+            panel14.Location = new Point(48, 23);
+            panel14.Margin = new Padding(3, 4, 3, 4);
             panel14.Name = "panel14";
-            panel14.Size = new Size(33, 25);
+            panel14.Size = new Size(38, 33);
             panel14.TabIndex = 1;
             // 
             // label8
             // 
             label8.AutoSize = true;
             label8.ForeColor = Color.Gray;
-            label8.Location = new Point(31, 84);
+            label8.Location = new Point(35, 112);
             label8.Name = "label8";
-            label8.Size = new Size(66, 15);
+            label8.Size = new Size(83, 20);
             label8.TabIndex = 0;
             label8.Text = "Completed";
             // 
@@ -489,9 +497,10 @@
             nosho.Controls.Add(label10);
             nosho.Controls.Add(panel16);
             nosho.ForeColor = SystemColors.InactiveCaption;
-            nosho.Location = new Point(311, 67);
+            nosho.Location = new Point(355, 89);
+            nosho.Margin = new Padding(3, 4, 3, 4);
             nosho.Name = "nosho";
-            nosho.Size = new Size(126, 124);
+            nosho.Size = new Size(144, 165);
             nosho.TabIndex = 1;
             // 
             // label14
@@ -499,9 +508,9 @@
             label14.AutoSize = true;
             label14.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label14.ForeColor = Color.Black;
-            label14.Location = new Point(47, 44);
+            label14.Location = new Point(54, 59);
             label14.Name = "label14";
-            label14.Size = new Size(33, 37);
+            label14.Size = new Size(40, 46);
             label14.TabIndex = 3;
             label14.Text = "5";
             // 
@@ -509,18 +518,19 @@
             // 
             label10.AutoSize = true;
             label10.ForeColor = Color.Gray;
-            label10.Location = new Point(40, 84);
+            label10.Location = new Point(46, 112);
             label10.Name = "label10";
-            label10.Size = new Size(55, 15);
+            label10.Size = new Size(69, 20);
             label10.TabIndex = 0;
             label10.Text = "No Show";
             // 
             // panel16
             // 
             panel16.BackgroundImage = (Image)resources.GetObject("panel16.BackgroundImage");
-            panel16.Location = new Point(47, 14);
+            panel16.Location = new Point(54, 19);
+            panel16.Margin = new Padding(3, 4, 3, 4);
             panel16.Name = "panel16";
-            panel16.Size = new Size(30, 30);
+            panel16.Size = new Size(34, 40);
             panel16.TabIndex = 2;
             // 
             // waiting
@@ -530,9 +540,10 @@
             waiting.Controls.Add(label9);
             waiting.Controls.Add(panel15);
             waiting.ForeColor = SystemColors.GradientActiveCaption;
-            waiting.Location = new Point(176, 67);
+            waiting.Location = new Point(201, 89);
+            waiting.Margin = new Padding(3, 4, 3, 4);
             waiting.Name = "waiting";
-            waiting.Size = new Size(126, 124);
+            waiting.Size = new Size(144, 165);
             waiting.TabIndex = 2;
             // 
             // label13
@@ -540,9 +551,9 @@
             label13.AutoSize = true;
             label13.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label13.ForeColor = Color.Black;
-            label13.Location = new Point(47, 44);
+            label13.Location = new Point(54, 59);
             label13.Name = "label13";
-            label13.Size = new Size(33, 37);
+            label13.Size = new Size(40, 46);
             label13.TabIndex = 3;
             label13.Text = "5";
             // 
@@ -550,18 +561,19 @@
             // 
             label9.AutoSize = true;
             label9.ForeColor = Color.Gray;
-            label9.Location = new Point(35, 84);
+            label9.Location = new Point(40, 112);
             label9.Name = "label9";
-            label9.Size = new Size(48, 15);
+            label9.Size = new Size(60, 20);
             label9.TabIndex = 0;
             label9.Text = "Waiting";
             // 
             // panel15
             // 
             panel15.BackgroundImage = (Image)resources.GetObject("panel15.BackgroundImage");
-            panel15.Location = new Point(45, 14);
+            panel15.Location = new Point(51, 19);
+            panel15.Margin = new Padding(3, 4, 3, 4);
             panel15.Name = "panel15";
-            panel15.Size = new Size(28, 28);
+            panel15.Size = new Size(32, 37);
             panel15.TabIndex = 2;
             // 
             // label11
@@ -569,9 +581,9 @@
             label11.AutoSize = true;
             label11.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label11.ForeColor = Color.Black;
-            label11.Location = new Point(28, 11);
+            label11.Location = new Point(32, 15);
             label11.Name = "label11";
-            label11.Size = new Size(68, 15);
+            label11.Size = new Size(85, 20);
             label11.TabIndex = 3;
             label11.Text = "Completed";
             // 
@@ -580,12 +592,13 @@
             prgUrgency.BorderRadius = 4;
             prgUrgency.CustomizableEdges = customizableEdges7;
             prgUrgency.FillColor = Color.FromArgb(229, 231, 235);
-            prgUrgency.Location = new Point(38, 39);
+            prgUrgency.Location = new Point(43, 52);
+            prgUrgency.Margin = new Padding(3, 4, 3, 4);
             prgUrgency.Name = "prgUrgency";
             prgUrgency.ProgressColor = Color.FromArgb(245, 158, 11);
             prgUrgency.ProgressColor2 = Color.FromArgb(245, 158, 11);
             prgUrgency.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            prgUrgency.Size = new Size(340, 8);
+            prgUrgency.Size = new Size(389, 11);
             prgUrgency.TabIndex = 8;
             prgUrgency.Text = "guna2ProgressBar1";
             prgUrgency.TextRenderingHint = System.Drawing.Text.TextRenderingHint.SystemDefault;
@@ -601,9 +614,10 @@
             progress.Controls.Add(nosho);
             progress.Controls.Add(completed);
             progress.ForeColor = SystemColors.Control;
-            progress.Location = new Point(715, 563);
+            progress.Location = new Point(817, 751);
+            progress.Margin = new Padding(3, 4, 3, 4);
             progress.Name = "progress";
-            progress.Size = new Size(464, 202);
+            progress.Size = new Size(530, 269);
             progress.TabIndex = 16;
             // 
             // sqlCommand1
@@ -613,13 +627,15 @@
             // 
             // Dashbord
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             AutoSize = true;
-            ClientSize = new Size(1187, 749);
+            ClientSize = new Size(1357, 999);
             Controls.Add(Appointment);
             Controls.Add(label15);
+            Controls.Add(NewAppoint);
+            Controls.Add(ViewQueu);
             Controls.Add(DoctorName);
             Controls.Add(label5);
             Controls.Add(label6);
@@ -628,7 +644,8 @@
             Controls.Add(header);
             Controls.Add(progress);
             Controls.Add(label7);
-            MinimumSize = new Size(500, 500);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(569, 651);
             Name = "Dashbord";
             Text = "Dashbord";
             WindowState = FormWindowState.Maximized;

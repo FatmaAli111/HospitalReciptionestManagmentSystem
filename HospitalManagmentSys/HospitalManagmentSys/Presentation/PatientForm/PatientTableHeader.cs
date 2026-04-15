@@ -3,7 +3,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using Guna.UI2.WinForms;
 
-namespace HospitalManagmentSys.Presentation.PatientForm
+namespace HospitalManagmentSys.Presentation.UserControls
 {
     public partial class PatientTableHeader : UserControl
     {

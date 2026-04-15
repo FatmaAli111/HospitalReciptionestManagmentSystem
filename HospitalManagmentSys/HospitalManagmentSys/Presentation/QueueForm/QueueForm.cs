@@ -1,3 +1,5 @@
+using HospitalManagmentSys.Presentation.Controls.Sidebar;
+
 namespace HospitalManagmentSys.Presentation
 {
     public partial class QueueForm : Form

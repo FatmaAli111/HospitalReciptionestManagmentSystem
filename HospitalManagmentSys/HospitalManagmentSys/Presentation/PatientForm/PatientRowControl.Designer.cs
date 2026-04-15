@@ -1,6 +1,6 @@
 ﻿using Guna.UI2.WinForms;
 
-namespace HospitalManagmentSys.Presentation.PatientForm
+namespace HospitalManagmentSys.Presentation.UserControls
 {
     partial class PatientRowControl
     {

@@ -5,6 +5,7 @@ using HospitalManagmentSys.BiussnessLogic;
 using HospitalManagmentSys.Presentation;
 using HospitalManagmentSys.Presentation.ProfilePatient;
 using WinFormsApp;
+using HospitalManagmentSys.Presentation.Controls.Sidebar;
 
 namespace HospitalManagmentSys
 {
@@ -20,8 +21,11 @@ namespace HospitalManagmentSys
             // see https://aka.ms/applicationconfiguration.
 
             ApplicationConfiguration.Initialize();
-            
-            Application.Run(new PatientsForm());
+
+            //Application.Run(new PatientsForm());
+            Application.Run(new MainPage());
+            //Application.Run(new A());
+            //Application.Run(new Dashbord());
         }
     }
 }

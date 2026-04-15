@@ -65,97 +65,7 @@ namespace HospitalManagmentSys.Migrations
 
                     b.HasIndex("TimeSlotId");
 
-                    b.ToTable("Appointments", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DoctorId = 1,
-                            PatientId = 1,
-                            PriorityScore = 7.5,
-                            QueueOrder = 1,
-                            Status = "Confirmed",
-                            TimeSlotId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DoctorId = 1,
-                            PatientId = 2,
-                            PriorityScore = 9.0,
-                            QueueOrder = 2,
-                            Status = "Confirmed",
-                            TimeSlotId = 1
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DoctorId = 1,
-                            PatientId = 3,
-                            PriorityScore = 5.0,
-                            QueueOrder = 3,
-                            Status = "Completed",
-                            TimeSlotId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DoctorId = 2,
-                            PatientId = 4,
-                            PriorityScore = 6.5,
-                            QueueOrder = 1,
-                            Status = "Pending",
-                            TimeSlotId = 3
-                        },
-                        new
-                        {
-                            Id = 5,
-                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DoctorId = 2,
-                            PatientId = 5,
-                            PriorityScore = 8.0,
-                            QueueOrder = 2,
-                            Status = "Cancelled",
-                            TimeSlotId = 4
-                        },
-                        new
-                        {
-                            Id = 6,
-                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DoctorId = 3,
-                            PatientId = 6,
-                            PriorityScore = 4.5,
-                            QueueOrder = 1,
-                            Status = "Pending",
-                            TimeSlotId = 5
-                        },
-                        new
-                        {
-                            Id = 7,
-                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DoctorId = 4,
-                            PatientId = 7,
-                            PriorityScore = 7.0,
-                            QueueOrder = 1,
-                            Status = "Completed",
-                            TimeSlotId = 7
-                        },
-                        new
-                        {
-                            Id = 8,
-                            AppointmentDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DoctorId = 5,
-                            PatientId = 8,
-                            PriorityScore = 8.5,
-                            QueueOrder = 1,
-                            Status = "Cancelled",
-                            TimeSlotId = 8
-                        });
+                    b.ToTable("Appointments");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Attendance", b =>
@@ -187,45 +97,7 @@ namespace HospitalManagmentSys.Migrations
                     b.HasIndex("AppointmentID")
                         .IsUnique();
 
-                    b.ToTable("Attendances", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AppointmentID = 3,
-                            ArriveTime = new DateTime(2025, 6, 10, 8, 55, 0, 0, DateTimeKind.Unspecified),
-                            CheckInTime = new DateTime(2025, 6, 10, 9, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutTime = new DateTime(2025, 6, 10, 9, 25, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Present"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AppointmentID = 7,
-                            ArriveTime = new DateTime(2025, 6, 12, 9, 50, 0, 0, DateTimeKind.Unspecified),
-                            CheckInTime = new DateTime(2025, 6, 12, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutTime = new DateTime(2025, 6, 12, 10, 28, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Present"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AppointmentID = 1,
-                            ArriveTime = new DateTime(2025, 6, 10, 9, 40, 0, 0, DateTimeKind.Unspecified),
-                            CheckInTime = new DateTime(2025, 6, 10, 9, 30, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutTime = new DateTime(2025, 6, 10, 9, 55, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Late"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AppointmentID = 5,
-                            ArriveTime = new DateTime(2025, 6, 10, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckInTime = new DateTime(2025, 6, 10, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            CheckOutTime = new DateTime(2025, 6, 10, 11, 0, 0, 0, DateTimeKind.Unspecified),
-                            Status = "Absent"
-                        });
+                    b.ToTable("Attendances");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Department", b =>
@@ -243,34 +115,7 @@ namespace HospitalManagmentSys.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Departments", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Cardiology"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Neurology"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Orthopedics"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Pediatrics"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Dermatology"
-                        });
+                    b.ToTable("Departments");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Doctor", b =>
@@ -299,44 +144,7 @@ namespace HospitalManagmentSys.Migrations
                     b.HasIndex("UserId")
                         .IsUnique();
 
-                    b.ToTable("Doctors", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DepartmentId = 1,
-                            Specialty = "Interventional Cardiology",
-                            UserId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DepartmentId = 2,
-                            Specialty = "Clinical Neurology",
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            DepartmentId = 3,
-                            Specialty = "Spine Surgery",
-                            UserId = 3
-                        },
-                        new
-                        {
-                            Id = 4,
-                            DepartmentId = 4,
-                            Specialty = "Neonatology",
-                            UserId = 4
-                        },
-                        new
-                        {
-                            Id = 5,
-                            DepartmentId = 5,
-                            Specialty = "Cosmetic Dermatology",
-                            UserId = 5
-                        });
+                    b.ToTable("Doctors");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Patient", b =>
@@ -398,121 +206,7 @@ namespace HospitalManagmentSys.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Patients", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AttendanceRate = 100.0,
-                            BloodType = "A_Positive",
-                            CreatedAt = new DateTime(2024, 3, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(1990, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "mohamed.ali@gmail.com",
-                            FullName = "Mohamed Ali",
-                            Gender = "Male",
-                            MedicalUrgency = "Medium",
-                            NoShowCount = 0,
-                            Phone = "01111234567"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            AttendanceRate = 80.0,
-                            BloodType = "B_Negative",
-                            CreatedAt = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(1985, 8, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "fatma.ibrahim@gmail.com",
-                            FullName = "Fatma Ibrahim",
-                            Gender = "Female",
-                            MedicalUrgency = "High",
-                            NoShowCount = 1,
-                            Phone = "01122345678"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            AttendanceRate = 65.0,
-                            BloodType = "O_Positive",
-                            CreatedAt = new DateTime(2024, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(1978, 12, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "khaled.mostafa@gmail.com",
-                            FullName = "Khaled Mostafa",
-                            Gender = "Male",
-                            MedicalUrgency = "Low",
-                            NoShowCount = 2,
-                            Phone = "01133456789"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            AttendanceRate = 100.0,
-                            BloodType = "AB_Positive",
-                            CreatedAt = new DateTime(2024, 3, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(2000, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "amira.samir@gmail.com",
-                            FullName = "Amira Samir",
-                            Gender = "Female",
-                            MedicalUrgency = "Medium",
-                            NoShowCount = 0,
-                            Phone = "01144567890"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            AttendanceRate = 50.0,
-                            BloodType = "O_Negative",
-                            CreatedAt = new DateTime(2024, 3, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(1995, 7, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "youssef.nabil@gmail.com",
-                            FullName = "Youssef Nabil",
-                            Gender = "Male",
-                            MedicalUrgency = "High",
-                            NoShowCount = 3,
-                            Phone = "01155678901"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            AttendanceRate = 75.0,
-                            BloodType = "A_Negative",
-                            CreatedAt = new DateTime(2024, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(1992, 11, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "rania.hassan@gmail.com",
-                            FullName = "Rania Hassan",
-                            Gender = "Female",
-                            MedicalUrgency = "Low",
-                            NoShowCount = 1,
-                            Phone = "01166789012"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            AttendanceRate = 90.0,
-                            BloodType = "B_Positive",
-                            CreatedAt = new DateTime(2024, 4, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(1970, 2, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "tarek.adel@gmail.com",
-                            FullName = "Tarek Adel",
-                            Gender = "Male",
-                            MedicalUrgency = "Medium",
-                            NoShowCount = 0,
-                            Phone = "01177890123"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            AttendanceRate = 95.0,
-                            BloodType = "AB_Negative",
-                            CreatedAt = new DateTime(2024, 4, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(1988, 6, 14, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "dina.walid@gmail.com",
-                            FullName = "Dina Walid",
-                            Gender = "Female",
-                            MedicalUrgency = "High",
-                            NoShowCount = 0,
-                            Phone = "01188901234"
-                        });
+                    b.ToTable("Patients");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.TimeSlot", b =>
@@ -552,97 +246,7 @@ namespace HospitalManagmentSys.Migrations
 
                     b.HasIndex("DoctorId");
 
-                    b.ToTable("TimeSlots", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            BookedCount = 3,
-                            DoctorId = 1,
-                            EndTime = new TimeSpan(0, 9, 30, 0, 0),
-                            IsAvailable = true,
-                            MaxCapacity = 5,
-                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 9, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            BookedCount = 5,
-                            DoctorId = 1,
-                            EndTime = new TimeSpan(0, 10, 30, 0, 0),
-                            IsAvailable = false,
-                            MaxCapacity = 5,
-                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 10, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            BookedCount = 2,
-                            DoctorId = 2,
-                            EndTime = new TimeSpan(0, 9, 30, 0, 0),
-                            IsAvailable = true,
-                            MaxCapacity = 4,
-                            SlotDate = new DateTime(2026, 6, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 9, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            BookedCount = 4,
-                            DoctorId = 2,
-                            EndTime = new TimeSpan(0, 11, 30, 0, 0),
-                            IsAvailable = false,
-                            MaxCapacity = 4,
-                            SlotDate = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 11, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            BookedCount = 1,
-                            DoctorId = 3,
-                            EndTime = new TimeSpan(0, 8, 30, 0, 0),
-                            IsAvailable = true,
-                            MaxCapacity = 3,
-                            SlotDate = new DateTime(2026, 6, 11, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 8, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 6,
-                            BookedCount = 0,
-                            DoctorId = 3,
-                            EndTime = new TimeSpan(0, 14, 30, 0, 0),
-                            IsAvailable = true,
-                            MaxCapacity = 3,
-                            SlotDate = new DateTime(2026, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 14, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 7,
-                            BookedCount = 3,
-                            DoctorId = 4,
-                            EndTime = new TimeSpan(0, 10, 30, 0, 0),
-                            IsAvailable = true,
-                            MaxCapacity = 6,
-                            SlotDate = new DateTime(2026, 6, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 10, 0, 0, 0)
-                        },
-                        new
-                        {
-                            Id = 8,
-                            BookedCount = 2,
-                            DoctorId = 5,
-                            EndTime = new TimeSpan(0, 13, 30, 0, 0),
-                            IsAvailable = true,
-                            MaxCapacity = 5,
-                            SlotDate = new DateTime(2026, 6, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            StartTime = new TimeSpan(0, 13, 0, 0, 0)
-                        });
+                    b.ToTable("TimeSlots");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.User", b =>
@@ -690,86 +294,7 @@ namespace HospitalManagmentSys.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Users", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2024, 1, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "ahmed.hassan@hospital.com",
-                            IsActive = true,
-                            Name = "Dr. Ahmed Hassan",
-                            PasswordHash = "hashed_pw_1",
-                            Phone = "01001234567",
-                            Role = 2
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2024, 1, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "sara.mahmoud@hospital.com",
-                            IsActive = true,
-                            Name = "Dr. Sara Mahmoud",
-                            PasswordHash = "hashed_pw_2",
-                            Phone = "01012345678",
-                            Role = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2024, 2, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "omar.youssef@hospital.com",
-                            IsActive = true,
-                            Name = "Dr. Omar Youssef",
-                            PasswordHash = "hashed_pw_3",
-                            Phone = "01023456789",
-                            Role = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(2024, 2, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "nour.eldin@hospital.com",
-                            IsActive = true,
-                            Name = "Dr. Nour ElDin",
-                            PasswordHash = "hashed_pw_4",
-                            Phone = "01034567890",
-                            Role = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedAt = new DateTime(2024, 3, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "hana.fathy@hospital.com",
-                            IsActive = true,
-                            Name = "Dr. Hana Fathy",
-                            PasswordHash = "hashed_pw_5",
-                            Phone = "01045678901",
-                            Role = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedAt = new DateTime(2024, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "admin@hospital.com",
-                            IsActive = true,
-                            Name = "Admin User",
-                            PasswordHash = "hashed_pw_6",
-                            Phone = "01056789012",
-                            Role = 1
-                        },
-                        new
-                        {
-                            Id = 7,
-                            CreatedAt = new DateTime(2024, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "mona.kamel@hospital.com",
-                            IsActive = true,
-                            Name = "Mona Kamel",
-                            PasswordHash = "hashed_pw_7",
-                            Phone = "01067890123",
-                            Role = 3
-                        });
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.UserRequest", b =>
@@ -825,7 +350,7 @@ namespace HospitalManagmentSys.Migrations
                         .IsUnique()
                         .HasFilter("[UserID] IS NOT NULL");
 
-                    b.ToTable("UserRequests", (string)null);
+                    b.ToTable("UserRequests");
                 });
 
             modelBuilder.Entity("HospitalManagmentSys.Data.Models.Appointment", b =>

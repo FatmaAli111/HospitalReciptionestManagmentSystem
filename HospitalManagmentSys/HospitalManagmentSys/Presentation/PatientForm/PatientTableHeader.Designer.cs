@@ -1,4 +1,4 @@
-﻿namespace HospitalManagmentSys.Presentation.PatientForm
+﻿namespace HospitalManagmentSys.Presentation.UserControls
 {
     partial class PatientTableHeader
     {
