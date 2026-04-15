@@ -322,7 +322,7 @@
             NewAppoint.FillColor = Color.FromArgb(0, 0, 192);
             NewAppoint.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NewAppoint.ForeColor = Color.White;
-            NewAppoint.Location = new Point(1107, 160);
+            NewAppoint.Location = new Point(841, 13);
             NewAppoint.Margin = new Padding(3, 4, 3, 4);
             NewAppoint.Name = "NewAppoint";
             NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges4;
@@ -345,7 +345,7 @@
             ViewQueu.FillColor = SystemColors.ControlLight;
             ViewQueu.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ViewQueu.ForeColor = SystemColors.InactiveCaptionText;
-            ViewQueu.Location = new Point(1105, 213);
+            ViewQueu.Location = new Point(621, 13);
             ViewQueu.Margin = new Padding(3, 4, 3, 4);
             ViewQueu.Name = "ViewQueu";
             ViewQueu.RightToLeft = RightToLeft.No;
@@ -359,6 +359,8 @@
             // 
             header.Controls.Add(label2);
             header.Controls.Add(label3);
+            header.Controls.Add(ViewQueu);
+            header.Controls.Add(NewAppoint);
             header.Location = new Point(271, 13);
             header.Margin = new Padding(3, 4, 3, 4);
             header.Name = "header";
@@ -634,8 +636,6 @@
             ClientSize = new Size(1357, 999);
             Controls.Add(Appointment);
             Controls.Add(label15);
-            Controls.Add(NewAppoint);
-            Controls.Add(ViewQueu);
             Controls.Add(DoctorName);
             Controls.Add(label5);
             Controls.Add(label6);

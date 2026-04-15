@@ -30,44 +30,63 @@ namespace HospitalManagmentSys.Presentation.Dashbord
 
         private void SetupFormLayout()
         {
-           
 
-            this.Controls.Clear();
 
+            // Don't clear designer controls - InitializeComponent already builds the visual layout
+            // Create a dedicated MainContainer panel under the designer KPI panel so designer controls remain visible
             MainContainer = new Panel
             {
-                Dock = DockStyle.Fill,
-                AutoScroll = true
+                AutoScroll = true,
+                BorderStyle = BorderStyle.None
             };
-            this.Controls.Add(MainContainer);
 
+            // position MainContainer under the KPI panel created by the designer (flowLayoutPanel4)
+            try
+            {
+                var x = flowLayoutPanel4.Location.X;
+                var y = flowLayoutPanel4.Location.Y + flowLayoutPanel4.Height + 10;
+                MainContainer.Location = new Point(x, y);
+                MainContainer.Size = new Size(this.ClientSize.Width - x - 18, Math.Max(200, this.ClientSize.Height - y - 18));
+                MainContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            }
+            catch
+            {
+                MainContainer.Location = new Point(18, 480);
+                MainContainer.Size = new Size(900, 400);
+                MainContainer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
+            }
+
+            // root is the dynamic content layout inside MainContainer
             root = new TableLayoutPanel
             {
-                Dock = DockStyle.Top,
-                AutoSize = true,
+                Dock = DockStyle.Fill,
+                AutoSize = false,
                 ColumnCount = 1,
                 Padding = new Padding(10)
             };
+
             MainContainer.Controls.Add(root);
+            this.Controls.Add(MainContainer);
         }
 
         private void BuildDashboardLayout()
         {
-            cardsPanel = new Panel();
-            cardsPanel.Dock = DockStyle.Fill;
-            this.Controls.Add(cardsPanel);
+            // removed cardsPanel overlay - it covered MainContainer and hid controls at runtime
 
             dashbordServices = new DashbordServices();
-            root.Controls.Add(CreateHeader());
-            root.Controls.Add(CreateKPIs());
+            // Update designer header/kpi controls instead of creating duplicates
+            CreateKPIs();
 
             FlowLayoutPanel horizontalWrapper = new FlowLayoutPanel
             {
                 FlowDirection = FlowDirection.LeftToRight,
-                AutoSize = true
+                AutoSize = false,
+                WrapContents = false,
+                Dock = DockStyle.Top,
+                Width = 900
             };
 
-            FlowLayoutPanel queueGroup = new FlowLayoutPanel { FlowDirection = FlowDirection.TopDown, AutoSize = true };
+            FlowLayoutPanel queueGroup = new FlowLayoutPanel { FlowDirection = FlowDirection.TopDown, AutoSize = false, WrapContents = false, Width = 420 };
             queueGroup.Paint += QueueGroup_Paint;
             queueGroup.Controls.Add(CreateSectionTitle("Select doctor Queue:"));
 
@@ -88,7 +107,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             appointmentsList = new AppointmentsListSection(co1);
             queueGroup.Controls.Add(appointmentsList);
 
-            FlowLayoutPanel doctorsGroup = new FlowLayoutPanel { FlowDirection = FlowDirection.TopDown, AutoSize = true };
+            FlowLayoutPanel doctorsGroup = new FlowLayoutPanel { FlowDirection = FlowDirection.TopDown, AutoSize = false, WrapContents = false, Width = 420 };
             doctorsGroup.Paint += DoctorsGroup_Paint;
             doctorsGroup.Controls.Add(CreateSectionTitle("Doctors Availability:"));
             doctorsGroup.Controls.Add(new DoctorsListSection());
@@ -107,60 +126,60 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         private Control CreateKPIs()
         {
             dashbordServices = new DashbordServices();
-            FlowLayoutPanel panel = new FlowLayoutPanel();
-            panel.Width = 900;
-            panel.Height = 200;
 
-            var TPatient = TPatients.Controls["TPtient"] as Label;
-            if (TPatient != null) TPatient.Text = dashbordServices.totalPatients().ToString();
-            panel.Controls.Add(TPatients);
+            // Update labels inside the designer KPI panels without changing their parent
+            var tPatientLabel = TPatients.Controls["TPtient"] as Label;
+            if (tPatientLabel != null) tPatientLabel.Text = dashbordServices.totalPatients().ToString();
 
-            var TAppoint = TodayAppoin.Controls["TAppoint"] as Label;
-            if (TAppoint != null) TAppoint.Text = dashbordServices.todayAppointments().ToString();
-            panel.Controls.Add(TodayAppoin);
+            var tAppointLabel = TodayAppoin.Controls["TAppoint"] as Label;
+            if (tAppointLabel != null) tAppointLabel.Text = dashbordServices.todayAppointments().ToString();
 
-            var NoSH = NoShow.Controls["NoSH"] as Label;
-            if (NoSH != null) NoSH.Text = dashbordServices.NoShowNumber().ToString();
-            panel.Controls.Add(NoShow);
+            var noShowLabel = NoShow.Controls["NoSH"] as Label;
+            if (noShowLabel != null) noShowLabel.Text = dashbordServices.NoShowNumber().ToString();
 
-            var PatientWaiting = PatientsWating.Controls["PatientWaiting"] as Label;
-            if (PatientWaiting != null) PatientWaiting.Text = dashbordServices.WaitingNow().ToString();
-            panel.Controls.Add(PatientsWating);
+            var patientWaitingLabel = PatientsWating.Controls["PatientWaiting"] as Label;
+            if (patientWaitingLabel != null) patientWaitingLabel.Text = dashbordServices.WaitingNow().ToString();
 
-            foreach (Control c in panel.Controls)
+            // Ensure designer flow panel has consistent spacing
+            try
             {
-                c.Margin = new Padding(10);
+                foreach (Control c in flowLayoutPanel4.Controls)
+                {
+                    c.Margin = new Padding(10);
+                }
             }
+            catch { }
 
-            return panel;
+            // return the existing designer KPI container
+            return flowLayoutPanel4;
         }
 
-        private Control CreateHeader()
-        {
-            Panel header = new Panel();
-            header.Width = 900;
-            header.Height = 100;
+        //private Control CreateHeader()
+        //{
+        //    Panel header = new Panel();
+        //    header.Width = 900;
+        //    header.Height = 100;
 
-            Label title = new Label();
-            title.Text = "Dashboard";
-            title.Font = new Font("Segoe UI", 18, FontStyle.Bold);
-            //title.Location = new Point(10, 5);
-            title.AutoSize = true;
+        //    Label title = new Label();
+        //    title.Text = "Dashboard";
+        //    title.Font = new Font("Segoe UI", 18, FontStyle.Bold);
+        //    //title.Location = new Point(10, 5);
+        //    title.AutoSize = true;
 
-            Label subtitle = new Label();
-            subtitle.Text = "Welcome back! Here's your hospital overview.";
-            subtitle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-            subtitle.ForeColor = Color.Gray;
-            subtitle.AutoSize = true;
-            //subtitle.Location = new Point(10, 40);
+        //    Label subtitle = new Label();
+        //    subtitle.Text = "Welcome back! Here's your hospital overview.";
+        //    subtitle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+        //    subtitle.ForeColor = Color.Gray;
+        //    subtitle.AutoSize = true;
+        //    //subtitle.Location = new Point(10, 40);
 
-            header.Controls.Add(title);
-            header.Controls.Add(subtitle);
-            header.Controls.Add(ViewQueu);
-            header.Controls.Add(NewAppoint);
+        //    header.Controls.Add(title);
+        //    header.Controls.Add(subtitle);
+        //    header.Controls.Add(ViewQueu);
+        //    header.Controls.Add(NewAppoint);
 
-            return header;
-        }
+        //    return header;
+        //}
 
         private Control CreateProgressSection()
         {
@@ -234,17 +253,18 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         {
             if (MainContainer != null)
             {
-                MainContainer.Controls.Clear();
-                control.Dock = DockStyle.Fill;
-                MainContainer.Controls.Add(control);
-            }
+                 
+        {
+            control.Dock = DockStyle.Fill;
+            MainContainer.Controls.Clear();
+            MainContainer.Controls.Add(control);
         }
 
-        private void ViewQueu_Click(object sender, EventArgs e)
-        {
-            QueueForm queueForm = new QueueForm();
-            queueForm.ShowDialog();
-        }
+
+    }
+}
+
+      
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -254,6 +274,17 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         private void NewAppoint_Click_1(object sender, EventArgs e)
         {
 
+        }
+
+        private void NewAppoint_Click_2(object sender, EventArgs e)
+        {
+            LoadControl(new AppointmentsView());
+        }
+
+        private void ViewQueu_Click_1(object sender, EventArgs e)
+        {
+            QueueForm queueForm = new QueueForm();
+            queueForm.ShowDialog();
         }
     }
 

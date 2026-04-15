@@ -81,6 +81,11 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             label3 = new Label();
             label2 = new Label();
             header = new Panel();
+            label25 = new Label();
+            label26 = new Label();
+            label27 = new Label();
+            label29 = new Label();
+            label28 = new Label();
             flowLayoutPanel4.SuspendLayout();
             TPatients.SuspendLayout();
             TodayAppoin.SuspendLayout();
@@ -311,7 +316,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             // 
             // progress
             // 
-            progress.Location = new Point(617, 514);
+            progress.Location = new Point(646, 295);
             progress.Name = "progress";
             progress.Size = new Size(200, 100);
             progress.TabIndex = 3;
@@ -323,7 +328,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             flowLayoutPanel4.Controls.Add(TodayAppoin);
             flowLayoutPanel4.Controls.Add(NoShow);
             flowLayoutPanel4.Controls.Add(PatientsWating);
-            flowLayoutPanel4.Location = new Point(18, 180);
+            flowLayoutPanel4.Location = new Point(18, 133);
             flowLayoutPanel4.Name = "flowLayoutPanel4";
             flowLayoutPanel4.Size = new Size(1480, 286);
             flowLayoutPanel4.TabIndex = 1;
@@ -504,7 +509,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             panel3.Location = new Point(133, 40);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(37, 40);
+            panel3.Size = new Size(36, 33);
             panel3.TabIndex = 0;
             // 
             // ViewQueu
@@ -513,12 +518,13 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             ViewQueu.FillColor = Color.FromArgb(224, 224, 224);
             ViewQueu.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             ViewQueu.ForeColor = Color.Black;
-            ViewQueu.Location = new Point(448, 14);
+            ViewQueu.Location = new Point(946, 20);
             ViewQueu.Name = "ViewQueu";
             ViewQueu.ShadowDecoration.CustomizableEdges = customizableEdges6;
             ViewQueu.Size = new Size(180, 45);
             ViewQueu.TabIndex = 11;
             ViewQueu.Text = "View Queue";
+            ViewQueu.Click += ViewQueu_Click_1;
             // 
             // NewAppoint
             // 
@@ -527,12 +533,13 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             NewAppoint.FillColor = Color.Blue;
             NewAppoint.Font = new Font("Segoe UI", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             NewAppoint.ForeColor = Color.White;
-            NewAppoint.Location = new Point(737, 11);
+            NewAppoint.Location = new Point(1195, 14);
             NewAppoint.Name = "NewAppoint";
             NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges8;
             NewAppoint.Size = new Size(190, 48);
             NewAppoint.TabIndex = 10;
             NewAppoint.Text = "New Appointment";
+            NewAppoint.Click += NewAppoint_Click_2;
             // 
             // label7
             // 
@@ -571,22 +578,83 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             header.Size = new Size(1450, 124);
             header.TabIndex = 0;
             // 
+            // label25
+            // 
+            label25.Anchor = AnchorStyles.None;
+            label25.AutoSize = true;
+            label25.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label25.ForeColor = Color.DarkGray;
+            label25.Location = new Point(1099, 354);
+            label25.Name = "label25";
+            label25.Size = new Size(0, 20);
+            label25.TabIndex = 37;
+            // 
+            // label26
+            // 
+            label26.Anchor = AnchorStyles.None;
+            label26.AutoSize = true;
+            label26.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label26.ForeColor = Color.LightSlateGray;
+            label26.Location = new Point(1295, 326);
+            label26.Name = "label26";
+            label26.Size = new Size(0, 28);
+            label26.TabIndex = 36;
+            // 
+            // label27
+            // 
+            label27.Anchor = AnchorStyles.None;
+            label27.AutoSize = true;
+            label27.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label27.ForeColor = Color.Black;
+            label27.Location = new Point(1024, 326);
+            label27.Name = "label27";
+            label27.Size = new Size(0, 28);
+            label27.TabIndex = 35;
+            // 
+            // label29
+            // 
+            label29.Anchor = AnchorStyles.None;
+            label29.AutoSize = true;
+            label29.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label29.ForeColor = Color.Black;
+            label29.Location = new Point(388, 524);
+            label29.Name = "label29";
+            label29.Size = new Size(0, 28);
+            label29.TabIndex = 33;
+            label29.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // label28
+            // 
+            label28.Anchor = AnchorStyles.None;
+            label28.AutoSize = true;
+            label28.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label28.ForeColor = Color.DarkGray;
+            label28.Location = new Point(475, 553);
+            label28.Name = "label28";
+            label28.Size = new Size(0, 20);
+            label28.TabIndex = 34;
+            // 
             // DashboardControl1
             // 
             AutoScroll = true;
             BackColor = Color.White;
             Controls.Add(header);
+            Controls.Add(label25);
             Controls.Add(flowLayoutPanel4);
             Controls.Add(label7);
-            Controls.Add(progress);
+            Controls.Add(label26);
             Controls.Add(Appointment);
             Controls.Add(label15);
+            Controls.Add(label27);
             Controls.Add(DoctorName);
             Controls.Add(label5);
+            Controls.Add(label28);
             Controls.Add(label6);
+            Controls.Add(progress);
             Controls.Add(label4);
+            Controls.Add(label29);
             Name = "DashboardControl1";
-            Size = new Size(1494, 949);
+            Size = new Size(1494, 802);
             flowLayoutPanel4.ResumeLayout(false);
             TPatients.ResumeLayout(false);
             TPatients.PerformLayout();
@@ -664,5 +732,10 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         private Label label22;
         private Label label23;
         private Panel panel3;
+        private Label label25;
+        private Label label26;
+        private Label label27;
+        private Label label29;
+        private Label label28;
     }
 }
