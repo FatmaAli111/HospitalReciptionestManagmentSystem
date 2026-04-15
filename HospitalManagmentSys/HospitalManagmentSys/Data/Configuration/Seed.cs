@@ -87,16 +87,16 @@ namespace HospitalManagmentSys.Data
             );
 
             
-        builder.Entity<TimeSlot>().HasData(
-    new TimeSlot { Id = 9, DoctorId = 1, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
-    new TimeSlot { Id = 10, DoctorId = 1, SlotDate = new DateTime(2026, 4, 15), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
-    new TimeSlot { Id = 11, DoctorId = 2, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
-    new TimeSlot { Id = 12, DoctorId = 2, SlotDate = new DateTime(2026, 4, 15), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
-    new TimeSlot { Id = 13, DoctorId = 3, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
-    new TimeSlot { Id = 14, DoctorId = 3, SlotDate = new DateTime(2026, 4, 16), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
-    new TimeSlot { Id = 15, DoctorId = 4, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
-    new TimeSlot { Id = 16, DoctorId = 5, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true }
-);
+            builder.Entity<TimeSlot>().HasData(
+                new TimeSlot { Id = 9, DoctorId = 1, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+                new TimeSlot { Id = 10, DoctorId = 1, SlotDate = new DateTime(2026, 4, 15), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+                new TimeSlot { Id = 11, DoctorId = 2, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+                new TimeSlot { Id = 12, DoctorId = 2, SlotDate = new DateTime(2026, 4, 15), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+                new TimeSlot { Id = 13, DoctorId = 3, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+                new TimeSlot { Id = 14, DoctorId = 3, SlotDate = new DateTime(2026, 4, 16), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+                new TimeSlot { Id = 15, DoctorId = 4, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(9, 0, 0), EndTime = new TimeSpan(12, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true },
+                new TimeSlot { Id = 16, DoctorId = 5, SlotDate = new DateTime(2026, 4, 14), StartTime = new TimeSpan(13, 0, 0), EndTime = new TimeSpan(16, 0, 0), MaxCapacity = 6, BookedCount = 0, IsAvailable = true }
+            );
 
             builder.Entity<Attendance>().HasData(
                 new Attendance { Id = 1, AppointmentID = 3, CheckInTime = new DateTime(2025, 6, 10, 9, 0, 0), CheckOutTime = new DateTime(2025, 6, 10, 9, 25, 0), ArriveTime = new DateTime(2025, 6, 10, 8, 55, 0), Status = AttendanceStatus.Present },
