@@ -1,3 +1,6 @@
+using HospitalManagmentSys.Presentation.Controls.Sidebar;
+using HospitalManagmentSys.Presentation;
+
 namespace Dashboard
 {
     public partial class Dashbord : Form
@@ -5,6 +8,47 @@ namespace Dashboard
         public Dashbord()
         {
             InitializeComponent();
+            SetupSidebar();
+        }
+
+        private void SetupSidebar()
+        {
+            sidebarControl1.NavigationChanged += (s, e) =>
+            {
+                switch (e.Item)
+                {
+                    case SidebarNavigationItem.Queue:
+                        var queueForm = new HospitalManagmentSys.Presentation.QueueForm();
+                        OpenForm(queueForm);
+                        break;
+
+                    case SidebarNavigationItem.Patients:
+                        var patientsForm = new HospitalManagmentSys.Presentation.PatientsForm();
+                        OpenForm(patientsForm);
+                        break;
+
+                    case SidebarNavigationItem.Appointments:
+                        var appointmentsForm = new HospitalManagmentSys.Presentation.AppointmentsHostForm();
+                        OpenForm(appointmentsForm);
+                        break;
+
+                    case SidebarNavigationItem.Dashboard:
+                        // Already on dashboard
+                        break;
+
+                    case SidebarNavigationItem.Reports:
+                        var reportsForm = new HospitalManagmentSys.Presentation.Form1();
+                        OpenForm(reportsForm);
+                        break;
+                }
+            };
+        }
+
+        private void OpenForm(Form form)
+        {
+            form.Show();
+            this.Hide();
+            form.FormClosed += (s, e) => this.Show();
         }
 
         private void panel9_Paint(object sender, PaintEventArgs e)

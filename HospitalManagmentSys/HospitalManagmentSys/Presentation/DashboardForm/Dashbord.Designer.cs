@@ -96,6 +96,7 @@
             NewAppoint = new Guna.UI2.WinForms.Guna2Button();
             ViewQueu = new Guna.UI2.WinForms.Guna2Button();
             ViewAll = new Guna.UI2.WinForms.Guna2Button();
+            sidebarControl1 = new HospitalManagmentSys.Presentation.Controls.Sidebar.SidebarControl();
             PatientsWating.SuspendLayout();
             panel3.SuspendLayout();
             TPatients.SuspendLayout();
@@ -119,7 +120,7 @@
             PatientsWating.Controls.Add(PatientWaiting);
             PatientsWating.Controls.Add(PatientsWatingNow);
             PatientsWating.Controls.Add(panel10);
-            PatientsWating.Location = new Point(1063, 116);
+            PatientsWating.Location = new Point(1343, 116);
             PatientsWating.Margin = new Padding(3, 4, 3, 4);
             PatientsWating.Name = "PatientsWating";
             PatientsWating.Size = new Size(229, 224);
@@ -165,7 +166,7 @@
             panel3.Controls.Add(ActiveDoc);
             panel3.Controls.Add(ActiveDoctor);
             panel3.Controls.Add(panel11);
-            panel3.Location = new Point(870, 116);
+            panel3.Location = new Point(1150, 116);
             panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
             panel3.Size = new Size(183, 224);
@@ -208,7 +209,7 @@
             TPatients.Controls.Add(TPtient);
             TPatients.Controls.Add(TotalPatients);
             TPatients.Controls.Add(panel6);
-            TPatients.Location = new Point(250, 116);
+            TPatients.Location = new Point(530, 116);
             TPatients.Margin = new Padding(3, 4, 3, 4);
             TPatients.Name = "TPatients";
             TPatients.Size = new Size(179, 224);
@@ -251,7 +252,7 @@
             NoShow.Controls.Add(NoSH);
             NoShow.Controls.Add(label1);
             NoShow.Controls.Add(panel8);
-            NoShow.Location = new Point(685, 116);
+            NoShow.Location = new Point(965, 116);
             NoShow.Margin = new Padding(3, 4, 3, 4);
             NoShow.Name = "NoShow";
             NoShow.Size = new Size(176, 224);
@@ -296,7 +297,7 @@
             TodayAppoin.Controls.Add(TAppoint);
             TodayAppoin.Controls.Add(TodaysAppointments);
             TodayAppoin.Controls.Add(panel7);
-            TodayAppoin.Location = new Point(437, 116);
+            TodayAppoin.Location = new Point(717, 116);
             TodayAppoin.Margin = new Padding(3, 4, 3, 4);
             TodayAppoin.Name = "TodayAppoin";
             TodayAppoin.Size = new Size(241, 224);
@@ -337,7 +338,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(255, 9);
+            label2.Location = new Point(535, 9);
             label2.Name = "label2";
             label2.Size = new Size(153, 41);
             label2.TabIndex = 1;
@@ -348,7 +349,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.DarkGray;
-            label3.Location = new Point(255, 61);
+            label3.Location = new Point(535, 61);
             label3.Name = "label3";
             label3.Size = new Size(406, 25);
             label3.TabIndex = 2;
@@ -359,7 +360,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.Blue;
-            label4.Location = new Point(250, 360);
+            label4.Location = new Point(530, 360);
             label4.Name = "label4";
             label4.Size = new Size(287, 28);
             label4.TabIndex = 0;
@@ -370,7 +371,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.DarkGray;
-            label5.Location = new Point(296, 400);
+            label5.Location = new Point(576, 400);
             label5.Name = "label5";
             label5.Size = new Size(256, 20);
             label5.TabIndex = 1;
@@ -381,7 +382,7 @@
             DoctorName.AutoSize = true;
             DoctorName.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             DoctorName.ForeColor = Color.LightSlateGray;
-            DoctorName.Location = new Point(515, 360);
+            DoctorName.Location = new Point(795, 360);
             DoctorName.Name = "DoctorName";
             DoctorName.Size = new Size(111, 28);
             DoctorName.TabIndex = 2;
@@ -451,7 +452,7 @@
             // 
             flowLayoutPanel1.BackColor = Color.White;
             flowLayoutPanel1.Controls.Add(panel4);
-            flowLayoutPanel1.Location = new Point(254, 449);
+            flowLayoutPanel1.Location = new Point(534, 449);
             flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(374, 145);
@@ -461,7 +462,7 @@
             // 
             flowLayoutPanel2.BackColor = Color.White;
             flowLayoutPanel2.Controls.Add(panel1);
-            flowLayoutPanel2.Location = new Point(784, 449);
+            flowLayoutPanel2.Location = new Point(1064, 449);
             flowLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new Size(509, 145);
@@ -552,7 +553,7 @@
             Appointment.BackColor = SystemColors.Control;
             Appointment.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Appointment.ForeColor = Color.Blue;
-            Appointment.Location = new Point(821, 368);
+            Appointment.Location = new Point(1101, 368);
             Appointment.Name = "Appointment";
             Appointment.Size = new Size(210, 28);
             Appointment.TabIndex = 9;
@@ -562,7 +563,7 @@
             // 
             flowLayoutPanel3.BackColor = Color.White;
             flowLayoutPanel3.Controls.Add(panel2);
-            flowLayoutPanel3.Location = new Point(255, 668);
+            flowLayoutPanel3.Location = new Point(535, 668);
             flowLayoutPanel3.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel3.Name = "flowLayoutPanel3";
             flowLayoutPanel3.Size = new Size(373, 315);
@@ -618,7 +619,7 @@
             Dctor.AutoSize = true;
             Dctor.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Dctor.ForeColor = Color.Blue;
-            Dctor.Location = new Point(254, 599);
+            Dctor.Location = new Point(534, 599);
             Dctor.Name = "Dctor";
             Dctor.Size = new Size(202, 28);
             Dctor.TabIndex = 0;
@@ -629,7 +630,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.DarkGray;
-            label6.Location = new Point(296, 644);
+            label6.Location = new Point(576, 644);
             label6.Name = "label6";
             label6.Size = new Size(181, 20);
             label6.TabIndex = 13;
@@ -640,7 +641,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label7.ForeColor = Color.Blue;
-            label7.Location = new Point(784, 611);
+            label7.Location = new Point(1064, 611);
             label7.Name = "label7";
             label7.Size = new Size(175, 28);
             label7.TabIndex = 15;
@@ -655,7 +656,7 @@
             panel5.Controls.Add(panel12);
             panel5.Controls.Add(panel9);
             panel5.ForeColor = SystemColors.ControlLightLight;
-            panel5.Location = new Point(762, 668);
+            panel5.Location = new Point(1042, 668);
             panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
             panel5.Size = new Size(530, 315);
@@ -760,7 +761,7 @@
             NewAppoint.FillColor = Color.FromArgb(0, 0, 192);
             NewAppoint.Font = new Font("Segoe UI", 9F);
             NewAppoint.ForeColor = Color.White;
-            NewAppoint.Location = new Point(976, 28);
+            NewAppoint.Location = new Point(1256, 28);
             NewAppoint.Margin = new Padding(3, 4, 3, 4);
             NewAppoint.Name = "NewAppoint";
             NewAppoint.ShadowDecoration.CustomizableEdges = customizableEdges2;
@@ -780,7 +781,7 @@
             ViewQueu.FillColor = Color.Silver;
             ViewQueu.Font = new Font("Segoe UI", 9F);
             ViewQueu.ForeColor = SystemColors.InactiveCaptionText;
-            ViewQueu.Location = new Point(762, 28);
+            ViewQueu.Location = new Point(1042, 28);
             ViewQueu.Margin = new Padding(3, 4, 3, 4);
             ViewQueu.Name = "ViewQueu";
             ViewQueu.RightToLeft = RightToLeft.No;
@@ -801,7 +802,7 @@
             ViewAll.FillColor = Color.Silver;
             ViewAll.Font = new Font("Segoe UI", 9F);
             ViewAll.ForeColor = SystemColors.InactiveCaptionText;
-            ViewAll.Location = new Point(1133, 368);
+            ViewAll.Location = new Point(1413, 368);
             ViewAll.Margin = new Padding(3, 4, 3, 4);
             ViewAll.Name = "ViewAll";
             ViewAll.RightToLeft = RightToLeft.No;
@@ -810,11 +811,24 @@
             ViewAll.TabIndex = 19;
             ViewAll.Text = "View all";
             // 
+            // sidebarControl1
+            // 
+            sidebarControl1.BackColor = Color.FromArgb(2, 29, 58);
+            sidebarControl1.Dock = DockStyle.Left;
+            sidebarControl1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            sidebarControl1.Location = new Point(0, 0);
+            sidebarControl1.MinimumSize = new Size(280, 400);
+            sidebarControl1.Name = "sidebarControl1";
+            sidebarControl1.Size = new Size(280, 1033);
+            sidebarControl1.TabIndex = 20;
+            sidebarControl1.UserName = "Admin User";
+            // 
             // Dashbord
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1924, 1033);
+            Controls.Add(sidebarControl1);
             Controls.Add(PatientsWating);
             Controls.Add(ViewAll);
             Controls.Add(panel3);
@@ -932,5 +946,6 @@
         private Guna.UI2.WinForms.Guna2Button NewAppoint;
         private Guna.UI2.WinForms.Guna2Button ViewQueu;
         private Guna.UI2.WinForms.Guna2Button ViewAll;
+        private HospitalManagmentSys.Presentation.Controls.Sidebar.SidebarControl sidebarControl1;
     }
 }
