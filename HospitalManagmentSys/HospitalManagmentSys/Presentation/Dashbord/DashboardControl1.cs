@@ -32,7 +32,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         {
 
 
-            
+
             MainContainer = new Panel
             {
                 AutoScroll = true,
@@ -236,24 +236,24 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             ControlPaint.DrawBorder3D(e.Graphics, panel.ClientRectangle, Border3DStyle.RaisedInner);
         }
 
-    
+
 
         private void LoadControl(UserControl control)
         {
             if (MainContainer != null)
             {
-                 
-        {
-            control.Dock = DockStyle.Fill;
-            MainContainer.Controls.Clear();
-            MainContainer.Controls.Add(control);
+
+                {
+                    control.Dock = DockStyle.Fill;
+                    MainContainer.Controls.Clear();
+                    MainContainer.Controls.Add(control);
+                }
+
+
+            }
         }
 
 
-    }
-}
-
-      
 
         private void label3_Click(object sender, EventArgs e)
         {
@@ -275,6 +275,16 @@ namespace HospitalManagmentSys.Presentation.Dashbord
         {
             QueueForm queueForm = new QueueForm();
             queueForm.ShowDialog();
+        }
+
+        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void header_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 

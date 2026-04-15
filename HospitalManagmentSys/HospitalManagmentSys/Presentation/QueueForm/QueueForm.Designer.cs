@@ -131,6 +131,58 @@ namespace HospitalManagmentSys.Presentation
             tableStats.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             tableStats.Size = new Size(1113, 100);
             tableStats.TabIndex = 0;
+            // create stat cards and populate tableStats columns
+            cardPatientsWaiting = new StatCardPanel();
+            cardEmergencies = new StatCardPanel();
+            cardAvgWaitTime = new StatCardPanel();
+            cardCurrentTime = new StatCardPanel();
+
+            // configure cards and add the prepared labels/panels into them
+            cardPatientsWaiting.Dock = DockStyle.Fill;
+            cardPatientsWaiting.Controls.Add(lblPatientsWaitingLabel);
+            cardPatientsWaiting.Controls.Add(lblPatientsWaitingValue);
+            cardPatientsWaiting.Controls.Add(pnlPatientsIconHost);
+
+            cardEmergencies.Dock = DockStyle.Fill;
+            cardEmergencies.Controls.Add(lblEmergenciesLabel);
+            cardEmergencies.Controls.Add(lblEmergenciesValue);
+            cardEmergencies.Controls.Add(pnlEmergenciesIconHost);
+
+            cardAvgWaitTime.Dock = DockStyle.Fill;
+            cardAvgWaitTime.Controls.Add(lblAvgWaitTimeLabel);
+            cardAvgWaitTime.Controls.Add(lblAvgWaitTimeValue);
+            cardAvgWaitTime.Controls.Add(pnlAvgWaitIconHost);
+
+            cardCurrentTime.Dock = DockStyle.Fill;
+            cardCurrentTime.Controls.Add(lblCurrentTimeLabel);
+            cardCurrentTime.Controls.Add(lblCurrentTimeValue);
+            cardCurrentTime.Controls.Add(pnlCurrentTimeIconHost);
+
+            // clear any placeholder locations and add to table
+            lblPatientsWaitingLabel.Location = new Point(16, 54);
+            lblPatientsWaitingValue.Location = new Point(16, 10);
+            pnlPatientsIconHost.Size = new Size(56, 56);
+            pnlPatientsIconHost.Dock = DockStyle.Right;
+
+            lblEmergenciesLabel.Location = new Point(16, 54);
+            lblEmergenciesValue.Location = new Point(16, 10);
+            pnlEmergenciesIconHost.Size = new Size(56, 56);
+            pnlEmergenciesIconHost.Dock = DockStyle.Right;
+
+            lblAvgWaitTimeLabel.Location = new Point(16, 54);
+            lblAvgWaitTimeValue.Location = new Point(16, 10);
+            pnlAvgWaitIconHost.Size = new Size(56, 56);
+            pnlAvgWaitIconHost.Dock = DockStyle.Right;
+
+            lblCurrentTimeLabel.Location = new Point(16, 54);
+            lblCurrentTimeValue.Location = new Point(16, 10);
+            pnlCurrentTimeIconHost.Size = new Size(56, 56);
+            pnlCurrentTimeIconHost.Dock = DockStyle.Right;
+
+            tableStats.Controls.Add(cardPatientsWaiting, 0, 0);
+            tableStats.Controls.Add(cardEmergencies, 1, 0);
+            tableStats.Controls.Add(cardAvgWaitTime, 2, 0);
+            tableStats.Controls.Add(cardCurrentTime, 3, 0);
             // 
             // lblPatientsWaitingLabel
             // 
@@ -295,8 +347,19 @@ namespace HospitalManagmentSys.Presentation
             // pnlQueueSection
             // 
             pnlQueueSection.BackColor = Color.White;
+            // create flowPatients control and legend
+            flowPatients = new DoubleBufferedFlowLayoutPanel
+            {
+                Dock = DockStyle.Fill,
+                AutoScroll = true,
+                FlowDirection = FlowDirection.TopDown,
+                WrapContents = false,
+                Padding = new Padding(12)
+            };
+
             pnlQueueSection.Controls.Add(pnlQueueContainer);
             pnlQueueSection.Controls.Add(tblQueueHeader);
+            pnlQueueSection.Controls.Add(new PriorityQueueLegendPanel { Dock = DockStyle.Bottom });
             pnlQueueSection.Dock = DockStyle.Fill;
             pnlQueueSection.Location = new Point(0, 228);
             pnlQueueSection.Name = "pnlQueueSection";
@@ -309,8 +372,10 @@ namespace HospitalManagmentSys.Presentation
             pnlQueueContainer.Dock = DockStyle.Fill;
             pnlQueueContainer.Location = new Point(0, 100);
             pnlQueueContainer.Name = "pnlQueueContainer";
-            pnlQueueContainer.Size = new Size(1113, 0);
+            pnlQueueContainer.Size = new Size(1113, 400);
             pnlQueueContainer.TabIndex = 0;
+            // add flowPatients to container
+            pnlQueueContainer.Controls.Add(flowPatients);
             // 
             // tblQueueHeader
             // 

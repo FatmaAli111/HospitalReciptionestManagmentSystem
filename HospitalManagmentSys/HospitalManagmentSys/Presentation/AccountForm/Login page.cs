@@ -2,6 +2,8 @@
 using HospitalManagmentSys.BiussnessLogic;
 using HospitalManagmentSys.Data;
 using HospitalManagmentSys.Presentation;
+using HospitalManagmentSys.Presentation.Controls.Sidebar;
+using HospitalManagmentSys.Presentation.Dashbord;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -50,13 +52,13 @@ namespace WinFormsApp
             return true;
         }
         //convert hash passowrd
-        string HashPassword(string pwd)
-        {
-            using var sha1 = SHA1.Create();
-            var bytes = Encoding.UTF8.GetBytes(pwd ?? string.Empty);
-            var hash = sha1.ComputeHash(bytes);
-            return Convert.ToBase64String(hash);
-        }
+        //string HashPassword(string pwd)
+        //{
+        //    using var sha1 = SHA1.Create();
+        //    var bytes = Encoding.UTF8.GetBytes(pwd ?? string.Empty);
+        //    var hash = sha1.ComputeHash(bytes);
+        //    return Convert.ToBase64String(hash);
+        //}
         #endregion
         //**************//
 
@@ -86,7 +88,7 @@ namespace WinFormsApp
                 return;
             }
 
-            if (user.PasswordHash != HashPassword(password))
+            if (user.PasswordHash != /*HashPassword*/(password))
             {
                 MessageBox.Show("Incorrect password ⚠️");
                 return;
@@ -94,10 +96,9 @@ namespace WinFormsApp
 
             MessageBox.Show("Login successful!🎉");
             SessionManager.CurrentUser = user;
-            Dashbord dashbord = new Dashbord();
-            dashbord.Show();
+            MainPage main = new MainPage();
+            main.Show();
             this.Hide();
-            dashbord.FormClosed += (s, args) => this.Close();
         }
 
 
