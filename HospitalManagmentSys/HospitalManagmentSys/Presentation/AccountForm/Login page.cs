@@ -1,5 +1,4 @@
-﻿using Dashboard;
-using HospitalManagmentSys.BiussnessLogic;
+﻿using HospitalManagmentSys.BiussnessLogic;
 using HospitalManagmentSys.Data;
 using HospitalManagmentSys.Presentation;
 using HospitalManagmentSys.Presentation.Controls.Sidebar;
