@@ -46,7 +46,8 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
                     break;
 
                 case SidebarNavigationItem.Queue:
-                    //LoadPage(new QueueView());
+                    QueueForm queueForm = new QueueForm();
+                    queueForm.ShowDialog();
                     break;
 
                 case SidebarNavigationItem.Reports:
