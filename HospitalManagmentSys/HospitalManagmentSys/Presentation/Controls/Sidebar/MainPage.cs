@@ -1,4 +1,5 @@
-﻿using HospitalManagmentSys.Presentation;
+﻿using HospitalManagmentSys.BiussnessLogic;
+using HospitalManagmentSys.Presentation;
 using HospitalManagmentSys.Presentation.Controls.Sidebar;
 using HospitalManagmentSys.Presentation.Dashbord;
 using HospitalManagmentSys.Presentation.ReportsForm;
@@ -13,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp;
 
 namespace HospitalManagmentSys.Presentation.Controls.Sidebar
 {
@@ -21,8 +23,27 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
         public MainPage()
         {
             InitializeComponent();
+            sidebarControl1.ProfileActionTriggered += Sidebar_ProfileActionTriggered;
             sidebarControl1.NavigationChanged += Sidebar_NavigationChanged;
             LoadPage(new DashboardControl1());
+        }
+
+        private void Sidebar_ProfileActionTriggered(object? sender, SidebarProfileActionEventArgs e)
+        {
+            switch (e.Action)
+            {
+                case SidebarProfileAction.Settings:
+                    LoadPage(new SettingsUserControl());
+                    break;
+
+                case SidebarProfileAction.SignOut:
+
+                    this.Hide();        
+                    var loginPage = new Login_page();
+                    loginPage.ShowDialog();   
+                    this.Close();      
+                    break;
+            }
         }
 
         private void Sidebar_NavigationChanged(object? sender, SidebarNavigationChangedEventArgs e)
@@ -46,7 +67,7 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
                     break;
 
                 case SidebarNavigationItem.Queue:
-                    //LoadPage(new QueueView());
+                    //LoadPage(new QueueController());
                     break;
 
                 case SidebarNavigationItem.Reports:
@@ -77,5 +98,8 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
         {
 
         }
+    
     }
+
+    
 }

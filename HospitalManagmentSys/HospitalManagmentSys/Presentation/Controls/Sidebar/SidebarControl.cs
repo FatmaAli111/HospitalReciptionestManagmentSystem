@@ -613,4 +613,8 @@ public sealed class SidebarControl : UserControl
         using var brush = new SolidBrush(color);
         graphics.FillPath(brush, path);
     }
+
+     
+
 }
+

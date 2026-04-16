@@ -146,32 +146,32 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             return flowLayoutPanel4;
         }
 
-        //private Control CreateHeader()
-        //{
-        //    Panel header = new Panel();
-        //    header.Width = 900;
-        //    header.Height = 100;
+        private Control CreateHeader()
+        {
+            Panel header = new Panel();
+            header.Width = 900;
+            header.Height = 100;
 
-        //    Label title = new Label();
-        //    title.Text = "Dashboard";
-        //    title.Font = new Font("Segoe UI", 18, FontStyle.Bold);
-        //    //title.Location = new Point(10, 5);
-        //    title.AutoSize = true;
+            Label title = new Label();
+            title.Text = "Dashboard";
+            title.Font = new Font("Segoe UI", 18, FontStyle.Bold);
+            //title.Location = new Point(10, 5);
+            title.AutoSize = true;
 
-        //    Label subtitle = new Label();
-        //    subtitle.Text = "Welcome back! Here's your hospital overview.";
-        //    subtitle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
-        //    subtitle.ForeColor = Color.Gray;
-        //    subtitle.AutoSize = true;
-        //    //subtitle.Location = new Point(10, 40);
+            Label subtitle = new Label();
+            subtitle.Text = "Welcome back! Here's your hospital overview.";
+            subtitle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
+            subtitle.ForeColor = Color.Gray;
+            subtitle.AutoSize = true;
+            //subtitle.Location = new Point(10, 40);
 
-        //    header.Controls.Add(title);
-        //    header.Controls.Add(subtitle);
-        //    header.Controls.Add(ViewQueu);
-        //    header.Controls.Add(NewAppoint);
+            header.Controls.Add(title);
+            header.Controls.Add(subtitle);
+            header.Controls.Add(ViewQueu);
+            header.Controls.Add(NewAppoint);
 
-        //    return header;
-        //}
+            return header;
+        }
 
         private Control CreateProgressSection()
         {

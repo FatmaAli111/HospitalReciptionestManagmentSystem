@@ -88,28 +88,17 @@ namespace WinFormsApp
                 return;
             }
 
-<<<<<<< HEAD
             if (user.PasswordHash != /*HashPassword*/(password))
             {
                 MessageBox.Show("Incorrect password ⚠️");
                 return;
             }
-=======
-            //if (user.PasswordHash != HashPassword(password))
-            //{
-            //    MessageBox.Show("Incorrect password ⚠️");
-            //    return;
-            //}
-
             // Set user session
             UserSession.SetUser(user);
->>>>>>> 746362347f8f206ed1cb94d736f8c457183d0bc9
 
             MessageBox.Show("Login successful!🎉");
             SessionManager.CurrentUser = user;
-            MainPage main = new MainPage();
-            main.Show();
-            this.Hide();
+            this.DialogResult = DialogResult.OK;
         }
 
 

@@ -20,13 +20,15 @@ namespace HospitalManagmentSys
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
 
-            ApplicationConfiguration.Initialize();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new PatientsForm());
-            //Application.Run(new MainPage());
-            Application.Run(new Login_page());
-            //Application.Run(new AdminPanel());
-            //Application.Run(new Dashbord());
+            var login = new Login_page();
+
+            if (login.ShowDialog() == DialogResult.OK)
+            {
+                Application.Run(new MainPage());
+            }
         }
     }
 }

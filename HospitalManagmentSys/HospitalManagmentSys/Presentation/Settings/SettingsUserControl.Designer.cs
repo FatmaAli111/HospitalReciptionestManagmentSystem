@@ -120,7 +120,7 @@
             tabQueue.Controls.Add(ucQueue);
             tabQueue.Location = new Point(4, 44);
             tabQueue.Name = "tabQueue";
-            tabQueue.Size = new Size(892, 452);
+            tabQueue.Size = new Size(1486, 905);
             tabQueue.TabIndex = 1;
             tabQueue.Text = "Queue";
             // 
@@ -130,7 +130,7 @@
             ucQueue.Dock = DockStyle.Fill;
             ucQueue.Location = new Point(0, 0);
             ucQueue.Name = "ucQueue";
-            ucQueue.Size = new Size(892, 452);
+            ucQueue.Size = new Size(1486, 905);
             ucQueue.TabIndex = 0;
             // 
             // tabSystem

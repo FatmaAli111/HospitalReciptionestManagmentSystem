@@ -1,7 +1,9 @@
 ﻿using Guna.UI2.WinForms;
 using HospitalManagmentSys.Data.Models;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
+
 
 namespace HospitalManagmentSys.Presentation.UserControls
 {
@@ -12,16 +14,31 @@ namespace HospitalManagmentSys.Presentation.UserControls
         public PatientRowControl()
         {
             InitializeComponent();
+        }
+        public PatientRowControl(Patient patient, Color avatarColor)
+        {
+            InitializeComponent();
+            _patient = patient;
 
             this.Click += (s, e) => OnPatientSelected?.Invoke(this, _patient);
             foreach (Control ctrl in this.Controls)
                 ctrl.Click += (s, e) => OnPatientSelected?.Invoke(this, _patient);
-        }
 
+            UpdateUI(patient, avatarColor);
+        }
         public void SetData(Patient patient, Color avatarColor)
         {
             _patient = patient;
 
+            // Click events
+            this.Click += (s, e) => OnPatientSelected?.Invoke(this, _patient);
+            foreach (Control ctrl in this.Controls)
+                ctrl.Click += (s, e) => OnPatientSelected?.Invoke(this, _patient);
+
+            UpdateUI(patient, avatarColor);
+        }
+        private void UpdateUI(Patient patient, Color avatarColor)
+        {
             avatarLabel.Text = patient.Initials;
             avatarLabel.FillColor = avatarColor;
 
