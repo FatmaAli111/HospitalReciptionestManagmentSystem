@@ -5,6 +5,7 @@ using HospitalManagmentSys.Presentation.Dashbord;
 using HospitalManagmentSys.Presentation.ReportsForm;
 using HospitalManagmentSys.Presentation.Settings;
 using HospitalManagmentSys.Presentation.UserControls;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,9 +26,38 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
             InitializeComponent();
             sidebarControl1.ProfileActionTriggered += Sidebar_ProfileActionTriggered;
             sidebarControl1.NavigationChanged += Sidebar_NavigationChanged;
-            LoadPage(new DashboardControl1());
+            SwitchView(new HospitalManagmentSys.Presentation.Dashbord1.Dashbord());
+
+
         }
 
+        private Control _previousView;
+        private Control? _currentView;
+
+
+        public void SwitchView(Form newForm)
+        {
+
+            if (_currentView != null)
+            {
+                _previousView = _currentView;
+                _currentView.Hide();
+            }
+           
+
+            newForm.TopLevel = false;
+            newForm.FormBorderStyle = FormBorderStyle.None;
+            newForm.Dock = DockStyle.Fill;
+
+            if (!guna2Panel1.Controls.Contains(newForm))
+                guna2Panel1.Controls.Add(newForm);
+
+            _currentView = newForm;
+
+         
+            newForm.Show();
+            newForm.BringToFront();
+        }
         private void Sidebar_ProfileActionTriggered(object? sender, SidebarProfileActionEventArgs e)
         {
             switch (e.Action)
@@ -53,7 +83,7 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
             {
 
                 case SidebarNavigationItem.Dashboard:
-                    LoadPage(new DashboardControl1());
+                    SwitchView(new HospitalManagmentSys.Presentation.Dashbord1.Dashbord());
                     break;
 
                 case SidebarNavigationItem.Patients:
@@ -68,8 +98,7 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
 
                 case SidebarNavigationItem.Queue:
 
-                    QueueForm queueForm = new QueueForm();
-                    queueForm.ShowDialog();
+                    SwitchView(new QueueForm());
                     break;
 
                 case SidebarNavigationItem.Reports:
@@ -87,10 +116,11 @@ namespace HospitalManagmentSys.Presentation.Controls.Sidebar
         private void LoadPage(UserControl page)
         {
             page.Dock = DockStyle.Fill;
+            _currentView = page;
             guna2Panel1.Controls.Clear();
             guna2Panel1.Controls.Add(page);
         }
-
+       
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 

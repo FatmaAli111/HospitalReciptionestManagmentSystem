@@ -1,4 +1,5 @@
-﻿using Guna.UI2.WinForms;
+
+using Guna.UI2.WinForms;
 using HospitalManagmentSys.BiussnessLogic;
 using HospitalManagmentSys.Data.Models;
 using HospitalManagmentSys.Presentation;
@@ -11,139 +12,119 @@ using System.IO;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.TaskbarClock;
 
-namespace HospitalManagmentSys.Presentation.Dashbord
+namespace HospitalManagmentSys.Presentation.Dashbord1
 {
-    public partial class DashboardControl1 : UserControl
+    public partial class Dashbord : Form
     {
         private TableLayoutPanel root;
-        private Panel MainContainer;
+        private Panel MainContainer;  
         private DashbordServices dashbordServices;
         private Panel cardsPanel;
         private AppointmentsListSection appointmentsList;
 
-        public DashboardControl1()
+        public Dashbord()
         {
             InitializeComponent();
             SetupFormLayout();
             BuildDashboardLayout();
         }
 
+
         private void SetupFormLayout()
         {
+            this.Padding = new Padding(200, 0, 0, 0);
+            this.MinimumSize = new Size(1100, 700);
+            this.Controls.Clear();
 
-
-
-            MainContainer = new Panel
+            MainContainer = new Panel  
             {
-                AutoScroll = true,
-                BorderStyle = BorderStyle.None
+                Dock = DockStyle.Fill,
+                AutoScroll = true
             };
-
-            try
-            {
-                var x = flowLayoutPanel4.Location.X;
-                var y = flowLayoutPanel4.Location.Y + flowLayoutPanel4.Height + 10;
-                MainContainer.Location = new Point(x, y);
-                MainContainer.Size = new Size(this.ClientSize.Width - x - 18, Math.Max(200, this.ClientSize.Height - y - 18));
-                MainContainer.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            }
-            catch
-            {
-                MainContainer.Location = new Point(18, 480);
-                MainContainer.Size = new Size(900, 400);
-                MainContainer.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right | AnchorStyles.Bottom;
-            }
+            this.Controls.Add(MainContainer);
 
             root = new TableLayoutPanel
             {
-                Dock = DockStyle.Fill,
-                AutoSize = false,
+                Dock = DockStyle.Top,
+                AutoSize = true,
                 ColumnCount = 1,
                 Padding = new Padding(10)
             };
-
             MainContainer.Controls.Add(root);
-            this.Controls.Add(MainContainer);
         }
 
         private void BuildDashboardLayout()
         {
+            cardsPanel = new Panel();
+            cardsPanel.Dock = DockStyle.Fill;
+            this.Controls.Add(cardsPanel);
 
             dashbordServices = new DashbordServices();
-            CreateKPIs();
+            root.Controls.Add(CreateHeader());
+            root.Controls.Add(CreateKPIs());
 
             FlowLayoutPanel horizontalWrapper = new FlowLayoutPanel
             {
                 FlowDirection = FlowDirection.LeftToRight,
-                AutoSize = false,
-                WrapContents = false,
-                Dock = DockStyle.Top,
-                Width = 900
+                AutoSize = true
             };
 
-            FlowLayoutPanel queueGroup = new FlowLayoutPanel { FlowDirection = FlowDirection.TopDown, AutoSize = false, WrapContents = false, Width = 420 };
-            queueGroup.Paint += QueueGroup_Paint;
-            queueGroup.Controls.Add(CreateSectionTitle("Select doctor Queue:"));
-
-            Guna2ComboBox co1 = new Guna2ComboBox();
-            co1.Size = new Size(200, 35);
-            co1.DisplayMember = "Name";
-            co1.ValueMember = "Id";
-
-            var doctors = dashbordServices.DoctorsAvailable();
-            foreach (var item in doctors)
+            FlowLayoutPanel doctorsGroup = new FlowLayoutPanel
             {
-                co1.Items.Add(item);
-            }
-
-            queueGroup.Controls.Add(co1);
-            queueGroup.Controls.Add(CreateSectionTitle(" "));
-
-            appointmentsList = new AppointmentsListSection(co1);
-            queueGroup.Controls.Add(appointmentsList);
-
-            FlowLayoutPanel doctorsGroup = new FlowLayoutPanel { FlowDirection = FlowDirection.TopDown, AutoSize = false, WrapContents = false, Width = 420 };
+                FlowDirection = FlowDirection.TopDown,
+                AutoSize = true
+            };
             doctorsGroup.Paint += DoctorsGroup_Paint;
             doctorsGroup.Controls.Add(CreateSectionTitle("Doctors Availability:"));
             doctorsGroup.Controls.Add(new DoctorsListSection());
 
-            horizontalWrapper.Controls.Add(queueGroup);
             horizontalWrapper.Controls.Add(doctorsGroup);
 
+
+            FlowLayoutPanel patientListSection = new FlowLayoutPanel
+            {
+                FlowDirection = FlowDirection.TopDown,
+                AutoSize = true
+            };
+            patientListSection.Paint += PatientGroup_Paint;
+            patientListSection.Controls.Add(CreateSectionTitle("Today Appointments:"));
+            patientListSection.Controls.Add(new PatientListSection());
+
+            horizontalWrapper.Controls.Add(patientListSection);
+
             root.Controls.Add(horizontalWrapper);
-            root.Controls.Add(CreateSectionTitle("Today Appointments:"));
-            PatientListSection patientGroup = new PatientListSection();
-            patientGroup.Paint += PatientGroup_Paint;
-            root.Controls.Add(patientGroup);
             root.Controls.Add(CreateProgressSection());
         }
 
         private Control CreateKPIs()
         {
             dashbordServices = new DashbordServices();
+            FlowLayoutPanel panel = new FlowLayoutPanel();
+            panel.Width = 900;
+            panel.Height = 200;
 
-            var tPatientLabel = TPatients.Controls["TPtient"] as Label;
-            if (tPatientLabel != null) tPatientLabel.Text = dashbordServices.totalPatients().ToString();
+            var TPatient = TPatients.Controls["TPtient"] as Label;
+            if (TPatient != null) TPatient.Text = dashbordServices.totalPatients().ToString();
+            panel.Controls.Add(TPatients);
 
-            var tAppointLabel = TodayAppoin.Controls["TAppoint"] as Label;
-            if (tAppointLabel != null) tAppointLabel.Text = dashbordServices.todayAppointments().ToString();
+            var TAppoint = TodayAppoin.Controls["TAppoint"] as Label;
+            if (TAppoint != null) TAppoint.Text = dashbordServices.todayAppointments().ToString();
+            panel.Controls.Add(TodayAppoin);
 
-            var noShowLabel = NoShow.Controls["NoSH"] as Label;
-            if (noShowLabel != null) noShowLabel.Text = dashbordServices.NoShowNumber().ToString();
+            var NoSH = NoShow.Controls["NoSH"] as Label;
+            if (NoSH != null) NoSH.Text = dashbordServices.NoShowNumber().ToString();
+            panel.Controls.Add(NoShow);
 
-            var patientWaitingLabel = PatientsWating.Controls["PatientWaiting"] as Label;
-            if (patientWaitingLabel != null) patientWaitingLabel.Text = dashbordServices.WaitingNow().ToString();
+            var PatientWaiting = PatientsWating.Controls["PatientWaiting"] as Label;
+            if (PatientWaiting != null) PatientWaiting.Text = dashbordServices.WaitingNow().ToString();
+            panel.Controls.Add(PatientsWating);
 
-            try
+            foreach (Control c in panel.Controls)
             {
-                foreach (Control c in flowLayoutPanel4.Controls)
-                {
-                    c.Margin = new Padding(10);
-                }
+                c.Margin = new Padding(10);
             }
-            catch { }
 
-            return flowLayoutPanel4;
+            return panel;
         }
 
         private Control CreateHeader()
@@ -155,7 +136,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             Label title = new Label();
             title.Text = "Dashboard";
             title.Font = new Font("Segoe UI", 18, FontStyle.Bold);
-            //title.Location = new Point(10, 5);
+            title.Location = new Point(10, 5);
             title.AutoSize = true;
 
             Label subtitle = new Label();
@@ -163,7 +144,7 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             subtitle.Font = new Font("Segoe UI", 10, FontStyle.Regular);
             subtitle.ForeColor = Color.Gray;
             subtitle.AutoSize = true;
-            //subtitle.Location = new Point(10, 40);
+            subtitle.Location = new Point(10, 40);
 
             header.Controls.Add(title);
             header.Controls.Add(subtitle);
@@ -214,15 +195,11 @@ namespace HospitalManagmentSys.Presentation.Dashbord
                 Font = new Font("Segoe UI", 12, FontStyle.Bold),
                 ForeColor = Color.Black,
                 AutoSize = true,
-                //Margin = margin ?? new Padding(20, 10, 0, 5)
+                Margin = margin ?? new Padding(20, 10, 0, 5)
             };
         }
 
-        private void QueueGroup_Paint(object sender, PaintEventArgs e)
-        {
-            FlowLayoutPanel panel = (FlowLayoutPanel)sender;
-            ControlPaint.DrawBorder3D(e.Graphics, panel.ClientRectangle, Border3DStyle.RaisedInner);
-        }
+       
 
         private void PatientGroup_Paint(object sender, PaintEventArgs e)
         {
@@ -236,176 +213,149 @@ namespace HospitalManagmentSys.Presentation.Dashbord
             ControlPaint.DrawBorder3D(e.Graphics, panel.ClientRectangle, Border3DStyle.RaisedInner);
         }
 
+        private void NewAppoint_Click(object sender, EventArgs e)
+        {
 
+            BookAppointmentForm form = new BookAppointmentForm();
+            form.ShowDialog();
+        }
 
         private void LoadControl(UserControl control)
         {
             if (MainContainer != null)
             {
-
-                {
-                    control.Dock = DockStyle.Fill;
-                    MainContainer.Controls.Clear();
-                    MainContainer.Controls.Add(control);
-                }
-
-
+                MainContainer.Controls.Clear();
+                control.Dock = DockStyle.Fill;
+                MainContainer.Controls.Add(control);
             }
         }
 
-
-
-        private void label3_Click(object sender, EventArgs e)
+        private void ViewQueu_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void NewAppoint_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NewAppoint_Click_2(object sender, EventArgs e)
-        {
-            BookAppointmentForm form = new BookAppointmentForm();
-            form.ShowDialog();
-        }
-
-        private void ViewQueu_Click_1(object sender, EventArgs e)
-        {
             QueueForm queueForm = new QueueForm();
             queueForm.ShowDialog();
         }
-
-        private void flowLayoutPanel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void header_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 
-    public class AppointmentsListSection : FlowLayoutPanel
-    {
-        private int selectedD = 1;
-        private Panel appointmentsContainer;
-        private Guna2ComboBox doctorComboBox;
+    //public class AppointmentsListSection : FlowLayoutPanel
+    //{
+    //    private int selectedD = 1;
+    //    private Panel appointmentsContainer;
+    //    private Guna2ComboBox doctorComboBox;
 
-        public AppointmentsListSection(Guna2ComboBox comboBox)
-        {
-            this.AutoSize = true;
-            this.FlowDirection = FlowDirection.TopDown;
-            this.WrapContents = false;
-            this.Width = 400;
+    //    //public AppointmentsListSection(Guna2ComboBox comboBox)
+    //    //{
+    //    //    this.AutoSize = true;
+    //    //    this.FlowDirection = FlowDirection.TopDown;
+    //    //    this.WrapContents = false;
+    //    //    this.Width = 400;
 
-            doctorComboBox = comboBox;
+    //    //    doctorComboBox = comboBox;
 
-            appointmentsContainer = new Panel
-            {
-                Dock = DockStyle.Top,
-                AutoScroll = true,
-                Height = 500,
-                Width = this.Width - 20
-            };
+    //    //    appointmentsContainer = new Panel
+    //    //    {
+    //    //        Dock = DockStyle.Top,
+    //    //        AutoScroll = true,
+    //    //        Height = 500,
+    //    //        Width = this.Width - 20
+    //    //    };
 
-            this.Controls.Add(appointmentsContainer);
+    //    //    this.Controls.Add(appointmentsContainer);
 
-            if (doctorComboBox != null)
-            {
-                doctorComboBox.SelectedIndexChanged += co1_SelectedIndexChanged;
-                if (doctorComboBox.Items.Count > 0)
-                {
-                    doctorComboBox.SelectedIndex = 0;
-                }
-            }
+    //    //    if (doctorComboBox != null)
+    //    //    {
+    //    //        doctorComboBox.SelectedIndexChanged += co1_SelectedIndexChanged;
+    //    //        if (doctorComboBox.Items.Count > 0)
+    //    //        {
+    //    //            doctorComboBox.SelectedIndex = 0;
+    //    //        }
+    //    //    }
 
-            LoadData();
-        }
+    //    //    //LoadData();
+    //    //}
 
-        private void co1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (doctorComboBox.SelectedItem != null)
-            {
-                dynamic selectedDoctor = doctorComboBox.SelectedItem;
-                if (selectedDoctor != null)
-                {
-                    int doctorId = 1;
-                    try
-                    {
-                        var propertyInfo = selectedDoctor.GetType().GetProperty("Id");
-                        if (propertyInfo != null)
-                        {
-                            doctorId = (int)propertyInfo.GetValue(selectedDoctor);
-                        }
-                        else
-                        {
-                            doctorId = doctorComboBox.SelectedIndex + 1;
-                        }
-                    }
-                    catch
-                    {
-                        doctorId = doctorComboBox.SelectedIndex + 1;
-                    }
+    //    //private void co1_SelectedIndexChanged(object sender, EventArgs e)
+    //    //{
+    //    //    if (doctorComboBox.SelectedItem != null)
+    //    //    {
+    //    //        dynamic selectedDoctor = doctorComboBox.SelectedItem;
+    //    //        if (selectedDoctor != null)
+    //    //        {
+    //    //            int doctorId = 1;
+    //    //            try
+    //    //            {
+    //    //                var propertyInfo = selectedDoctor.GetType().GetProperty("Id");
+    //    //                if (propertyInfo != null)
+    //    //                {
+    //    //                    doctorId = (int)propertyInfo.GetValue(selectedDoctor);
+    //    //                }
+    //    //                else
+    //    //                {
+    //    //                    doctorId = doctorComboBox.SelectedIndex + 1;
+    //    //                }
+    //    //            }
+    //    //            catch
+    //    //            {
+    //    //                doctorId = doctorComboBox.SelectedIndex + 1;
+    //    //            }
 
-                    selectedD = doctorId;
-                    LoadData();
-                }
-            }
-        }
+    //    //            selectedD = doctorId;
+    //    //            LoadData();
+    //    //        }
+    //    //    }
+    //    //}
 
-        private void LoadData()
-        {
-            int num = 0;
-            appointmentsContainer.Controls.Clear();
+    //    //private void LoadData()
+    //    //{
+    //    //    int num = 0;
+    //    //    appointmentsContainer.Controls.Clear();
 
-            DashbordServices dashbordServices = new DashbordServices();
-            var Appoins = dashbordServices.AppoinmentQueue(selectedD);
+    //    //    DashbordServices dashbordServices = new DashbordServices();
+    //    //    var Appoins = dashbordServices.AppoinmentQueue(selectedD);
 
-            foreach (var appt in Appoins)
-            {
-                if (appt.Doctor == null || appt.Patient == null || appt.TimeSlot == null)
-                    continue;
+    //    //    foreach (var appt in Appoins)
+    //    //    {
+    //    //        if (appt.Doctor == null || appt.Patient == null || appt.TimeSlot == null)
+    //    //            continue;
 
-                AppointmentCardControl appoint = new AppointmentCardControl();
+    //    //        AppointmentCardControl appoint = new AppointmentCardControl();
 
-                if (appoint.Controls["ActualScore"] is Label lblName)
-                    lblName.Text = appt.PriorityScore.ToString();
+    //    //        if (appoint.Controls["ActualScore"] is Label lblName)
+    //    //            lblName.Text = appt.PriorityScore.ToString();
 
-                if (appoint.Controls["PatientName"] is Label PaName)
-                    PaName.Text = appt.Patient.FullName;
+    //    //        if (appoint.Controls["PatientName"] is Label PaName)
+    //    //            PaName.Text = appt.Patient.FullName;
 
-                if (appoint.Controls["Urgency"] is Guna2Button UrgName)
-                {
-                    switch (appt.Patient.MedicalUrgency)
-                    {
-                        case MedicalUrgency.Low:
-                            UrgName.Text = "Low";
-                            UrgName.FillColor = Color.Green;
-                            break;
-                        case MedicalUrgency.Medium:
-                            UrgName.Text = "Medium";
-                            UrgName.FillColor = Color.Orange;
-                            break;
-                        case MedicalUrgency.High:
-                            UrgName.Text = "High";
-                            UrgName.FillColor = Color.Red;
-                            break;
-                    }
-                }
+    //    //        if (appoint.Controls["Urgency"] is Guna2Button UrgName)
+    //    //        {
+    //    //            switch (appt.Patient.MedicalUrgency)
+    //    //            {
+    //    //                case MedicalUrgency.Low:
+    //    //                    UrgName.Text = "Low";
+    //    //                    UrgName.FillColor = Color.Green;
+    //    //                    break;
+    //    //                case MedicalUrgency.Medium:
+    //    //                    UrgName.Text = "Medium";
+    //    //                    UrgName.FillColor = Color.Orange;
+    //    //                    break;
+    //    //                case MedicalUrgency.High:
+    //    //                    UrgName.Text = "High";
+    //    //                    UrgName.FillColor = Color.Red;
+    //    //                    break;
+    //    //            }
+    //    //        }
 
-                if (appoint.Controls["btnAvatar"] is Guna2CircleButton avar)
-                {
-                    num++;
-                    avar.Text = num.ToString();
-                }
+    //    //        if (appoint.Controls["btnAvatar"] is Guna2CircleButton avar)
+    //    //        {
+    //    //            num++;
+    //    //            avar.Text = num.ToString();
+    //    //        }
 
-                appointmentsContainer.Controls.Add(appoint);
-            }
-        }
-    }
+    //    //        appointmentsContainer.Controls.Add(appoint);
+    //    //    }
+    //    //}
+    //}
 
     public class DoctorsListSection : FlowLayoutPanel
     {

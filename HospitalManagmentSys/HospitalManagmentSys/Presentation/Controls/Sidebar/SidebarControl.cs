@@ -61,7 +61,6 @@ public sealed class SidebarControl : UserControl
         var dateTimePanel = BuildDateTimeSection(out _timeLabel, out _dateLabel);
         rootLayout.Controls.Add(dateTimePanel, 0, 1);
 
-        rootLayout.Controls.Add(BuildQuickActionsSection(), 0, 2);
 
         var navHost = BuildNavigationHost(out _queueBadgeLabel);
         rootLayout.Controls.Add(navHost, 0, 3);
@@ -244,56 +243,6 @@ public sealed class SidebarControl : UserControl
 
         panel.Controls.Add(timeLabel);
         panel.Controls.Add(dateLabel);
-        return panel;
-    }
-
-    private Panel BuildQuickActionsSection()
-    {
-        var panel = new Panel
-        {
-            Dock = DockStyle.Top,
-            Height = 90,
-            BackColor = Color.Transparent,
-            Padding = new Padding(0, 0, 0, 16)
-        };
-
-        var title = CreateSectionTitle("QUICK ACTIONS");
-        title.Location = new Point(0, 0);
-        panel.Controls.Add(title);
-
-        var row = new TableLayoutPanel
-        {
-            Top = 30,
-            Left = 0,
-            Width = 280,
-            Height = 44,
-            ColumnCount = 2,
-            RowCount = 1,
-            BackColor = Color.Transparent
-        };
-        row.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        row.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-        row.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-
-        var newPatient = CreateQuickActionTile(
-            "\uE13D",
-            "New Patient",
-            Color.FromArgb(16, 49, 84),
-            Color.White,
-            (_, _) => NewPatientClicked?.Invoke(this, EventArgs.Empty));
-
-        var emergency = CreateQuickActionTile(
-            "\uE814",
-            "Emergency",
-            Color.FromArgb(220, 38, 67),
-            Color.White,
-            (_, _) => EmergencyClicked?.Invoke(this, EventArgs.Empty));
-
-        newPatient.Margin = new Padding(0, 0, 6, 0);
-        emergency.Margin = new Padding(6, 0, 0, 0);
-        row.Controls.Add(newPatient, 0, 0);
-        row.Controls.Add(emergency, 1, 0);
-        panel.Controls.Add(row);
         return panel;
     }
 

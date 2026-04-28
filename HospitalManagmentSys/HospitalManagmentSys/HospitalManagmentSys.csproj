@@ -27,6 +27,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <Compile Update="Presentation\Dashbord1\Dashbord.cs">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Compile>
+	  <Compile Update="Presentation\Dashbord1\Dashbord.Designer.cs">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Presentation\Dashbord1\Dashbord.resx">
+	    <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </EmbeddedResource>
+	</ItemGroup>
+
+	<ItemGroup>
 		<None Update="appsettings.json">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</None>

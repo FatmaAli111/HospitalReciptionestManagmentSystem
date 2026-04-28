@@ -53,28 +53,24 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -106,8 +102,6 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             cartesianChart1 = new Panel();
             guna2HtmlLabel17 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel18 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             Patient = new DataGridViewTextBoxColumn();
@@ -580,53 +574,6 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             guna2HtmlLabel18.TabIndex = 5;
             guna2HtmlLabel18.Text = "Reports & Analytics";
             // 
-            // guna2ComboBox1
-            // 
-            guna2ComboBox1.BackColor = Color.Transparent;
-            guna2ComboBox1.BorderRadius = 5;
-            guna2ComboBox1.CustomizableEdges = customizableEdges19;
-            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.Font = new Font("Segoe UI", 10F);
-            guna2ComboBox1.ForeColor = Color.FromArgb(68, 88, 112);
-            guna2ComboBox1.ItemHeight = 30;
-            guna2ComboBox1.Items.AddRange(new object[] { "This Week", "Last Week", "Monthly" });
-            guna2ComboBox1.Location = new Point(930, 9);
-            guna2ComboBox1.Margin = new Padding(5, 4, 5, 4);
-            guna2ComboBox1.Name = "guna2ComboBox1";
-            guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            guna2ComboBox1.ShadowDecoration.Depth = 10;
-            guna2ComboBox1.ShadowDecoration.Enabled = true;
-            guna2ComboBox1.Size = new Size(194, 36);
-            guna2ComboBox1.StartIndex = 0;
-            guna2ComboBox1.TabIndex = 7;
-            // 
-            // guna2Button1
-            // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderColor = Color.Gainsboro;
-            guna2Button1.BorderRadius = 8;
-            guna2Button1.CustomizableEdges = customizableEdges21;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.White;
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.Gray;
-            guna2Button1.Location = new Point(1166, 4);
-            guna2Button1.Margin = new Padding(5, 4, 5, 4);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2Button1.ShadowDecoration.Depth = 10;
-            guna2Button1.ShadowDecoration.Enabled = true;
-            guna2Button1.Size = new Size(200, 49);
-            guna2Button1.TabIndex = 8;
-            guna2Button1.Text = "Export Report";
-            guna2Button1.Click += guna2Button1_Click;
-            // 
             // guna2CustomGradientPanel3
             // 
             guna2CustomGradientPanel3.BackColor = Color.Transparent;
@@ -635,12 +582,12 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             guna2CustomGradientPanel3.Controls.Add(guna2CirclePictureBox7);
             guna2CustomGradientPanel3.Controls.Add(guna2HtmlLabel19);
             guna2CustomGradientPanel3.Controls.Add(guna2HtmlLabel20);
-            guna2CustomGradientPanel3.CustomizableEdges = customizableEdges24;
+            guna2CustomGradientPanel3.CustomizableEdges = customizableEdges20;
             guna2CustomGradientPanel3.Location = new Point(-16, 676);
             guna2CustomGradientPanel3.Margin = new Padding(5, 4, 5, 4);
             guna2CustomGradientPanel3.Name = "guna2CustomGradientPanel3";
             guna2CustomGradientPanel3.ShadowDecoration.Color = Color.LightGray;
-            guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges25;
+            guna2CustomGradientPanel3.ShadowDecoration.CustomizableEdges = customizableEdges21;
             guna2CustomGradientPanel3.ShadowDecoration.Enabled = true;
             guna2CustomGradientPanel3.Size = new Size(1080, 407);
             guna2CustomGradientPanel3.TabIndex = 9;
@@ -730,7 +677,7 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             guna2CirclePictureBox7.Location = new Point(30, 19);
             guna2CirclePictureBox7.Margin = new Padding(5, 4, 5, 4);
             guna2CirclePictureBox7.Name = "guna2CirclePictureBox7";
-            guna2CirclePictureBox7.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            guna2CirclePictureBox7.ShadowDecoration.CustomizableEdges = customizableEdges19;
             guna2CirclePictureBox7.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox7.Size = new Size(42, 44);
             guna2CirclePictureBox7.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -772,12 +719,12 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             guna2CustomGradientPanel4.Controls.Add(guna2CustomGradientPanel5);
             guna2CustomGradientPanel4.Controls.Add(guna2HtmlLabel23);
             guna2CustomGradientPanel4.Controls.Add(guna2HtmlLabel24);
-            guna2CustomGradientPanel4.CustomizableEdges = customizableEdges34;
+            guna2CustomGradientPanel4.CustomizableEdges = customizableEdges30;
             guna2CustomGradientPanel4.Location = new Point(1074, 672);
             guna2CustomGradientPanel4.Margin = new Padding(5, 4, 5, 4);
             guna2CustomGradientPanel4.Name = "guna2CustomGradientPanel4";
             guna2CustomGradientPanel4.ShadowDecoration.Color = Color.Gray;
-            guna2CustomGradientPanel4.ShadowDecoration.CustomizableEdges = customizableEdges35;
+            guna2CustomGradientPanel4.ShadowDecoration.CustomizableEdges = customizableEdges31;
             guna2CustomGradientPanel4.ShadowDecoration.Depth = 6;
             guna2CustomGradientPanel4.ShadowDecoration.Enabled = true;
             guna2CustomGradientPanel4.Size = new Size(505, 407);
@@ -789,13 +736,13 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             guna2CustomGradientPanel8.BorderRadius = 15;
             guna2CustomGradientPanel8.Controls.Add(guna2HtmlLabel32);
             guna2CustomGradientPanel8.Controls.Add(guna2HtmlLabel28);
-            guna2CustomGradientPanel8.CustomizableEdges = customizableEdges26;
+            guna2CustomGradientPanel8.CustomizableEdges = customizableEdges22;
             guna2CustomGradientPanel8.FillColor = Color.DarkOrange;
             guna2CustomGradientPanel8.FillColor2 = Color.Moccasin;
             guna2CustomGradientPanel8.Location = new Point(231, 185);
             guna2CustomGradientPanel8.Margin = new Padding(5, 4, 5, 4);
             guna2CustomGradientPanel8.Name = "guna2CustomGradientPanel8";
-            guna2CustomGradientPanel8.ShadowDecoration.CustomizableEdges = customizableEdges27;
+            guna2CustomGradientPanel8.ShadowDecoration.CustomizableEdges = customizableEdges23;
             guna2CustomGradientPanel8.Size = new Size(155, 119);
             guna2CustomGradientPanel8.TabIndex = 7;
             // 
@@ -828,13 +775,13 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             guna2CustomGradientPanel7.BorderRadius = 15;
             guna2CustomGradientPanel7.Controls.Add(guna2HtmlLabel31);
             guna2CustomGradientPanel7.Controls.Add(guna2HtmlLabel26);
-            guna2CustomGradientPanel7.CustomizableEdges = customizableEdges28;
+            guna2CustomGradientPanel7.CustomizableEdges = customizableEdges24;
             guna2CustomGradientPanel7.FillColor = Color.DodgerBlue;
             guna2CustomGradientPanel7.FillColor2 = Color.LightSkyBlue;
             guna2CustomGradientPanel7.Location = new Point(37, 193);
             guna2CustomGradientPanel7.Margin = new Padding(5, 4, 5, 4);
             guna2CustomGradientPanel7.Name = "guna2CustomGradientPanel7";
-            guna2CustomGradientPanel7.ShadowDecoration.CustomizableEdges = customizableEdges29;
+            guna2CustomGradientPanel7.ShadowDecoration.CustomizableEdges = customizableEdges25;
             guna2CustomGradientPanel7.Size = new Size(147, 119);
             guna2CustomGradientPanel7.TabIndex = 6;
             // 
@@ -867,13 +814,13 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             guna2CustomGradientPanel6.BorderRadius = 15;
             guna2CustomGradientPanel6.Controls.Add(guna2HtmlLabel30);
             guna2CustomGradientPanel6.Controls.Add(guna2HtmlLabel27);
-            guna2CustomGradientPanel6.CustomizableEdges = customizableEdges30;
+            guna2CustomGradientPanel6.CustomizableEdges = customizableEdges26;
             guna2CustomGradientPanel6.FillColor = Color.LightCoral;
             guna2CustomGradientPanel6.FillColor2 = Color.Salmon;
             guna2CustomGradientPanel6.Location = new Point(231, 75);
             guna2CustomGradientPanel6.Margin = new Padding(5, 4, 5, 4);
             guna2CustomGradientPanel6.Name = "guna2CustomGradientPanel6";
-            guna2CustomGradientPanel6.ShadowDecoration.CustomizableEdges = customizableEdges31;
+            guna2CustomGradientPanel6.ShadowDecoration.CustomizableEdges = customizableEdges27;
             guna2CustomGradientPanel6.Size = new Size(151, 102);
             guna2CustomGradientPanel6.TabIndex = 5;
             // 
@@ -907,13 +854,13 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             guna2CustomGradientPanel5.BorderRadius = 15;
             guna2CustomGradientPanel5.Controls.Add(guna2HtmlLabel29);
             guna2CustomGradientPanel5.Controls.Add(guna2HtmlLabel25);
-            guna2CustomGradientPanel5.CustomizableEdges = customizableEdges32;
+            guna2CustomGradientPanel5.CustomizableEdges = customizableEdges28;
             guna2CustomGradientPanel5.FillColor = Color.LightGreen;
             guna2CustomGradientPanel5.FillColor2 = Color.LightGreen;
             guna2CustomGradientPanel5.Location = new Point(37, 80);
             guna2CustomGradientPanel5.Margin = new Padding(5, 4, 5, 4);
             guna2CustomGradientPanel5.Name = "guna2CustomGradientPanel5";
-            guna2CustomGradientPanel5.ShadowDecoration.CustomizableEdges = customizableEdges33;
+            guna2CustomGradientPanel5.ShadowDecoration.CustomizableEdges = customizableEdges29;
             guna2CustomGradientPanel5.Size = new Size(147, 105);
             guna2CustomGradientPanel5.TabIndex = 4;
             // 
@@ -970,12 +917,12 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             mainPanel.AutoScroll = true;
             mainPanel.BackColor = Color.Transparent;
             mainPanel.BorderRadius = 15;
-            mainPanel.CustomizableEdges = customizableEdges36;
+            mainPanel.CustomizableEdges = customizableEdges32;
             mainPanel.Location = new Point(1013, 262);
             mainPanel.Margin = new Padding(5, 4, 5, 4);
             mainPanel.Name = "mainPanel";
             mainPanel.ShadowDecoration.Color = Color.Gray;
-            mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges37;
+            mainPanel.ShadowDecoration.CustomizableEdges = customizableEdges33;
             mainPanel.ShadowDecoration.Depth = 6;
             mainPanel.ShadowDecoration.Enabled = true;
             mainPanel.Size = new Size(505, 394);
@@ -1003,8 +950,6 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             Controls.Add(guna2CustomGradientPanel4);
             Controls.Add(mainPanel);
             Controls.Add(guna2CustomGradientPanel3);
-            Controls.Add(guna2Button1);
-            Controls.Add(guna2ComboBox1);
             Controls.Add(guna2HtmlLabel17);
             Controls.Add(guna2HtmlLabel18);
             Controls.Add(guna2CustomGradientPanel2);
@@ -1015,7 +960,7 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
             Controls.Add(guna2Panel1);
             Margin = new Padding(5, 4, 5, 4);
             Name = "ReportsControl";
-            Size = new Size(1503, 936);
+            Size = new Size(1482, 915);
             Load += Form1_Load;
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
@@ -1086,8 +1031,6 @@ namespace HospitalManagmentSys.Presentation.ReportsForm
         private System.Windows.Forms.Panel cartesianChart1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel17;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel18;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel19;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel20;

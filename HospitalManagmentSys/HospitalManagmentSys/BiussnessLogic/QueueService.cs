@@ -70,12 +70,13 @@ namespace HospitalManagmentSys.BiussnessLogic
         public IReadOnlyList<Appointment> GetDoctorQueueByTimeSlot(int doctorId, int timeSlotId)
         {
             return _context.Appointments
+
                 .Where(a => a.DoctorId == doctorId
                          && a.TimeSlotId == timeSlotId
                          && a.Status != AppointmentStatus.Cancelled
                          && a.Status != AppointmentStatus.Completed)
-                .Include(a => a.Patient)
                 .Include(a => a.Doctor).ThenInclude(d => d.User)
+                .Include(a => a.Patient)
                 .Include(a => a.TimeSlot)
                 .OrderByDescending(a => a.PriorityScore)
                 .ThenBy(a => a.QueueOrder)

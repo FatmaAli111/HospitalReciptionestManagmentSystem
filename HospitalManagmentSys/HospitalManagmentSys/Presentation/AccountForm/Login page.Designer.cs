@@ -72,9 +72,9 @@
             // 
             label1.AutoSize = true;
             label1.ForeColor = SystemColors.ControlDarkDark;
-            label1.Location = new Point(259, 437);
+            label1.Location = new Point(296, 583);
             label1.Name = "label1";
-            label1.Size = new Size(139, 15);
+            label1.Size = new Size(175, 20);
             label1.TabIndex = 10;
             label1.Text = "Don't have an account ?";
             // 
@@ -82,10 +82,9 @@
             // 
             Signin_button.BackColor = SystemColors.HotTrack;
             Signin_button.FlatStyle = FlatStyle.Popup;
-            Signin_button.Location = new Point(3, 395);
-            Signin_button.Margin = new Padding(3, 2, 3, 2);
+            Signin_button.Location = new Point(3, 527);
             Signin_button.Name = "Signin_button";
-            Signin_button.Size = new Size(814, 31);
+            Signin_button.Size = new Size(930, 41);
             Signin_button.TabIndex = 9;
             Signin_button.Text = "Sign in";
             Signin_button.UseVisualStyleBackColor = false;
@@ -94,20 +93,18 @@
             // doctors_photo
             // 
             doctors_photo.Image = (Image)resources.GetObject("doctors_photo.Image");
-            doctors_photo.Location = new Point(259, 484);
-            doctors_photo.Margin = new Padding(3, 2, 3, 2);
+            doctors_photo.Location = new Point(296, 645);
             doctors_photo.Name = "doctors_photo";
-            doctors_photo.Size = new Size(257, 265);
+            doctors_photo.Size = new Size(350, 353);
             doctors_photo.TabIndex = 8;
             doctors_photo.TabStop = false;
             // 
             // Password_textBox1
             // 
             Password_textBox1.BorderStyle = BorderStyle.FixedSingle;
-            Password_textBox1.Location = new Point(204, 326);
-            Password_textBox1.Margin = new Padding(3, 2, 3, 2);
+            Password_textBox1.Location = new Point(233, 435);
             Password_textBox1.Name = "Password_textBox1";
-            Password_textBox1.Size = new Size(300, 23);
+            Password_textBox1.Size = new Size(343, 27);
             Password_textBox1.TabIndex = 5;
             Password_textBox1.TextChanged += Password_textBox1_TextChanged;
             // 
@@ -116,19 +113,18 @@
             Password.AutoSize = true;
             Password.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Password.ForeColor = SystemColors.ActiveCaptionText;
-            Password.Location = new Point(204, 304);
+            Password.Location = new Point(233, 405);
             Password.Name = "Password";
-            Password.Size = new Size(79, 21);
+            Password.Size = new Size(97, 28);
             Password.TabIndex = 4;
             Password.Text = "Password";
             // 
             // Emal_Address_textBox
             // 
             Emal_Address_textBox.BorderStyle = BorderStyle.FixedSingle;
-            Emal_Address_textBox.Location = new Point(204, 239);
-            Emal_Address_textBox.Margin = new Padding(3, 2, 3, 2);
+            Emal_Address_textBox.Location = new Point(233, 319);
             Emal_Address_textBox.Name = "Emal_Address_textBox";
-            Emal_Address_textBox.Size = new Size(300, 23);
+            Emal_Address_textBox.Size = new Size(343, 27);
             Emal_Address_textBox.TabIndex = 3;
             Emal_Address_textBox.TextChanged += Emal_Address_textBox_TextChanged;
             // 
@@ -137,9 +133,9 @@
             Email_Address.AutoSize = true;
             Email_Address.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Email_Address.ForeColor = SystemColors.ActiveCaptionText;
-            Email_Address.Location = new Point(204, 216);
+            Email_Address.Location = new Point(233, 288);
             Email_Address.Name = "Email_Address";
-            Email_Address.Size = new Size(112, 21);
+            Email_Address.Size = new Size(139, 28);
             Email_Address.TabIndex = 2;
             Email_Address.Text = "Email Address";
             // 
@@ -148,9 +144,9 @@
             Welcome_Header.AutoSize = true;
             Welcome_Header.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Welcome_Header.ForeColor = SystemColors.ActiveCaptionText;
-            Welcome_Header.Location = new Point(259, 94);
+            Welcome_Header.Location = new Point(296, 125);
             Welcome_Header.Name = "Welcome_Header";
-            Welcome_Header.Size = new Size(221, 41);
+            Welcome_Header.Size = new Size(276, 50);
             Welcome_Header.TabIndex = 0;
             Welcome_Header.Text = "Welcome back";
             // 
@@ -158,9 +154,9 @@
             // 
             footer.AutoSize = true;
             footer.ForeColor = SystemColors.ControlDarkDark;
-            footer.Location = new Point(247, 714);
+            footer.Location = new Point(282, 952);
             footer.Name = "footer";
-            footer.Size = new Size(295, 15);
+            footer.Size = new Size(372, 20);
             footer.TabIndex = 4;
             footer.Text = "© 2026 MediCare Hospital Systems. All rights reserved.";
             // 
@@ -169,9 +165,9 @@
             pargraph.AutoSize = true;
             pargraph.Font = new Font("Segoe UI", 10.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pargraph.ForeColor = SystemColors.ControlDarkDark;
-            pargraph.Location = new Point(61, 304);
+            pargraph.Location = new Point(70, 405);
             pargraph.Name = "pargraph";
-            pargraph.Size = new Size(311, 60);
+            pargraph.Size = new Size(375, 75);
             pargraph.TabIndex = 2;
             pargraph.Text = "Streamline patient registration, appointment\r\n scheduling, and queue management with our\r\n intelligent hospital reception platform.\r\n";
             // 
@@ -180,9 +176,9 @@
             Header1.AutoSize = true;
             Header1.Font = new Font("Segoe UI", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Header1.ForeColor = Color.White;
-            Header1.Location = new Point(61, 184);
+            Header1.Location = new Point(70, 245);
             Header1.Name = "Header1";
-            Header1.Size = new Size(267, 82);
+            Header1.Size = new Size(330, 100);
             Header1.TabIndex = 1;
             Header1.Text = "Smart Hospital\r\nReception System";
             // 
@@ -190,10 +186,9 @@
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.InitialImage = (Image)resources.GetObject("pictureBox1.InitialImage");
-            pictureBox1.Location = new Point(42, 69);
-            pictureBox1.Margin = new Padding(3, 2, 3, 2);
+            pictureBox1.Location = new Point(48, 92);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(258, 74);
+            pictureBox1.Size = new Size(295, 99);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -202,9 +197,9 @@
             Pargraph_signin.AutoSize = true;
             Pargraph_signin.Font = new Font("Segoe UI Semibold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Pargraph_signin.ForeColor = SystemColors.ControlDarkDark;
-            Pargraph_signin.Location = new Point(259, 162);
+            Pargraph_signin.Location = new Point(296, 216);
             Pargraph_signin.Name = "Pargraph_signin";
-            Pargraph_signin.Size = new Size(248, 19);
+            Pargraph_signin.Size = new Size(301, 23);
             Pargraph_signin.TabIndex = 1;
             Pargraph_signin.Text = "Sign in to access the reception system";
             // 
@@ -213,9 +208,9 @@
             Active_Patients_num.AutoSize = true;
             Active_Patients_num.Font = new Font("Simplified Arabic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Active_Patients_num.ForeColor = Color.White;
-            Active_Patients_num.Location = new Point(13, 10);
+            Active_Patients_num.Location = new Point(15, 13);
             Active_Patients_num.Name = "Active_Patients_num";
-            Active_Patients_num.Size = new Size(116, 59);
+            Active_Patients_num.Size = new Size(146, 73);
             Active_Patients_num.TabIndex = 1;
             Active_Patients_num.Text = "1,455";
             // 
@@ -224,9 +219,9 @@
             Active_Patients_name.AutoSize = true;
             Active_Patients_name.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Active_Patients_name.ForeColor = Color.Gray;
-            Active_Patients_name.Location = new Point(3, 65);
+            Active_Patients_name.Location = new Point(3, 87);
             Active_Patients_name.Name = "Active_Patients_name";
-            Active_Patients_name.Size = new Size(108, 19);
+            Active_Patients_name.Size = new Size(129, 23);
             Active_Patients_name.TabIndex = 0;
             Active_Patients_name.Text = "Active Patients";
             // 
@@ -235,9 +230,9 @@
             Today_Appointments_num.AutoSize = true;
             Today_Appointments_num.Font = new Font("Simplified Arabic", 25.8000011F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Today_Appointments_num.ForeColor = Color.White;
-            Today_Appointments_num.Location = new Point(13, 10);
+            Today_Appointments_num.Location = new Point(15, 13);
             Today_Appointments_num.Name = "Today_Appointments_num";
-            Today_Appointments_num.Size = new Size(65, 59);
+            Today_Appointments_num.Size = new Size(82, 73);
             Today_Appointments_num.TabIndex = 1;
             Today_Appointments_num.Text = "65";
             // 
@@ -246,9 +241,9 @@
             Today_Appointments_Name.AutoSize = true;
             Today_Appointments_Name.Font = new Font("Segoe UI", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             Today_Appointments_Name.ForeColor = Color.Gray;
-            Today_Appointments_Name.Location = new Point(3, 65);
+            Today_Appointments_Name.Location = new Point(3, 87);
             Today_Appointments_Name.Name = "Today_Appointments_Name";
-            Today_Appointments_Name.Size = new Size(154, 19);
+            Today_Appointments_Name.Size = new Size(184, 23);
             Today_Appointments_Name.TabIndex = 0;
             Today_Appointments_Name.Text = "Today`sAppointments";
             // 
@@ -257,10 +252,9 @@
             Today_Appointments_panel.BackColor = Color.FromArgb(0, 0, 65);
             Today_Appointments_panel.Controls.Add(Today_Appointments_num);
             Today_Appointments_panel.Controls.Add(Today_Appointments_Name);
-            Today_Appointments_panel.Location = new Point(472, 497);
-            Today_Appointments_panel.Margin = new Padding(3, 2, 3, 2);
+            Today_Appointments_panel.Location = new Point(539, 663);
             Today_Appointments_panel.Name = "Today_Appointments_panel";
-            Today_Appointments_panel.Size = new Size(277, 97);
+            Today_Appointments_panel.Size = new Size(317, 129);
             Today_Appointments_panel.TabIndex = 5;
             // 
             // left_panel1
@@ -273,10 +267,9 @@
             left_panel1.Controls.Add(pargraph);
             left_panel1.Controls.Add(Header1);
             left_panel1.Controls.Add(pictureBox1);
-            left_panel1.Location = new Point(3, 2);
-            left_panel1.Margin = new Padding(3, 2, 3, 2);
+            left_panel1.Location = new Point(3, 3);
             left_panel1.Name = "left_panel1";
-            left_panel1.Size = new Size(853, 829);
+            left_panel1.Size = new Size(975, 1105);
             left_panel1.TabIndex = 0;
             // 
             // Active_Patients_panel
@@ -284,10 +277,9 @@
             Active_Patients_panel.BackColor = Color.FromArgb(0, 0, 65);
             Active_Patients_panel.Controls.Add(Active_Patients_num);
             Active_Patients_panel.Controls.Add(Active_Patients_name);
-            Active_Patients_panel.Location = new Point(73, 497);
-            Active_Patients_panel.Margin = new Padding(3, 2, 3, 2);
+            Active_Patients_panel.Location = new Point(83, 663);
             Active_Patients_panel.Name = "Active_Patients_panel";
-            Active_Patients_panel.Size = new Size(277, 97);
+            Active_Patients_panel.Size = new Size(317, 129);
             Active_Patients_panel.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -297,13 +289,12 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.3333321F));
             tableLayoutPanel1.Controls.Add(left_panel1, 0, 0);
             tableLayoutPanel1.Controls.Add(right_panel, 1, 0);
-            tableLayoutPanel1.Location = new Point(-6, -46);
-            tableLayoutPanel1.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel1.Location = new Point(-7, -61);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 98.73817F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 1.26182961F));
-            tableLayoutPanel1.Size = new Size(1696, 833);
+            tableLayoutPanel1.Size = new Size(1938, 1111);
             tableLayoutPanel1.TabIndex = 16;
             // 
             // right_panel
@@ -321,10 +312,9 @@
             right_panel.Dock = DockStyle.Fill;
             right_panel.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             right_panel.ForeColor = SystemColors.ButtonHighlight;
-            right_panel.Location = new Point(862, 2);
-            right_panel.Margin = new Padding(3, 2, 3, 2);
+            right_panel.Location = new Point(984, 3);
             right_panel.Name = "right_panel";
-            right_panel.Size = new Size(831, 829);
+            right_panel.Size = new Size(951, 1105);
             right_panel.TabIndex = 1;
             // 
             // Signup_Link
@@ -332,9 +322,9 @@
             Signup_Link.ActiveLinkColor = Color.Blue;
             Signup_Link.AutoSize = true;
             Signup_Link.LinkColor = Color.FromArgb(0, 0, 50);
-            Signup_Link.Location = new Point(409, 437);
+            Signup_Link.Location = new Point(467, 583);
             Signup_Link.Name = "Signup_Link";
-            Signup_Link.Size = new Size(186, 15);
+            Signup_Link.Size = new Size(235, 20);
             Signup_Link.TabIndex = 11;
             Signup_Link.TabStop = true;
             Signup_Link.Text = "Submit a Ticket to Adminstrator";
@@ -345,10 +335,9 @@
             sign_in_button.BackColor = SystemColors.MenuHighlight;
             sign_in_button.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             sign_in_button.ForeColor = Color.White;
-            sign_in_button.Location = new Point(594, 238);
-            sign_in_button.Margin = new Padding(3, 2, 3, 2);
+            sign_in_button.Location = new Point(679, 317);
             sign_in_button.Name = "sign_in_button";
-            sign_in_button.Size = new Size(418, 28);
+            sign_in_button.Size = new Size(478, 37);
             sign_in_button.TabIndex = 15;
             sign_in_button.Text = "Sign in";
             sign_in_button.UseVisualStyleBackColor = false;
@@ -359,19 +348,18 @@
             Password_textBox.BorderStyle = BorderStyle.FixedSingle;
             Password_textBox.Cursor = Cursors.No;
             Password_textBox.ForeColor = SystemColors.Desktop;
-            Password_textBox.Location = new Point(616, 176);
-            Password_textBox.Margin = new Padding(3, 2, 3, 2);
+            Password_textBox.Location = new Point(704, 235);
             Password_textBox.Name = "Password_textBox";
-            Password_textBox.Size = new Size(205, 23);
+            Password_textBox.Size = new Size(234, 27);
             Password_textBox.TabIndex = 14;
             // 
             // Password_sign_in
             // 
             Password_sign_in.AutoSize = true;
             Password_sign_in.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Password_sign_in.Location = new Point(616, 158);
+            Password_sign_in.Location = new Point(704, 211);
             Password_sign_in.Name = "Password_sign_in";
-            Password_sign_in.Size = new Size(57, 15);
+            Password_sign_in.Size = new Size(73, 20);
             Password_sign_in.TabIndex = 13;
             Password_sign_in.Text = "Password";
             // 
@@ -381,19 +369,18 @@
             EmailAddress_textBox.BorderStyle = BorderStyle.FixedSingle;
             EmailAddress_textBox.Cursor = Cursors.No;
             EmailAddress_textBox.ForeColor = SystemColors.Desktop;
-            EmailAddress_textBox.Location = new Point(616, 101);
-            EmailAddress_textBox.Margin = new Padding(3, 2, 3, 2);
+            EmailAddress_textBox.Location = new Point(704, 135);
             EmailAddress_textBox.Name = "EmailAddress_textBox";
-            EmailAddress_textBox.Size = new Size(205, 23);
+            EmailAddress_textBox.Size = new Size(234, 27);
             EmailAddress_textBox.TabIndex = 12;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(616, 84);
+            label3.Location = new Point(704, 112);
             label3.Name = "label3";
-            label3.Size = new Size(81, 15);
+            label3.Size = new Size(104, 20);
             label3.TabIndex = 11;
             label3.Text = "Email Address";
             // 
@@ -402,9 +389,9 @@
             pargraph_sign_in.AutoSize = true;
             pargraph_sign_in.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             pargraph_sign_in.ForeColor = SystemColors.ControlDarkDark;
-            pargraph_sign_in.Location = new Point(656, 34);
+            pargraph_sign_in.Location = new Point(750, 45);
             pargraph_sign_in.Name = "pargraph_sign_in";
-            pargraph_sign_in.Size = new Size(241, 19);
+            pargraph_sign_in.Size = new Size(300, 23);
             pargraph_sign_in.TabIndex = 10;
             pargraph_sign_in.Text = "Sign in to access the reception system";
             // 
@@ -412,17 +399,17 @@
             // 
             Welcome.AutoSize = true;
             Welcome.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Welcome.Location = new Point(656, -6);
+            Welcome.Location = new Point(750, -8);
             Welcome.Name = "Welcome";
-            Welcome.Size = new Size(163, 30);
+            Welcome.Size = new Size(207, 38);
             Welcome.TabIndex = 9;
             Welcome.Text = "Welcome back";
             // 
             // Login_page
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1199, 562);
+            ClientSize = new Size(1924, 1033);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(sign_in_button);
             Controls.Add(Password_textBox);
@@ -431,9 +418,9 @@
             Controls.Add(label3);
             Controls.Add(pargraph_sign_in);
             Controls.Add(Welcome);
-            Margin = new Padding(3, 2, 3, 2);
             Name = "Login_page";
             Text = "Login_page";
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)doctors_photo).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             Today_Appointments_panel.ResumeLayout(false);

@@ -5,6 +5,7 @@ using HospitalManagmentSys.Presentation;
 using HospitalManagmentSys.Presentation.ProfilePatient;
 using WinFormsApp;
 using HospitalManagmentSys.Presentation.Controls.Sidebar;
+using HospitalManagmentSys.Presentation.Dashbord;
 
 namespace HospitalManagmentSys
 {
@@ -22,12 +23,14 @@ namespace HospitalManagmentSys
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var login = new Login_page();
+            //var loginpage = new Login_page();
 
-            if (login.ShowDialog() == DialogResult.OK)
-            {
-                Application.Run(new MainPage());
-            }
+            //if (loginpage.ShowDialog() == DialogResult.OK)
+            //{
+            //Application.Run(new MainPage());
+            //}
+            //Application.Run(new HospitalManagmentSys.Presentation.Dashbord1.Dashbord());
+            Application.Run(new AdminPanel());
         }
     }
 }

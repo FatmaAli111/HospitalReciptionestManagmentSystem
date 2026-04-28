@@ -23,10 +23,12 @@
             tabQueue = new TabPage();
             ucQueue = new QueueTabControl();
             tabSystem = new TabPage();
+            ucSystem = new systenm();
             pnlHeader.SuspendLayout();
             tabControl.SuspendLayout();
             tabProfile.SuspendLayout();
             tabQueue.SuspendLayout();
+            tabSystem.SuspendLayout();
             SuspendLayout();
             // 
             // pnlHeader
@@ -136,11 +138,21 @@
             // tabSystem
             // 
             tabSystem.BackColor = Color.FromArgb(248, 250, 252);
+            tabSystem.Controls.Add(ucSystem);
             tabSystem.Location = new Point(4, 44);
             tabSystem.Name = "tabSystem";
             tabSystem.Size = new Size(1486, 905);
             tabSystem.TabIndex = 2;
             tabSystem.Text = "System";
+            // 
+            // ucSystem
+            // 
+            ucSystem.BackColor = Color.FromArgb(248, 249, 250);
+            ucSystem.Dock = DockStyle.Fill;
+            ucSystem.Location = new Point(0, 0);
+            ucSystem.Name = "ucSystem";
+            ucSystem.Size = new Size(1486, 905);
+            ucSystem.TabIndex = 0;
             // 
             // SettingsUserControl
             // 
@@ -154,6 +166,7 @@
             tabControl.ResumeLayout(false);
             tabProfile.ResumeLayout(false);
             tabQueue.ResumeLayout(false);
+            tabSystem.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -168,6 +181,6 @@
         private System.Windows.Forms.TabPage tabSystem;
         private ProfileTabControl ucProfile;
         private QueueTabControl ucQueue;
-
+        private systenm ucSystem;
     }
 }
